@@ -129,6 +129,120 @@ button.active{background:#fff;color:#090b10}.summary{display:grid;grid-template-
   content:"●";font-size:8px;color:#8aa6ff;
 }
 </style>
+
+<style>
+/* Team crests + competition watermark */
+.game{
+  grid-template-columns:86px minmax(320px,1.05fr) 112px minmax(430px,1fr) 86px !important;
+}
+.fixture h3{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  white-space:normal;
+  overflow:visible;
+}
+.team-inline{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+}
+.team-badge{
+  width:29px;
+  height:29px;
+  object-fit:contain;
+  flex:0 0 29px;
+  opacity:0;
+  transition:opacity .18s ease, transform .18s ease;
+}
+.team-badge.loaded{opacity:1}
+.team-inline:hover .team-badge{transform:scale(1.05)}
+.versus{
+  color:#596273;
+  font-size:13px;
+  font-weight:800;
+  margin:0 1px;
+}
+.compmark{
+  height:100%;
+  min-height:116px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  background:transparent;
+  border-right:1px solid #27303d;
+}
+.comp-logo{
+  display:block;
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  opacity:.11;
+  filter:grayscale(1);
+  user-select:none;
+  pointer-events:none;
+}
+.compmark[data-comp="UEFA Champions League"] .comp-logo{
+  width:82px;height:82px;opacity:.09;filter:none;
+}
+.compmark[data-comp="Carabao Cup"] .comp-logo{
+  opacity:.09;
+}
+.window{
+  border-left:0 !important;
+  padding-left:22px !important;
+}
+@media(max-width:1180px){
+  .game{
+    grid-template-columns:74px minmax(245px,1fr) 82px minmax(320px,1fr) !important;
+  }
+  .actions{grid-column:4;justify-content:flex-end}
+  .comp-logo{width:60px;height:60px}
+}
+@media(max-width:760px){
+  .game{grid-template-columns:62px minmax(0,1fr) !important}
+  .compmark{
+    grid-column:2;
+    min-height:52px;
+    justify-content:flex-start;
+    border-right:0;
+    border-top:1px solid #27303d;
+    padding-top:10px;
+  }
+  .comp-logo{width:46px;height:46px}
+  .window{grid-column:2;padding-left:0 !important}
+  .actions{grid-column:2}
+  .team-badge{width:25px;height:25px;flex-basis:25px}
+}
+</style>
+
+
+<style>
+.comp-fallback{
+  display:none;
+  position:absolute;
+  text-align:center;
+  font-size:13px;
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:rgba(255,255,255,.065);
+  user-select:none;
+  pointer-events:none;
+}
+.compmark[data-comp="Premier League"] .comp-logo{
+  width:84px;
+  height:84px;
+  opacity:.28;
+  filter:grayscale(1) brightness(1.9);
+  image-rendering:auto;
+}
+</style>
+
 </head><body>
 <div class="wrap">
 <h1>Premier Ticket Tracker</h1>
@@ -229,6 +343,26 @@ function updateDynamicTicketStates(){
     }
   });
 }
+
+const COMP_LOGOS={
+  'Premier League':'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzg4NTA3ODE3NTkwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9Ijc5MzkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTQ2NC4yNjE5NjcgMTAyNGEyMy41NDkwNTYgMjMuNTQ5MDU2IDAgMCAwLTUuMDU1MzY4LTEuOTgzNzUyIDE5OS43ODMwMjcgMTk5Ljc4MzAyNyAwIDAgMS0yOS41MDAzMTItNC45OTEzNzZjLTI2LjY4NDY2NC04LjgzMDg5Ni01My4wNDkzNjktMTguODEzNjQ4LTc5LjY3MDA0Mi0yOC4yMjA0NzMtNi4zOTkyLTIuMzY3NzA0LTguNTEwOTM2LTUuODIzMjcyLTQuODYzMzkyLTEyLjQxNDQ0OGE1MC4wNDE3NDUgNTAuMDQxNzQ1IDAgMCAwIDQuNzM1NDA4LTExLjI2MjU5MiAzNDQuNzg4OTAxIDM0NC43ODg5MDEgMCAwIDAgMTUuNjE0MDQ5LTEyOC41NTk5M2MtMi4zNjc3MDQtMjIuNDYxMTkyLTYuMDE1MjQ4LTQ0Ljc5NDQwMS05LjUzNDgwOC02Ny4wNjM2MTctMS40MDc4MjQtOC44MzA4OTYtNC4yMjM0NzItMTcuNDY5ODE2LTYuNzgzMTUzLTI3LjcwODUzNmE0OTkuMTM3NjA4IDQ5OS4xMzc2MDggMCAwIDEtMTIzLjM3NjU3NyAxNDkuMDM3MzcgNDgwLjQ1MTk0NCA0ODAuNDUxOTQ0IDAgMCAxLTI1LjAyMDg3My0yODEuOTQ4NzU2IDkyLjcyNDQwOSA5Mi43MjQ0MDkgMCAwIDEtNzIuODIyODk3IDI3LjM4ODU3NmM0LjIyMzQ3Mi0yMy41NDkwNTYgNi44NDcxNDQtNDYuNzE0MTYxIDEyLjc5ODQtNjkuMDQ3MzY5YTM5Ny41ODIzMDIgMzk3LjU4MjMwMiAwIDAgMSA3NC40ODY2ODktMTQ0LjMwMTk2MmwtNDUuNjI2Mjk2LTcuMzU5MDgxYTQwNC4zMDE0NjIgNDA0LjMwMTQ2MiAwIDAgMSAxMjAuNDMyOTQ2LTE1NC45ODg2MjZjMC44OTU4ODggMTcuODUzNzY4IDAuNzY3OTA0IDM1LjEzMTYwOSAyLjgxNTY0OCA1Mi4xNTM0ODFhODkuMTQwODU3IDg5LjE0MDg1NyAwIDAgMCAyMS43NTcyOCA1My4wNDkzNjkgMzYuMjgzNDY1IDM2LjI4MzQ2NSAwIDAgMCAxNy41OTc4IDEyLjc5ODQgMjc5LjY0NTA0NCAyNzkuNjQ1MDQ0IDAgMCAxLTYuMDE1MjQ4LTc3Ljg3ODI2NSAxMzYuNDMwOTQ2IDEzNi40MzA5NDYgMCAwIDEgNS41NjczMDQtMzEuOTk2MDAxIDI5LjE4MDM1MiAyOS4xODAzNTIgMCAwIDEgMzAuNjUyMTY5LTIwLjQ3NzQ0IDEwMi4zODcyMDIgMTAyLjM4NzIwMiAwIDAgMSA0My4wNjY2MTYgMTguMTczNzI4YzEuMDg3ODY0IDAuODMxODk2IDMuMTM1NjA4IDAuNTExOTM2IDUuMjQ3MzQ0IDAuNzY3OTA0YTY5LjMwMzMzNyA2OS4zMDMzMzcgMCAwIDAtNTIuNTM3NDMyLTQ4LjM3Nzk1M2MzLjcxMTUzNi0xLjk4Mzc1MiA1LjYzMTI5Ni0zLjMyNzU4NCA3Ljc0MzAzMi00LjE1OTQ4YTUyOS40Njk4MTYgNTI5LjQ2OTgxNiAwIDAgMSAxMTUuODI1NTIyLTM1LjMyMzU4NCA1MjQuNzM0NDA4IDUyNC43MzQ0MDggMCAwIDEgOTMuNDI4MzIxLTYuMzk5MiAyMC40MTM0NDggMjAuNDEzNDQ4IDAgMCAxIDguMjU0OTY4IDEuOTE5NzYgMTUyLjgxMjg5OCAxNTIuODEyODk4IDAgMCAxIDQ5LjY1Nzc5MyAzNS42NDM1NDQgMTYwLjkzOTg4MyAxNjAuOTM5ODgzIDAgMCAxIDEwLjk0MjYzMiAxNi41NzM5MjkgODMuNjM3NTQ1IDgzLjYzNzU0NSAwIDAgMC0yLjgxNTY0OC00My4wNjY2MTcgMTEuMDcwNjE2IDExLjA3MDYxNiAwIDAgMSAxLjY2Mzc5MiAwIDM0MC41NjU0MjkgMzQwLjU2NTQyOSAwIDAgMSAxMTguMjU3MjE4IDU4LjM2MDcwNSA3Ljk5OSA3Ljk5OSAwIDAgMSAyLjk0MzYzMiA1LjM3NTMyOCAyMTAuMDIxNzQ3IDIxMC4wMjE3NDcgMCAwIDAgMTUuODcwMDE2IDY3LjE5MTYwMWMwLjg5NTg4OCAyLjQzMTY5NiAyLjA0Nzc0NCA0Ljc5OTQgMy4wMDc2MjQgNy4yOTUwODhzMS42NjM3OTIgNC43OTk0IDMuMDA3NjI0IDguODk0ODg4YTYzMS40MDkwNzQgNjMxLjQwOTA3NCAwIDAgMC0xMDYuMjkwNzEzLTg2LjY0NTE2OWwtMTEuNzEwNTM3IDQ4LjEyMTk4NWMtMjguMDI4NDk2LTE2LjU3MzkyOC01NC4yNjUyMTctMzIuNTA3OTM3LTgwLjgyMTg5Ny00Ny42MTAwNDlhMzguMDExMjQ5IDM4LjAxMTI0OSAwIDAgMC0zMS45OTYtNC42MDc0MjQgNTI4Ljk1Nzg4IDUyOC45NTc4OCAwIDAgMC01Mi4wODk0ODkgMTguNjg1NjY0IDEzOS4yNDY1OTQgMTM5LjI0NjU5NCAwIDAgMC01MC4zNjE3MDUgMzYuOTg3Mzc3IDIxLjc1NzI4IDIxLjc1NzI4IDAgMCAwLTIuMjM5NzIgNC42NzE0MTZsMjQuMTg4OTc2IDguMTkwOTc2LTcyLjc1ODkwNSA1MS4xOTM2MDEgNDEuMDgyODY1IDMuMTM1NjA4LTQuMTU5NDggMjMuMjkzMDg4YzguNzAyOTEyLTMuMjYzNTkyIDEwLjk0MjYzMiAxLjk4Mzc1MiAxMi43OTg0IDguNDQ2OTQ0YTY3LjYzOTU0NSA2Ny42Mzk1NDUgMCAwIDAgNTguOTM2NjMzIDQzLjA2NjYxN2g5MS4zMTY1ODVhNzYuNzkwNDAxIDc2Ljc5MDQwMSAwIDAgMSAzNy4xMTUzNjEgNi4zOTkyYzEuOTE5NzYgMC45NTk4OCA1Ljc1OTI4LTEuMDIzODcyIDguMTI2OTg0LTIuNjIzNjcyIDAuNjM5OTItMC4zODM5NTIgMC00LjczNTQwOC0xLjQwNzgyNC02LjM5OTJhMTk3LjQxNTMyMyAxOTcuNDE1MzIzIDAgMCAwLTUyLjUzNzQzMy01Mi42MDE0MjUgMTUuMjMwMDk2IDE1LjIzMDA5NiAwIDAgMC02Ljk3NTEyOC0yLjYyMzY3MmMtMjEuNDM3MzItMS4wMjM4NzItNDIuODc0NjQxLTEuMjc5ODQtNjMuOTkyMDAxLTIuODc5NjRhNjcuNzY3NTI5IDY3Ljc2NzUyOSAwIDAgMS00MC44OTA4ODgtMTcuNDA1ODI0Yy04Ljc2NjkwNC03LjkzNTAwOC04LjUxMDkzNi04Ljc2NjkwNCAwLjc2NzkwNC0xNS4xNjYxMDVhODUuNTU3MzA1IDg1LjU1NzMwNSAwIDAgMSA1NS44MDEwMjQtMTkuMTk3NiAxMDQuMTc4OTc4IDEwNC4xNzg5NzggMCAwIDEgNTEuODk3NTEzIDIwLjczMzQwOCAxNS40ODYwNjQgMTUuNDg2MDY0IDAgMCAwIDE2LjU3MzkyOCAyLjgxNTY0OGMxMS4wMDY2MjQtNC45OTEzNzYgMjEuNjI5Mjk2LTEwLjc1MDY1NiAyOS41MDAzMTMtMTQuNjU0MTY4LTIuNjIzNjcyIDcuOTk5LTUuODg3MjY0IDE5LjE5NzYtOS45ODI3NTIgMzAuMjY4MjE3YTguMjU0OTY4IDguMjU0OTY4IDAgMCAwIDMuMTM1NjA4IDExLjAwNjYyNCAzNTUuOTg3NTAyIDM1NS45ODc1MDIgMCAwIDEgMzAuNzE2MTYgMjkuODg0MjY0IDM2NC4wNTA0OTQgMzY0LjA1MDQ5NCAwIDAgMSAyMS42MjkyOTcgMzAuMjA0MjI1IDIxNy4xODg4NTEgMjE3LjE4ODg1MSAwIDAgMSAxMDYuODY2NjQxLTYuMzk5MiAzOTUuMDIyNjIyIDM5NS4wMjI2MjIgMCAwIDEtNzUuMTI2NjA5LTkwLjE2NDczbDM4LjkwNzEzNyAyNS41OTY4MDFhNDYuOTcwMTI5IDQ2Ljk3MDEyOSAwIDAgMSA2LjM5OTItMTIuMTU4NDhjMy43MTE1MzYtMy4zOTE1NzYgOS4yNzg4NC03Ljg3MTAxNiAxMy4xODIzNTItNy4xNjcxMDUgOS43OTA3NzYgMS43Mjc3ODQgMTMuNjk0Mjg4IDEwLjk0MjYzMiAxNS42MTQwNDggMjAuMDI5NDk3IDEuNTk5OCA3Ljc0MzAzMiAzLjMyNzU4NCAxNi4zMTc5Ni05LjM0MjgzMiAyMC42MDU0MjRsMjguMTU2NDgxIDM0LjYxOTY3MyAyLjk0MzYzMi0wLjcwMzkxMiA1Ljc1OTI4LTIyLjIwNTIyNSAyLjY4NzY2NC0wLjk1OTg4YzE1LjI5NDA4OCAyOS4zMDgzMzYgMzEuOTk2IDU4LjA0MDc0NSA0NS40MzQzMiA4OC4xODA5NzhhMzQ5LjU4ODMwMSAzNDkuNTg4MzAxIDAgMCAxIDI4LjY2ODQxNyA5OC4xNjM3MjljMS4zNDM4MzIgOS45ODI3NTIgMy41MTk1NiAxOS43NzM1MjggNS4zMTEzMzYgMjkuNjI4Mjk3djczLjMzNDgzM2MtMC41NzU5MjggMC44OTU4ODgtMS41OTk4IDEuNjYzNzkyLTEuNzkxNzc2IDIuNjIzNjcyLTMuMDA3NjI0IDE4LjgxMzY0OC01LjE4MzM1MiAzNy43NTUyODEtOS4wMjI4NzIgNTYuNDQwOTQ1LTMuMjYzNTkyIDE2LjA2MTk5Mi04LjM4Mjk1MiAzMS45OTYtMTIuNzk4NCA0OS4xNDU4NTYtMTUuNzQyMDMyLTI4LjE1NjQ4LTIwLjU0MTQzMi0zMi40NDM5NDUtMzIuNTcxOTI5LTMwLjI2ODIxNmEzMzAuODM4NjQ1IDMzMC44Mzg2NDUgMCAwIDEtMTQ3LjgyMTUyMiAyNTIuNzA0NDEybC0xMy41MDIzMTItNTguNTUyNjgxYy04Ljg5NDg4OCA1LjU2NzMwNC0xNS44MDYwMjQgOS41MzQ4MDgtMjIuMzMzMjA5IDE0LjA3ODI0YTI5NS4yNTkwOTMgMjk1LjI1OTA5MyAwIDAgMS0xMDkuNTU0MzA1IDQ2LjUyMjE4NWwtMjYuNDkyNjg5IDUuNTAzMzEyeiBtMjY2Ljc4MjY1Mi0yNzQuMzMzNzA4YTE1Ny42MTIyOTggMTU3LjYxMjI5OCAwIDAgMCAxNS44MDYwMjUtOS4wMjI4NzIgOTAuNTQ4NjgxIDkwLjU0ODY4MSAwIDAgMCAzMC4yNjgyMTYtNDMuNjQyNTQ1IDgxLjM5NzgyNSA4MS4zOTc4MjUgMCAwIDAgMS4zNDM4MzItNjguODU1MzkzIDIyLjI2OTIxNiAyMi4yNjkyMTYgMCAwIDAtMTguODEzNjQ4LTEyLjE1ODQ4Yy01LjYzMTI5NiAwLjcwMzkxMi0xMS4zMjY1ODQgMS4wMjM4NzItMTYuOTU3ODggMS43OTE3NzZhNzUuMDYyNjE3IDc1LjA2MjYxNyAwIDAgMC0yMi4zOTcyMDEgMy44Mzk1MiAxMTUuMTg1NjAyIDExNS4xODU2MDIgMCAwIDAtMjQuMjUyOTY4IDE3LjQ2OTgxNiAxMjQuNDAwNDUgMTI0LjQwMDQ1IDAgMCAxLTQ4LjE4NTk3NyAyMy40ODUwNjRjLTQuOTI3Mzg0IDEuNDA3ODI0LTEwLjA0Njc0NCAyLjQ5NTY4OC0xNC44NDYxNDQgMy42NDc1NDQgOC4xMjY5ODQgMTcuNDA1ODI0IDE1LjkzNDAwOCAzMy41OTU4MDEgMjMuMjkzMDg4IDUwLjE2OTcyOSAxLjk4Mzc1MiA0LjYwNzQyNCA0LjYwNzQyNCA2LjM5OTIgOS4yMTQ4NDggNS41MDMzMTJhOTguMjI3NzIyIDk4LjIyNzcyMiAwIDAgMCA0OS4xNDU4NTctMjIuNzgxMTUyYzUuMDU1MzY4LTQuNzM1NDA4IDEwLjYyMjY3Mi04LjgzMDg5NiAxNS45OTgtMTMuMzEwMzM2YTEzNS40MDcwNzQgMTM1LjQwNzA3NCAwIDAgMSAwLjM4Mzk1MiA2My44NjQwMTd6IG0tNjcuMzE5NTg1LTI3Ni4xODk0NzdjLTMxLjE2NDEwNCAxNy4wMjE4NzItNjIuMjAwMjI1IDM0LjIzNTcyMS05My4wNDQzNjkgNTEuODk3NTEzYTExLjgzODUyIDExLjgzODUyIDAgMCAwLTUuNTY3MzA0IDE3LjAyMTg3MmMzLjkwMzUxMiA3LjQyMzA3MiA3LjgwNzAyNCAxNC45MTAxMzYgMTEuODM4NTIgMjIuMjY5MjE3IDkuNTk4OCAxNy41MzM4MDggMTkuMTk3NiAzNS4xMzE2MDkgMjkuMDUyMzY4IDUyLjYwMTQyNSAzLjE5OTYgNS42OTUyODggNy4yMzEwOTYgMTEuMDcwNjE2IDE0Ljc4MjE1MyA5LjkxODc2YTEwNS41MjI4MSAxMDUuNTIyODEgMCAwIDAgMTQuMDc4MjQtMi45NDM2MzIgMTg1LjU3NjgwMyAxODUuNTc2ODAzIDAgMCAwIDU5LjAwMDYyNS0zMi42OTk5MTMgNDQwLjUyMDkzNSA0NDAuNTIwOTM1IDAgMCAwIDM3LjgxOTI3Mi0zNS41Nzk1NTIgNi4zOTkyIDYuMzk5MiAwIDAgMCAxLjIxNTg0OC0zLjgzOTUydi0yNS41OTY4MDFoMC4zODM5NTJhOTIuOTE2Mzg1IDkyLjkxNjM4NSAwIDAgMSAwLTEzLjM3NDMyOCAxMi4wOTQ0ODggMTIuMDk0NDg4IDAgMCAwLTcuODA3MDI0LTEzLjUwMjMxMiAxMzguNTQyNjgyIDEzOC41NDI2ODIgMCAwIDEtMjkuNDM2MzItMjAuMDI5NDk3Yy03LjQ4NzA2NC03LjM1OTA4LTEyLjIyMjQ3Mi0xMS4wNzA2MTYtMTguMTczNzI4LTExLjA3MDYxNmEzMS4yOTIwODggMzEuMjkyMDg4IDAgMCAwLTE0LjE0MjIzMyA0LjkyNzM4NHogbTExOC44MzMxNDYgMTguMzY1NzA1YTI5LjMwODMzNiAyOS4zMDgzMzYgMCAwIDAtMTUuMzU4MDggMzEuOTk2YzAuNTc1OTI4IDMuNzExNTM2LTEuMzQzODMyIDcuNjc5MDQtMS4wODc4NjQgMTEuMzkwNTc2IDAuNTc1OTI4IDkuNzI2Nzg0LTMuMzkxNTc2IDE5Ljk2NTUwNCAzLjcxMTUzNiAyOS4xMTYzNjEgMTIuNzk4NCAxNi40NDU5NDQgMjUuMTQ4ODU2IDMzLjI3NTg0MSAzOC4zOTUyMDEgNTAuNDg5Njg5YTE1NC42Njg2NjYgMTU0LjY2ODY2NiAwIDAgMC02LjM5OTItMTM4LjYwNjY3NSAxNzAuNjY2NjY3IDE3MC42NjY2NjcgMCAwIDEtMTkuMjYxNTkzIDE1Ljg3MDAxN3pNMjg1LjIxMjM0OCA5MS44Mjg1MjFsNzMuMzk4ODI2IDQ4LjE4NTk3N0wzNDMuNDQ1MDY5IDQyLjkzODYzM2wxMDQuOTQ2ODgyIDc1Ljc2NjUyOSAzMC4wNzYyNC0xMTMuMDczODY2aDMuMjYzNTkzbDUzLjY4OTI4OCA5My4wNDQzN2MyLjQ5NTY4OCA0LjM1MTQ1NiAzLjM5MTU3NiA1LjY5NTI4OCA3LjI5NTA4OCAwLjU3NTkyOCAxOC43NDk2NTYtMjQuOTU2ODggMzguMzk1MjAxLTQ5LjMzNzgzMyA1Ny4yNzI4NDEtNzMuOTc0NzU0IDUuMDU1MzY4LTYuMzk5MiA5LjcyNjc4NC0xMy41NjYzMDQgMTQuNzE4MTYxLTIwLjI4NTQ2NEE0Ny40MTgwNzMgNDcuNDE4MDczIDAgMCAxIDYyMC4wODI0OSAwYzAuODk1ODg4IDM4Ljc3OTE1MyAxLjkxOTc2IDc1LjgzMDUyMSAyLjg3OTY0IDExNS45NTM1MDZsNjMuNDE2MDczLTcwLjM5MTIwMWEzNTAuOTMyMTMzIDM1MC45MzIxMzMgMCAwIDAtMjMuOTMzMDA5IDExOS40MDkwNzQgNDAzLjE0OTYwNiA0MDMuMTQ5NjA2IDAgMCAwLTMyOC4xNTA5ODEgNDAuNTA2OTM2IDI5My42NTkyOTMgMjkzLjY1OTI5MyAwIDAgMC00OS4xNDU4NTctMTEzLjY0OTc5NHoiIGZpbGw9IiMzMzMzMzMiIHAtaWQ9Ijc5NDAiPjwvcGF0aD48L3N2Zz4=',
+  'UEFA Champions League':'https://assets.footylogos.com/logos/uefa-champions-league-symbol-white/uefa-champions-league-symbol-white-logo-footylogos.svg',
+  'Carabao Cup':'https://assets.footylogos.com/logos/efl-cup-logo-footylogos.svg'
+};
+function escAttr(v){
+  return String(v??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function teamMarkup(name){
+  return `<span class="team-inline"><img class="team-badge" data-team="${escAttr(name)}" alt="${escAttr(name)} 队徽"><span>${name}</span></span>`;
+}
+function compMark(comp){
+  const src=COMP_LOGOS[comp];
+  const fallback=comp==='Premier League'
+    ? '<div class="comp-fallback">PREMIER<br>LEAGUE</div>'
+    : '';
+  return `<div class="compmark" data-comp="${escAttr(comp)}">${src?`<img class="comp-logo" src="${src}" alt="${escAttr(comp)} logo" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')">`:''}${fallback}</div>`;
+}
+
 function render(){
 updateDynamicTicketStates();
 updateDynamicTicketStates();
@@ -256,7 +390,7 @@ if(weekKeys.length){
   },weekKeys[0]);
 }
 const wstate=(v,kind)=>{if(v==='待官方公布')return 'state-wait';if(v==='不适用')return 'state-na';if(kind==='result')return 'state-result';if(/2026|2027/.test(v))return kind==='open'?'state-open':'state-closed';return 'state-result'};
-el.innerHTML=weekKeys.map(w=>`<section class="week ${w===nearestWeek?'nearest-week':''}"><div class="weekhead"><h2>${fmt(w)} 起这一周</h2><span>${groups[w].length} 场</span></div><div class="games">${groups[w].map(x=>`<article class="game ${x.matchStatus==='FINISHED'?'finished':''}"><div class="date"><b>${fmt(x.date)}</b><span>${x.time}</span></div><div class="fixture"><div class="comp">${x.competition}</div><h3>${x.home} <span style="color:#596273">vs</span> ${x.away}</h3><div class="statusline"><span class="pill">${({'UPCOMING':'比赛未开始','FINISHED':'比赛已结束'}[x.matchStatus]||x.matchStatus)}</span><span class="pill ${cls(x.ticketStatus)}">${({'BUY NOW':'现在可买','EXCHANGE OPEN':'Exchange 已开放','APPLICATION CLOSED':'申请已截止','WAITING FOR TICKET INFO':'等待官方票务信息','BALLOT NOTICE':'官方日历已提醒','BALLOT UPCOMING':'48小时内开放','BALLOT OPEN':'Ballot 开放中','RESULT PENDING':'等待 Red Ballot 结果','APPLICATION UPCOMING':'48小时内开放','APPLICATION OPEN':'申请开放中','BALLOT UPCOMING':'今晚开放','BALLOT OPEN':'Ballot 开放中','RESULT PENDING':'等待 Red Ballot 结果','CLOSED':'票务已结束','SOLD OUT':'已售罄','RESULT PENDING':'等待结果','COMING SOON':'即将开售'}[x.ticketStatus]||x.ticketStatus)}</span></div></div><div class="window"><h4>${x.windowType}${x.home==='Arsenal'?'<span class="member-pill">Red会员</span>':''}</h4>${(x.windowType.startsWith('Ballot') && (x.windowOpen==='已结束' || x.windowNote.includes('Ballot 已结束'))) ? `<div class="ended-panel"><span class="ended-title">Ballot 已结束</span><span class="exchange-state ${x.ticketStatus==='EXCHANGE OPEN'?'exchange-open':'exchange-check'}">${x.ticketStatus==='EXCHANGE OPEN'?'Exchange 已开放':'Exchange 状态待确认'}</span></div><p>${x.home==='Arsenal'?(x.ticketStatus==='EXCHANGE OPEN'?'按阿森纳官方票务/Red Member 日历状态；限符合条件会员，实时库存需登录查看':'以阿森纳官方票务/Red Member 日历为准'):(x.ticketStatus==='EXCHANGE OPEN'?'限符合条件会员，实时库存需登录官方票务系统查看':'以俱乐部官方票务页实时状态为准')}</p>` : `<div class="window-grid"><div class="window-state ${wstate(x.windowOpen,'open')}"><span class="label">开放</span><span class="value">${windowValue(x.windowOpen)}</span></div><div class="window-state ${wstate(x.windowClose,'close')}"><span class="label">截止</span><span class="value">${windowValue(x.windowClose)}</span></div><div class="window-state ${wstate(x.resultTime,'result')}"><span class="label">结果</span><span class="value">${windowValue(x.resultTime)}</span></div></div><p>${x.windowNote}</p>${x.ticketStatus==='BALLOT NOTICE'?'<div class="calendar-notice">来自 Arsenal 官方 Red Member 日历提醒</div>':''}`}</div><div class="actions"><a class="official-btn" href="${x.officialUrl}" target="_blank" rel="noreferrer">官方票务</a></div></article>`).join('')}</div></section>`).join('')||'<div class="empty">当前筛选没有比赛</div>';
+el.innerHTML=weekKeys.map(w=>`<section class="week ${w===nearestWeek?'nearest-week':''}"><div class="weekhead"><h2>${fmt(w)} 起这一周</h2><span>${groups[w].length} 场</span></div><div class="games">${groups[w].map(x=>`<article class="game ${x.matchStatus==='FINISHED'?'finished':''}"><div class="date"><b>${fmt(x.date)}</b><span>${x.time}</span></div><div class="fixture"><div class="comp">${x.competition}</div><h3>${teamMarkup(x.home)} <span class="versus">vs</span> ${teamMarkup(x.away)}</h3><div class="statusline"><span class="pill">${({'UPCOMING':'比赛未开始','FINISHED':'比赛已结束'}[x.matchStatus]||x.matchStatus)}</span><span class="pill ${cls(x.ticketStatus)}">${({'BUY NOW':'现在可买','EXCHANGE OPEN':'Exchange 已开放','APPLICATION CLOSED':'申请已截止','WAITING FOR TICKET INFO':'等待官方票务信息','BALLOT NOTICE':'官方日历已提醒','BALLOT UPCOMING':'48小时内开放','BALLOT OPEN':'Ballot 开放中','RESULT PENDING':'等待 Red Ballot 结果','APPLICATION UPCOMING':'48小时内开放','APPLICATION OPEN':'申请开放中','BALLOT UPCOMING':'今晚开放','BALLOT OPEN':'Ballot 开放中','RESULT PENDING':'等待 Red Ballot 结果','CLOSED':'票务已结束','SOLD OUT':'已售罄','RESULT PENDING':'等待结果','COMING SOON':'即将开售'}[x.ticketStatus]||x.ticketStatus)}</span></div></div>${compMark(x.competition)}<div class="window"><h4>${x.windowType}${x.home==='Arsenal'?'<span class="member-pill">Red会员</span>':''}</h4>${(x.windowType.startsWith('Ballot') && (x.windowOpen==='已结束' || x.windowNote.includes('Ballot 已结束'))) ? `<div class="ended-panel"><span class="ended-title">Ballot 已结束</span><span class="exchange-state ${x.ticketStatus==='EXCHANGE OPEN'?'exchange-open':'exchange-check'}">${x.ticketStatus==='EXCHANGE OPEN'?'Exchange 已开放':'Exchange 状态待确认'}</span></div><p>${x.home==='Arsenal'?(x.ticketStatus==='EXCHANGE OPEN'?'按阿森纳官方票务/Red Member 日历状态；限符合条件会员，实时库存需登录查看':'以阿森纳官方票务/Red Member 日历为准'):(x.ticketStatus==='EXCHANGE OPEN'?'限符合条件会员，实时库存需登录官方票务系统查看':'以俱乐部官方票务页实时状态为准')}</p>` : `<div class="window-grid"><div class="window-state ${wstate(x.windowOpen,'open')}"><span class="label">开放</span><span class="value">${windowValue(x.windowOpen)}</span></div><div class="window-state ${wstate(x.windowClose,'close')}"><span class="label">截止</span><span class="value">${windowValue(x.windowClose)}</span></div><div class="window-state ${wstate(x.resultTime,'result')}"><span class="label">结果</span><span class="value">${windowValue(x.resultTime)}</span></div></div><p>${x.windowNote}</p>${x.ticketStatus==='BALLOT NOTICE'?'<div class="calendar-notice">来自 Arsenal 官方 Red Member 日历提醒</div>':''}`}</div><div class="actions"><a class="official-btn" href="${x.officialUrl}" target="_blank" rel="noreferrer">官方票务</a></div></article>`).join('')}</div></section>`).join('')||'<div class="empty">当前筛选没有比赛</div>';
 }
 document.querySelectorAll('#clubs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#clubs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');club=b.dataset.club;render()}));
 comp.addEventListener('change',render);ticket.addEventListener('change',render);render();
@@ -287,6 +421,91 @@ comp.addEventListener('change',render);ticket.addEventListener('change',render);
   }
   updateClock();
   setInterval(updateClock,1000);
+})();
+</script>
+
+
+<script>
+(function(){
+  const API='https://www.thesportsdb.com/api/v1/json/123';
+  const CACHE_KEY='ptt-team-badges-v2';
+  const aliases={
+    'Lille':'LOSC Lille',
+    'Liverpool':'Liverpool FC',
+    'Paris Saint-Germain':'Paris Saint Germain',
+    'Sporting CP':'Sporting Lisbon'
+  };
+  let cache={};
+  try{cache=JSON.parse(localStorage.getItem(CACHE_KEY)||'{}')||{}}catch(e){cache={}}
+
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  const normalize=s=>String(s||'').toLowerCase().replace(/football club|fc|afc/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+
+  function apply(){
+    document.querySelectorAll('.team-badge').forEach(img=>{
+      const name=img.dataset.team;
+      const src=cache[name];
+      if(src && img.src!==src){
+        img.onload=()=>img.classList.add('loaded');
+        img.onerror=()=>img.classList.remove('loaded');
+        img.src=src;
+      }
+    });
+  }
+
+  async function getJson(url){
+    const r=await fetch(url,{cache:'force-cache'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return r.json();
+  }
+
+  async function seedPremierLeague(){
+    try{
+      const j=await getJson(API+'/search_all_teams.php?l=English_Premier_League');
+      (j.teams||[]).forEach(t=>{
+        if(!t.strBadge) return;
+        const names=[t.strTeam].concat((t.strTeamAlternate||'').split(',').map(x=>x.trim()).filter(Boolean));
+        names.forEach(n=>{
+          const target=[...document.querySelectorAll('.team-badge')].find(el=>normalize(el.dataset.team)===normalize(n));
+          if(target) cache[target.dataset.team]=t.strBadge;
+        });
+      });
+    }catch(e){}
+  }
+
+  async function lookup(name){
+    try{
+      const q=encodeURIComponent(aliases[name]||name);
+      const j=await getJson(API+'/searchteams.php?t='+q);
+      const team=(j.teams||[]).find(t=>t.strSport==='Soccer') || (j.teams||[])[0];
+      if(team?.strBadge) cache[name]=team.strBadge;
+    }catch(e){}
+  }
+
+  async function hydrate(){
+    apply();
+    await seedPremierLeague();
+    apply();
+
+    const names=[...new Set([...document.querySelectorAll('.team-badge')].map(x=>x.dataset.team))];
+    const missing=names.filter(n=>!cache[n]);
+    for(const n of missing){
+      await lookup(n);
+      apply();
+      await wait(120);
+    }
+    try{localStorage.setItem(CACHE_KEY,JSON.stringify(cache))}catch(e){}
+    apply();
+  }
+
+  const originalRender=window.render;
+  if(typeof originalRender==='function'){
+    window.render=function(){
+      originalRender();
+      setTimeout(hydrate,0);
+    };
+  }
+  hydrate();
 })();
 </script>
 
