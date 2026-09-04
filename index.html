@@ -149,7 +149,7 @@ function cls(s){if(s==='BUY NOW')return'buy';if(s==='EXCHANGE OPEN')return'excha
 function windowValue(v){const m=v.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})\s*(.*)$/);if(!m)return `<span class=\"date-main\">${v}</span>`;return `<span class=\"date-main\">${Number(m[2])}月${Number(m[3])}日</span><span class=\"time-sub\">${m[4]} ${m[5]}</span>`}
 function updateDynamicTicketStates(){
   const nowMs=Date.now();
-  data.forEach(x=>{
+  DATA.forEach(x=>{
     if(x.home==='Arsenal' && x.away==='Everton' && x.date==='2026-10-24'){
       const openMs=Date.parse('2026-09-04T12:00:00+01:00');
       const closeMs=Date.parse('2026-09-07T12:00:00+01:00');
@@ -193,7 +193,7 @@ if(weekKeys.length){
     return todayLocal>=start && todayLocal<=end;
   });
   nearestWeek=currentWeek || weekKeys.reduce((best,w)=>{
-    const d=new Date(w+'T_00:00:00'.replace('_',''));
+    const d=new Date(w+'T00:00:00');
     const bestD=new Date(best+'T00:00:00');
     return Math.abs(d-todayLocal)<Math.abs(bestD-todayLocal)?w:best;
   },weekKeys[0]);
