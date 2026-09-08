@@ -168,3 +168,6 @@ webcal://premier-ticket-tracker.vercel.app/iphone-cn.ics
 
 旧地址 /premier-ticket-tracker.ics 仍兼容，但本次建议重新订阅新地址，
 这样可以强制 iPhone 拉取最新格式，避免继续显示旧缓存。
+
+【比赛时间显示】
+新版 iPhone 日历中的比赛事件只保留开球时间，不显示比赛结束时间。

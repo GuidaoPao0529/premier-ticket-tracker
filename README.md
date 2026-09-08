@@ -45,3 +45,10 @@ Use the new feed to bypass old iOS Calendar cache:
 ## UCL update
 已补充四队已由俱乐部官方确认的 2026/27 欧冠主场 league phase 赛程，共新增 10 条缺失记录（若原数据已存在则不重复）。
 iPhone 日历会随 `tickets.json` 自动包含这些欧冠主场比赛。
+
+## Match event display
+比赛事件只显示开球时间，不再写入比赛结束时间；Ballot/Application 等票务事件仍保留各自的事件时段。
+
+## 2026/27 UCL clean audit
+This build removes all previously imported UCL rows and re-adds only fixtures explicitly verified as 2026/27 from official club pages.
+Chelsea men's UCL fixtures are intentionally omitted until a current-season official page is verified, preventing 2025/26 data from leaking into the 2026/27 calendar.
