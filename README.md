@@ -41,3 +41,7 @@ Use the new feed to bypass old iOS Calendar cache:
 - HTTPS: `https://premier-ticket-tracker.vercel.app/iphone-cn.ics`
 - webcal: `webcal://premier-ticket-tracker.vercel.app/iphone-cn.ics`
 - Calendar name: `四队票务｜北京时间`
+
+## UCL update
+已补充四队已由俱乐部官方确认的 2026/27 欧冠主场 league phase 赛程，共新增 10 条缺失记录（若原数据已存在则不重复）。
+iPhone 日历会随 `tickets.json` 自动包含这些欧冠主场比赛。

@@ -136,6 +136,20 @@
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"
   },
   {
+    "home": "Manchester United",
+    "away": "Sabah",
+    "date": "2026-09-10",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "WAITING FOR TICKET INFO",
+    "windowType": "Member Sale",
+    "windowOpen": "",
+    "windowClose": "",
+    "windowNote": "官方已确认主场欧冠赛程；会员票务精确开放时间待官方公布。",
+    "officialUrl": "https://tickets.manutd.com/",
+    "membershipTier": "Member"
+  },
+  {
     "date": "2026-09-12",
     "time": "15:00",
     "home": "Chelsea",
@@ -212,6 +226,20 @@
     "windowClose": "不适用",
     "resultTime": "不适用",
     "windowNote": "官方状态：Tickets and hospitality on sale；需符合会员购票条件"
+  },
+  {
+    "home": "Chelsea",
+    "away": "Benfica",
+    "date": "2026-09-30",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "MEMBER BUNDLE UPCOMING",
+    "windowType": "Member Sale",
+    "windowOpen": "2026-09-15 14:00",
+    "windowClose": "2026-09-16 17:00",
+    "windowNote": "CFC Blue：欧冠四场主场 bundle 销售窗口；需满足官方 loyalty points 门槛，具体阶段以官网为准。",
+    "officialUrl": "https://www.chelseafc.com/en/news/article/champions-league-match-ticket-bundles-sales-information-for-members",
+    "membershipTier": "CFC Blue"
   },
   {
     "date": "2026-10-10",
@@ -310,6 +338,20 @@
     "source": "Manchester City 官方 Men's Home Tickets / Member"
   },
   {
+    "home": "Manchester City",
+    "away": "PSG",
+    "date": "2026-10-14",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "COMING SOON",
+    "windowType": "Member Sale",
+    "windowOpen": "",
+    "windowClose": "",
+    "windowNote": "官方票务页显示 Tickets and hospitality coming soon。",
+    "officialUrl": "https://www.mancity.com/tickets/mens/champions-league/home",
+    "membershipTier": "Member"
+  },
+  {
     "date": "2026-10-17",
     "time": "15:00",
     "home": "Manchester City",
@@ -346,6 +388,20 @@
     "resultTime": "不适用",
     "windowNote": "官方状态：Tickets and hospitality coming soon / Notify Me",
     "source": "Manchester City 官方 Men's Home Tickets / Member"
+  },
+  {
+    "home": "Chelsea",
+    "away": "Ajax",
+    "date": "2026-10-22",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "MEMBER BUNDLE UPCOMING",
+    "windowType": "Member Sale",
+    "windowOpen": "2026-09-15 14:00",
+    "windowClose": "2026-09-16 17:00",
+    "windowNote": "CFC Blue：欧冠四场主场 bundle 销售窗口；需满足官方 loyalty points 门槛，具体阶段以官网为准。",
+    "officialUrl": "https://www.chelseafc.com/en/news/article/champions-league-match-ticket-bundles-sales-information-for-members",
+    "membershipTier": "CFC Blue"
   },
   {
     "date": "2026-10-24",
@@ -444,6 +500,20 @@
     "windowClose": "不适用",
     "resultTime": "不适用",
     "windowNote": "官方状态：Tickets and hospitality on sale；需符合会员购票条件"
+  },
+  {
+    "home": "Manchester United",
+    "away": "AS Roma",
+    "date": "2026-11-03",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "WAITING FOR TICKET INFO",
+    "windowType": "Member Sale",
+    "windowOpen": "",
+    "windowClose": "",
+    "windowNote": "官方已确认主场欧冠赛程；会员票务精确开放时间待官方公布。",
+    "officialUrl": "https://tickets.manutd.com/",
+    "membershipTier": "Member"
   },
   {
     "date": "2026-11-07",
@@ -561,6 +631,20 @@
     "source": "Manchester City 官方 Men's Home Tickets / Member"
   },
   {
+    "home": "Chelsea",
+    "away": "Barcelona",
+    "date": "2026-11-25",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "MEMBER BUNDLE UPCOMING",
+    "windowType": "Member Sale",
+    "windowOpen": "2026-09-15 14:00",
+    "windowClose": "2026-09-16 17:00",
+    "windowNote": "CFC Blue：欧冠四场主场 bundle 销售窗口；需满足官方 loyalty points 门槛，具体阶段以官网为准。",
+    "officialUrl": "https://www.chelseafc.com/en/news/article/champions-league-match-ticket-bundles-sales-information-for-members",
+    "membershipTier": "CFC Blue"
+  },
+  {
     "date": "2026-11-28",
     "time": "15:00",
     "home": "Arsenal",
@@ -676,6 +760,20 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"
+  },
+  {
+    "home": "Manchester United",
+    "away": "RB Leipzig",
+    "date": "2026-12-08",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "WAITING FOR TICKET INFO",
+    "windowType": "Member Sale",
+    "windowOpen": "",
+    "windowClose": "",
+    "windowNote": "官方已确认主场欧冠赛程；会员票务精确开放时间待官方公布。",
+    "officialUrl": "https://tickets.manutd.com/",
+    "membershipTier": "Member"
   },
   {
     "date": "2026-12-09",
@@ -968,6 +1066,34 @@
     "windowNote": "官方状态：Tickets and hospitality on sale；需符合会员购票条件"
   },
   {
+    "home": "Manchester United",
+    "away": "Bayern Munich",
+    "date": "2027-01-20",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "WAITING FOR TICKET INFO",
+    "windowType": "Member Sale",
+    "windowOpen": "",
+    "windowClose": "",
+    "windowNote": "官方已确认主场欧冠赛程；会员票务精确开放时间待官方公布。",
+    "officialUrl": "https://tickets.manutd.com/",
+    "membershipTier": "Member"
+  },
+  {
+    "home": "Chelsea",
+    "away": "Pafos",
+    "date": "2027-01-21",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "MEMBER BUNDLE UPCOMING",
+    "windowType": "Member Sale",
+    "windowOpen": "2026-09-15 14:00",
+    "windowClose": "2026-09-16 17:00",
+    "windowNote": "CFC Blue：欧冠四场主场 bundle 销售窗口；需满足官方 loyalty points 门槛，具体阶段以官网为准。",
+    "officialUrl": "https://www.chelseafc.com/en/news/article/champions-league-match-ticket-bundles-sales-information-for-members",
+    "membershipTier": "CFC Blue"
+  },
+  {
     "date": "2027-01-23",
     "time": "15:00",
     "home": "Arsenal",
@@ -1023,6 +1149,20 @@
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
     "source": "Arsenal 官方 Tickets / Red Member"
+  },
+  {
+    "home": "Arsenal",
+    "away": "Sabah",
+    "date": "2027-01-27",
+    "time": "20:00",
+    "competition": "UEFA Champions League",
+    "ticketStatus": "WAITING FOR TICKET INFO",
+    "windowType": "Ballot",
+    "windowOpen": "",
+    "windowClose": "",
+    "windowNote": "Arsenal Red Member；官方已确认主场欧冠赛程，Ballot 精确时间待官方公布。",
+    "officialUrl": "https://www.arsenal.com/tickets/men",
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-01-27",
