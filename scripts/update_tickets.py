@@ -20,6 +20,8 @@ AUDIT = ROOT / "last-audit.json"
 
 UA = "Mozilla/5.0 (Premier Ticket Tracker; official-source monitor)"
 
+MEMBERSHIP_PROFILE = {"Arsenal": "Red", "Chelsea": "CFC Blue"}
+
 STABLE_SOURCES = {
     "Arsenal": "https://www.arsenal.com/tickets/men",
     "Chelsea": "https://www.chelseafc.com/en/tickets",
@@ -66,6 +68,7 @@ def main():
     audit = {
         "checkedAt": datetime.now(timezone.utc).isoformat(),
         "sources": {},
+        "membershipProfile": MEMBERSHIP_PROFILE,
         "changes": []
     }
 

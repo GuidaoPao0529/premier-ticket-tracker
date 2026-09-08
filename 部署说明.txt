@@ -126,3 +126,14 @@ Read and write permissions
 - Vercel 随之部署
 - iPhone 日历随后同步
 
+
+==================================================
+六、当前会员资格
+==================================================
+
+Arsenal：Red Member
+Chelsea：CFC Blue
+
+Chelsea 页面和日历按 CFC Blue 资格判断。
+CFC Blue 官方权益包括 Ticket Application Window 的专属/预留票池机会，
+并可使用 Ticket Exchange。若某场有 loyalty points 门槛，仍以该场官方公告为准。
