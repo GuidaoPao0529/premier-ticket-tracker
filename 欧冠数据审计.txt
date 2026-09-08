@@ -1,0 +1,36 @@
+Premier Ticket Tracker 2026/27 · 欧冠数据审计
+=================================================
+
+本版重做原则：
+- 仅保留俱乐部官网明确属于 2026/27 的男子一线队欧冠主场比赛。
+- 不把“页面今天能搜到”误认为“页面属于 2026/27”；必须核对页面正文里的年份。
+- 未找到当前赛季官方确认页的球队，不猜对阵、不平移上一赛季日期。
+- iPhone 日历仍统一北京时间，标题为中文短格式，不显示比赛结束时间。
+
+已确认加入：
+Arsenal
+- 2026-10-13 Arsenal v Lille
+- 2026-11-24 Arsenal v Borussia Dortmund
+- 2026-12-09 Arsenal v Real Madrid
+- 2027-01-27 Arsenal v Sabah
+
+Manchester United
+- 2026-09-10 Manchester United v Sabah
+- 2026-11-03 Manchester United v AS Roma
+- 2026-12-08 Manchester United v RB Leipzig
+- 2027-01-20 Manchester United v Bayern Munich
+
+Manchester City
+- 2026-10-14 Manchester City v PSG
+- 2026-10-20 Manchester City v AEK Athens
+- 2026-11-24 Manchester City v Napoli
+- 2027-01-27 Manchester City v Sporting CP
+
+Chelsea
+- 本次审计未找到可明确证明属于男子一线队 2026/27 的官方欧冠完整赛程页，
+  因此暂不写入 Chelsea 男足欧冠对阵。
+- 已删除之前误串入的 2025/26 数据（Benfica / Ajax / Barcelona / Pafos）。
+- 后续 Chelsea 官方发布 2026/27 男足欧冠确切赛程后再加入。
+
+注意：
+网站现有英超/杯赛条目仍沿用当前项目已有数据；本次重点是彻底清理并重建欧冠部分。
