@@ -16,3 +16,12 @@
 ## Membership profile
 - Arsenal: Red Member
 - Chelsea: CFC Blue
+
+## Calendar timezone
+所有比赛、Ballot/Application/Member Sale 时间均从英国当地时间自动换算为北京时间（Asia/Shanghai），并自动处理英国夏令时/冬令时差异。
+
+## Weekly fixtures in iPhone Calendar
+日历同时包含 Arsenal、Chelsea、Manchester United、Manchester City 的网站内未开赛主场比赛。
+比赛事件标题直接显示北京时间和对阵，例如：
+`⚽ 10/14 03:00｜Manchester City vs PSG`
+比赛默认提前 1 天及 2 小时提醒。
