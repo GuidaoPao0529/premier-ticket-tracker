@@ -12,7 +12,7 @@ const TEAM_CN = {
   'Leeds United':'利兹联','Everton':'埃弗顿','Lille':'里尔','Hull City':'赫尔城',
   'Brighton & Hove Albion':'布莱顿','Brighton':'布莱顿','AFC Bournemouth':'伯恩茅斯','Bournemouth':'伯恩茅斯',
   'Paris Saint-Germain':'巴黎圣日耳曼','PSG':'巴黎圣日耳曼','AEK Athens':'雅典AEK','Napoli':'那不勒斯',
-  'Sporting CP':'葡萄牙体育','Tottenham Hotspur':'热刺','Tottenham':'热刺','AS Roma':'罗马',
+  'Sporting CP':'葡萄牙体育','Tottenham Hotspur':'热刺','Tottenham':'热刺','AS Roma':'罗马','RB Leipzig':'RB莱比锡','Bayern Munich':'拜仁慕尼黑',
   'Real Madrid':'皇马','Borussia Dortmund':'多特蒙德','Sabah':'萨巴','Benfica':'本菲卡',
   'Ajax':'阿贾克斯','Barcelona':'巴塞罗那','Pafos':'帕福斯','Norwich City':'诺维奇',
   'Sunderland':'桑德兰','Ipswich Town':'伊普斯维奇','Ipswich':'伊普斯维奇'
@@ -69,7 +69,7 @@ module.exports = async (req,res) => {
     out.push(`SUMMARY:${esc(matchTitle)}`);
     if(match){
       out.push(`DTSTART;TZID=Asia/Shanghai:${fmtBJ(match)}`);
-      out.push(`DTEND;TZID=Asia/Shanghai:${fmtBJ(new Date(match.getTime()+2*3600*1000))}`);
+      out.push('DURATION:PT0S');
     }else{
       out.push(`DTSTART;VALUE=DATE:${x.date.replace(/-/g,'')}`);
     }
@@ -85,7 +85,7 @@ module.exports = async (req,res) => {
       const t = parseWindow(x[field]);
       if(!t) continue;
       out.push('BEGIN:VEVENT');
-      out.push(`UID:${field}-${x.home}-${x.away}-${x.date}@premier-ticket-tracker`);
+      out.push(`UID:${field}-${x.home}-${x.away}-${x.date}@premier-ticket-tracker);
       out.push(`DTSTAMP:${now.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')}`);
       let ticketTag = '票务';
       const wt = String(x.windowType||'').toLowerCase();
