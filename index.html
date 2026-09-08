@@ -322,6 +322,15 @@ button.active{background:#fff;color:#090b10}.summary{display:grid;grid-template-
 @media(max-width:760px){.data-audit-note{font-size:9px;margin-top:4px}}
 </style>
 
+
+<style>
+.calendar-subscribe-wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.calendar-subscribe-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#111827;color:#fff;text-decoration:none;font-size:13px;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.14)}
+.calendar-subscribe-btn:hover{transform:translateY(-1px)}
+.calendar-subscribe-copy{font-size:11px;color:#7f8a9d}
+@media(max-width:760px){.calendar-subscribe-wrap{margin-top:6px}.calendar-subscribe-btn{padding:7px 10px;font-size:11px}.calendar-subscribe-copy{font-size:9px}}
+</style>
+
 </head><body>
 <div class="wrap">
 <h1>Premier Ticket Tracker</h1>
@@ -592,6 +601,20 @@ comp.addEventListener('change',render);ticket.addEventListener('change',render);
     };
   }
   hydrate();
+})();
+</script>
+
+
+<script>
+(function(){
+  const btn = document.getElementById('iphoneCalendarSubscribe');
+  if(!btn) return;
+  const host = location.host || 'premier-ticket-tracker.vercel.app';
+  const path = '/premier-ticket-tracker.ics';
+  btn.href = 'webcal://' + host + path;
+  btn.addEventListener('click', function(){
+    // Native iPhone/iPad Calendar should handle webcal:// directly.
+  });
 })();
 </script>
 

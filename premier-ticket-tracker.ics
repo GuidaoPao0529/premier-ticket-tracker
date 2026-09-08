@@ -1,0 +1,1028 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Premier Ticket Tracker//iPhone Calendar//ZH-CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Premier Ticket Tracker
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:match-51723144-49f2-4b8e-84d0-ddcf95da9781@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Coventry City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260821T200000
+DTEND;TZID=Europe/London:20260821T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-603b0c7f-0c2a-4700-87b0-30aecaa8f8cb@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs AFC Bournemouth
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale\n说明：等待 Manchester City 官方票务页更新\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260823T140000
+DTEND;TZID=Europe/London:20260823T160000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-981e21b8-85e4-4fed-82c9-d82d003f0103@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Luton Town
+DESCRIPTION:赛事：Carabao Cup\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260827T193000
+DTEND;TZID=Europe/London:20260827T213000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-a56e87da-a7c6-4cd2-9f0e-f0d039abd0ee@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Brighton & Hove Albion
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260830T140000
+DTEND;TZID=Europe/London:20260830T160000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-1bf4f67a-fb09-47a5-b83f-69fadcc8d38a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Ipswich Town
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260830T163000
+DTEND;TZID=Europe/London:20260830T183000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-8ba2c94c-3a08-4c17-9090-ef259a5904a2@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Coventry City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale\n说明：等待 Manchester City 官方票务页更新\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260905T150000
+DTEND;TZID=Europe/London:20260905T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-06501073-c6dd-4946-aad7-9367b93e6f48@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Chelsea
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260906T163000
+DTEND;TZID=Europe/London:20260906T183000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-4e0a769e-145f-41f5-9f3b-a28fae68be82@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Hull City
+DESCRIPTION:赛事：Premier League\n票务状态：APPLICATION CLOSED\n票务类型：Application\n说明：True Blue+ / True Blue / CFC Blue / Junior Blue；申请已截止\n官方票务：https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260912T150000
+DTEND;TZID=Europe/London:20260912T170000
+URL:https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-8e691750-9301-4103-a01b-e9272f1d7488@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Manchester City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260913T163000
+DTEND;TZID=Europe/London:20260913T183000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-92e77091-461b-4f75-9c1a-916e4c1b75cb@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Norwich City
+DESCRIPTION:赛事：Carabao Cup\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets available to qualifying fans\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260917T193000
+DTEND;TZID=Europe/London:20260917T213000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-e9674f60-02c9-481b-8a13-61044af65828@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Sunderland
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20260920T140000
+DTEND;TZID=Europe/London:20260920T160000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-0c0a1a34-bb44-4d41-807d-c70e8bab1f8c@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Leeds United
+DESCRIPTION:赛事：Premier League\n票务状态：BALLOT CLOSED\n票务类型：Ballot\n说明：Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261010T150000
+DTEND;TZID=Europe/London:20261010T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-cef4793f-3420-4d46-974c-1ff5bce2a555@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs AFC Bournemouth
+DESCRIPTION:赛事：Premier League\n票务状态：APPLICATION OPEN\n票务类型：Application\n说明：True Blue+ / True Blue / CFC Blue / Junior Blue；当前申请窗口开放\n官方票务：https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261010T150000
+DTEND;TZID=Europe/London:20261010T170000
+URL:https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27
+END:VEVENT
+BEGIN:VEVENT
+UID:match-182628cc-667b-4881-8725-2c6e0bc8201a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Tottenham Hotspur
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261010T150000
+DTEND;TZID=Europe/London:20261010T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-46b2102d-82a5-4315-be00-ad4e40acf9ba@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Lille
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：BALLOT NOTICE\n票务类型：Ballot\n说明：Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261013T200000
+DTEND;TZID=Europe/London:20261013T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-94a9bbc7-d780-4bfa-be1b-6040762f180a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Paris Saint-Germain
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：COMING SOON\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality coming soon / Notify Me\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261014T200000
+DTEND;TZID=Europe/London:20261014T220000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-688e9d2b-5348-4788-8025-ded2ac53d292@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Ipswich Town
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261017T150000
+DTEND;TZID=Europe/London:20261017T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-015031bd-37d6-49db-bff1-1c199ea17900@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs AEK Athens
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：COMING SOON\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality coming soon / Notify Me\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261020T200000
+DTEND;TZID=Europe/London:20261020T220000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-d7ac62f2-0548-41df-917e-44aeaae61d1a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Everton
+DESCRIPTION:赛事：Premier League\n票务状态：BALLOT CLOSED\n票务类型：Ballot\n说明：Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261024T140000
+DTEND;TZID=Europe/London:20261024T160000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-11bff48e-9825-4008-9105-d138cced40aa@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Tottenham Hotspur
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261024T150000
+DTEND;TZID=Europe/London:20261024T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-876aff78-0826-49a0-be1f-cb12619a6d8a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs AFC Bournemouth
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261024T150000
+DTEND;TZID=Europe/London:20261024T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-490ad230-3048-4106-b967-e87da69ce212@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Manchester United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261031T150000
+DTEND;TZID=Europe/London:20261031T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-12b52fe1-1f98-4a53-a941-14fab3dc82b0@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Brighton & Hove Albion
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261031T150000
+DTEND;TZID=Europe/London:20261031T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-dff679e5-d6f8-4e53-98f9-be8e199ce710@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Hull City
+DESCRIPTION:赛事：Premier League\n票务状态：BALLOT NOTICE\n票务类型：Ballot\n说明：Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261107T150000
+DTEND;TZID=Europe/London:20261107T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-50de4bbe-91e8-4943-b7c7-3d13195e571d@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Aston Villa
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261107T150000
+DTEND;TZID=Europe/London:20261107T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-ec86a214-16ed-478e-9a1b-cdc23cb0c1c0@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Leeds United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261121T150000
+DTEND;TZID=Europe/London:20261121T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-1279c9b4-0500-48ab-aa16-1846fcedfbb8@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Fulham
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261121T150000
+DTEND;TZID=Europe/London:20261121T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-560496a3-bf7b-41bd-a0b7-1664ce5276c2@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Borussia Dortmund
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261124T200000
+DTEND;TZID=Europe/London:20261124T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-786f2f0f-c958-47d0-979e-8ea2c4c1594a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Napoli
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：COMING SOON\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality coming soon / Notify Me\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261124T200000
+DTEND;TZID=Europe/London:20261124T220000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-80a3191d-af9d-464d-b598-de1940e8f4fe@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Manchester City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261128T150000
+DTEND;TZID=Europe/London:20261128T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-a8188f75-adad-4a18-bc41-d4c861ef52de@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Brentford
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261128T150000
+DTEND;TZID=Europe/London:20261128T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-06d6e54a-e9fa-46dc-84c3-03990f42ec4a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Crystal Palace
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261202T200000
+DTEND;TZID=Europe/London:20261202T220000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-0db01106-998b-4edd-a9de-6630d8026be5@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Leeds United
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261202T200000
+DTEND;TZID=Europe/London:20261202T220000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-91981bb1-0328-41a7-b06b-84f831834ecb@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Liverpool
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261205T150000
+DTEND;TZID=Europe/London:20261205T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-60cdea03-60e1-4134-b881-7ef2095b2668@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Coventry City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261205T150000
+DTEND;TZID=Europe/London:20261205T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-f41bc283-3e25-4100-91a1-ead684ceca91@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Real Madrid
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261209T200000
+DTEND;TZID=Europe/London:20261209T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-cff2cc8e-690a-4651-a8cc-0c8833f0fa9b@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs AFC Bournemouth
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261212T150000
+DTEND;TZID=Europe/London:20261212T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-a18996e5-1898-4341-9399-6ed08725d401@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Chelsea
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261212T150000
+DTEND;TZID=Europe/London:20261212T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-0a3c8a7a-a3a2-4e91-b894-38fdd102f0ac@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Manchester United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261219T150000
+DTEND;TZID=Europe/London:20261219T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-66e39f62-1249-4d73-9e15-2ac34df4e6c7@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Aston Villa
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261219T150000
+DTEND;TZID=Europe/London:20261219T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-1b5763ff-fc43-4939-8ad1-97275a8d3dcb@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Hull City
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261219T150000
+DTEND;TZID=Europe/London:20261219T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-d807ea28-4722-4a72-bc12-d9593b9d4b42@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Nottingham Forest
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261226T150000
+DTEND;TZID=Europe/London:20261226T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-b81a6871-1772-4d6c-8598-3beb6a539801@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Sunderland
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20261230T200000
+DTEND;TZID=Europe/London:20261230T220000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-edfff495-3266-44ea-a1c8-f86986a482bc@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Ipswich Town
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270102T150000
+DTEND;TZID=Europe/London:20270102T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-9774d59c-534e-4aa0-a6d3-93edf4f2d0e0@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Newcastle United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270102T150000
+DTEND;TZID=Europe/London:20270102T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-ba6b83a6-f7c4-49b2-8b01-84f2920d11aa@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Tottenham Hotspur
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270102T150000
+DTEND;TZID=Europe/London:20270102T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-11f44bfb-5a18-4860-87ef-8f7d462ec64a@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Brentford
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270106T200000
+DTEND;TZID=Europe/London:20270106T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-d93cd87e-4c31-4e8a-8908-a62f27e547bf@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Newcastle United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270106T200000
+DTEND;TZID=Europe/London:20270106T220000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-11ce13a3-d2f3-4fac-9579-a8cb02228393@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Sunderland
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270116T150000
+DTEND;TZID=Europe/London:20270116T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-464577dc-c247-45d8-834d-588c724f22cb@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Nottingham Forest
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270116T150000
+DTEND;TZID=Europe/London:20270116T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-69212881-065d-44d4-8f4c-912ce83715da@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Newcastle United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270123T150000
+DTEND;TZID=Europe/London:20270123T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-17574717-8628-45d9-bc2b-7b0f223df63e@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Liverpool
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270123T150000
+DTEND;TZID=Europe/London:20270123T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-487e9538-4580-4daa-8c95-c25dc34b0043@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Sabah FK
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270127T200000
+DTEND;TZID=Europe/London:20270127T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-3d3559aa-067e-4347-ab98-6aef135f899e@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Sporting CP
+DESCRIPTION:赛事：UEFA Champions League\n票务状态：COMING SOON\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality coming soon / Notify Me\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270127T200000
+DTEND;TZID=Europe/London:20270127T220000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-cca5f5fb-c16d-4bb2-ae50-33137c1fada9@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Nottingham Forest
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270130T150000
+DTEND;TZID=Europe/London:20270130T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-8af8ff74-7bc8-4d0e-8cfd-75a1b3fb12c9@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Arsenal
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270130T150000
+DTEND;TZID=Europe/London:20270130T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-ab82915d-4782-400f-9cd2-d32ba08c25ab@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Liverpool
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270206T150000
+DTEND;TZID=Europe/London:20270206T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-2e2cb2b1-1120-447f-b6f0-f9d049e83d24@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Chelsea
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270206T150000
+DTEND;TZID=Europe/London:20270206T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-57ce7593-9729-4885-b536-bd146867fbe0@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Brighton & Hove Albion
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270210T200000
+DTEND;TZID=Europe/London:20270210T220000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-ed3747ee-af9a-4e3a-8b27-236b92b0f712@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Fulham
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270220T150000
+DTEND;TZID=Europe/London:20270220T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-8824965e-47c1-4d7e-8caa-d89a6e54a54e@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Ipswich Town
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270220T150000
+DTEND;TZID=Europe/London:20270220T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-44c14ef9-6e99-48bc-a0fa-e44ae8d50e71@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Newcastle United
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270220T150000
+DTEND;TZID=Europe/London:20270220T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-41c9cbab-99d3-420f-af54-077327fac265@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Arsenal
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270227T150000
+DTEND;TZID=Europe/London:20270227T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-c40d50d3-6b04-4aa6-8399-094a659ef7cc@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Crystal Palace
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270303T200000
+DTEND;TZID=Europe/London:20270303T220000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-5bcd6d2e-aae2-42c5-84c1-0850d1f4060f@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Coventry City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270303T200000
+DTEND;TZID=Europe/London:20270303T220000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-f79043cd-ef73-42a8-a677-a1bec0cc8322@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Everton
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270303T200000
+DTEND;TZID=Europe/London:20270303T220000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-ce1a23f1-2d14-4d7f-b4ab-a4a0f76bf984@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Arsenal
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270313T150000
+DTEND;TZID=Europe/London:20270313T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-73fd4663-ecf2-487f-a084-6dcee8c53ca2@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Everton
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270313T150000
+DTEND;TZID=Europe/London:20270313T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-9b7d4afb-117e-4f8e-add5-020ae21e5c33@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Sunderland
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270320T150000
+DTEND;TZID=Europe/London:20270320T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-d33f347f-680c-437b-a8ee-27920427ec8b@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Manchester United
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270320T150000
+DTEND;TZID=Europe/London:20270320T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-59f318e4-2375-4814-b317-9f8c5aed9621@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Fulham
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270410T150000
+DTEND;TZID=Europe/London:20270410T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-5ee46709-1077-49b9-942e-ee9645cf85b6@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Hull City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270410T150000
+DTEND;TZID=Europe/London:20270410T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-9a7b44bf-308a-4ce0-8dd5-6b55702ecf39@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Aston Villa
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270417T150000
+DTEND;TZID=Europe/London:20270417T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-22239204-45be-48f6-93a7-1dceb3da76e5@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Crystal Palace
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270417T150000
+DTEND;TZID=Europe/London:20270417T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-63c82c5e-3209-413c-9229-2da09e15c1d3@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Manchester City
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270424T150000
+DTEND;TZID=Europe/London:20270424T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-846eb8eb-aa31-48cb-8fe4-c7a5b7f855b1@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Crystal Palace
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270424T150000
+DTEND;TZID=Europe/London:20270424T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-af38c0ca-9cbc-4608-90f0-57658dcb03e8@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Tottenham Hotspur
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270501T150000
+DTEND;TZID=Europe/London:20270501T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-5d202783-989a-4e91-a79e-afd022b86a03@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Brentford
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270501T150000
+DTEND;TZID=Europe/London:20270501T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-c1a2b109-29de-4793-87f2-7481117c4664@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Liverpool
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270508T150000
+DTEND;TZID=Europe/London:20270508T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-dbb92001-bc84-43bf-ab07-986556f3e0f3@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Nottingham Forest
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270515T150000
+DTEND;TZID=Europe/London:20270515T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-a0ed0d88-082f-4b4e-ab15-eb1883b57b03@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Everton
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270515T150000
+DTEND;TZID=Europe/London:20270515T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-7b8723c0-276e-402b-804e-4a0fa518e764@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Leeds United
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270515T150000
+DTEND;TZID=Europe/London:20270515T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:match-942ff94a-c2a7-41a2-a044-04cc6cdc7173@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester City vs Aston Villa
+DESCRIPTION:赛事：Premier League\n票务状态：BUY NOW\n票务类型：Member Sale\n说明：官方状态：Tickets and hospitality on sale；需符合会员购票条件\n官方票务：https://www.mancity.com/tickets/mens/all/home
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270523T150000
+DTEND;TZID=Europe/London:20270523T170000
+URL:https://www.mancity.com/tickets/mens/all/home
+END:VEVENT
+BEGIN:VEVENT
+UID:match-7de53380-fe47-4d5c-a984-dd36d7d9da8c@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Arsenal vs Brighton & Hove Albion
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Ballot\n说明：Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间\n官方票务：https://www.arsenal.com/tickets/men
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270530T150000
+DTEND;TZID=Europe/London:20270530T170000
+URL:https://www.arsenal.com/tickets/men
+END:VEVENT
+BEGIN:VEVENT
+UID:match-b8d04695-a39b-4421-b5b1-ea5650d30b9d@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Chelsea vs Brentford
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Application\n说明：会员 Ticket Application Window 尚未在官网公布精确时间\n官方票务：https://www.chelseafc.com/en/tickets
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270530T150000
+DTEND;TZID=Europe/London:20270530T170000
+URL:https://www.chelseafc.com/en/tickets
+END:VEVENT
+BEGIN:VEVENT
+UID:match-e57af3fc-c39d-4b77-964f-f0a7ec460ad7@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:Manchester United vs Fulham
+DESCRIPTION:赛事：Premier League\n票务状态：WAITING FOR TICKET INFO\n票务类型：Member Sale / Ballot\n说明：Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示\n官方票务：https://tickets.manutd.com/
+CATEGORIES:MATCH
+DTSTART;TZID=Europe/London:20270530T150000
+DTEND;TZID=Europe/London:20270530T170000
+URL:https://tickets.manutd.com/
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-fa3a1896-7afb-436e-94af-774f4d96c641@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务开放｜Chelsea vs Hull City
+DESCRIPTION:Application：票务开放\n比赛：Chelsea vs Hull City\n赛事：Premier League\n状态：APPLICATION CLOSED\n说明：True Blue+ / True Blue / CFC Blue / Junior Blue；申请已截止\n官方链接：https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260821T120000
+DTEND;TZID=Europe/London:20260821T123000
+URL:https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Chelsea vs Hull City
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Chelsea vs Hull City
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-bd84a4c6-dc2a-430f-b43a-f2f4dd5e6fac@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务截止｜Chelsea vs Hull City
+DESCRIPTION:Application：票务截止\n比赛：Chelsea vs Hull City\n赛事：Premier League\n状态：APPLICATION CLOSED\n说明：True Blue+ / True Blue / CFC Blue / Junior Blue；申请已截止\n官方链接：https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260826T120000
+DTEND;TZID=Europe/London:20260826T123000
+URL:https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Chelsea vs Hull City
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Chelsea vs Hull City
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-8319e593-95e1-49c8-9e13-b348bf6a5092@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务开放｜Arsenal vs Leeds United
+DESCRIPTION:Ballot：票务开放\n比赛：Arsenal vs Leeds United\n赛事：Premier League\n状态：BALLOT CLOSED\n说明：Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准\n官方链接：https://www.arsenal.com/tickets/men
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260814T120000
+DTEND;TZID=Europe/London:20260814T123000
+URL:https://www.arsenal.com/tickets/men
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Arsenal vs Leeds United
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Arsenal vs Leeds United
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-4b911bde-57fd-4f2c-b320-938241928e11@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务截止｜Arsenal vs Leeds United
+DESCRIPTION:Ballot：票务截止\n比赛：Arsenal vs Leeds United\n赛事：Premier League\n状态：BALLOT CLOSED\n说明：Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准\n官方链接：https://www.arsenal.com/tickets/men
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260817T120000
+DTEND;TZID=Europe/London:20260817T123000
+URL:https://www.arsenal.com/tickets/men
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Arsenal vs Leeds United
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Arsenal vs Leeds United
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-47179f9f-7935-4b81-8895-817b915de9ef@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务开放｜Chelsea vs AFC Bournemouth
+DESCRIPTION:Application：票务开放\n比赛：Chelsea vs AFC Bournemouth\n赛事：Premier League\n状态：APPLICATION OPEN\n说明：True Blue+ / True Blue / CFC Blue / Junior Blue；当前申请窗口开放\n官方链接：https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260907T120000
+DTEND;TZID=Europe/London:20260907T123000
+URL:https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Chelsea vs AFC Bournemouth
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Chelsea vs AFC Bournemouth
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-d9c3d9c6-a41a-4ac4-b6be-4ca819e941d7@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务截止｜Chelsea vs AFC Bournemouth
+DESCRIPTION:Application：票务截止\n比赛：Chelsea vs AFC Bournemouth\n赛事：Premier League\n状态：APPLICATION OPEN\n说明：True Blue+ / True Blue / CFC Blue / Junior Blue；当前申请窗口开放\n官方链接：https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260910T120000
+DTEND;TZID=Europe/London:20260910T123000
+URL:https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Chelsea vs AFC Bournemouth
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Chelsea vs AFC Bournemouth
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-f2e8b424-4fcf-4efe-a413-9871c03bdf5c@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务开放｜Arsenal vs Everton
+DESCRIPTION:Ballot：票务开放\n比赛：Arsenal vs Everton\n赛事：Premier League\n状态：BALLOT CLOSED\n说明：Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准\n官方链接：https://www.arsenal.com/tickets/men
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260904T120000
+DTEND;TZID=Europe/London:20260904T123000
+URL:https://www.arsenal.com/tickets/men
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Arsenal vs Everton
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务开放｜Arsenal vs Everton
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ticket-70b96c36-5bb8-4c22-9a71-e5de573c1347@premier-ticket-tracker
+DTSTAMP:20260908T024945Z
+SUMMARY:票务截止｜Arsenal vs Everton
+DESCRIPTION:Ballot：票务截止\n比赛：Arsenal vs Everton\n赛事：Premier League\n状态：BALLOT CLOSED\n说明：Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准\n官方链接：https://www.arsenal.com/tickets/men
+CATEGORIES:TICKETS
+DTSTART;TZID=Europe/London:20260907T120000
+DTEND;TZID=Europe/London:20260907T123000
+URL:https://www.arsenal.com/tickets/men
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Arsenal vs Everton
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:票务截止｜Arsenal vs Everton
+END:VALARM
+END:VEVENT
+END:VCALENDAR
