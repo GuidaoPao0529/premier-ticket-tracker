@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b10">
+<title>Premier Ticket Tracker</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090b10;color:#f6f7fb;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 80px}h1{font-size:clamp(34px,6vw,64px);letter-spacing:-.055em;margin:0}
+.sub{color:#8f98a8;margin:10px 0 24px}.bar{position:sticky;top:0;z-index:50;background:rgba(9,11,16,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0;border-bottom:1px solid #202632;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}.bar-left{min-width:0}
+.row{display:flex;gap:8px;flex-wrap:wrap}button,select{border:1px solid #293140;background:#111620;color:#fff;border-radius:999px;padding:10px 14px;font:inherit}
+button.active{background:#fff;color:#090b10}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 26px}
+.sum{border:1px solid #242b37;background:#10141b;border-radius:18px;padding:16px}.sum b{font-size:28px;display:block}.sum span{font-size:11px;color:#8f98a8}
+.week{margin:30px 0}.weekhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:10px}.weekhead h2{font-size:17px;margin:0}.weekhead span{font-size:11px;color:#7f8795}
+.games{display:grid;gap:10px}.game{display:grid;grid-template-columns:86px minmax(320px,1.05fr) minmax(430px,1fr) 86px;gap:20px;align-items:center;border:1px solid #242b37;background:#10141b;border-radius:18px;padding:18px 20px;color:inherit}
+.game.finished{opacity:.44;filter:grayscale(.75)}.date b{display:block}.date span{font-size:11px;color:#8f98a8}.fixture{min-width:0}
+.comp{font-size:11px;letter-spacing:.08em;color:#7f8795;text-transform:uppercase}.fixture h3{margin:5px 0 0;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.statusline{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-start;margin-top:12px}.pill{font-size:11px;font-weight:850;border-radius:999px;padding:7px 9px;border:1px solid #303847;white-space:nowrap}
+.buy{color:#7de79d;background:rgba(70,200,110,.10)}.exchange{color:#9fc0ff;background:rgba(80,130,255,.12)}.wait{color:#f2cd72;background:rgba(242,205,114,.10)}.closed{color:#8f98a8}.soon{color:#e8bc78;background:rgba(232,188,120,.10)}
+.window{border-left:1px solid #27303d;padding:4px 0 4px 26px}.window h4{font-size:18px;color:#f1f3f7;margin:0 0 14px;font-weight:900;letter-spacing:-.01em}.window-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.window-state{border:1px solid #2c3442;background:#121720;border-radius:14px;padding:12px 13px;min-width:0;min-height:78px}.window-state .label{display:block;font-size:11px;color:#7f8998;margin-bottom:7px;font-weight:700}.window-state .value{display:block;font-size:14px;font-weight:850;line-height:1.35;white-space:normal}.window-state .date-main{display:block;font-size:15px;font-weight:900;line-height:1.15}.window-state .time-sub{display:block;font-size:11px;margin-top:5px;opacity:.85;font-weight:750}.state-wait{color:#f2cd72;background:rgba(242,205,114,.06)}.state-open{color:#7de79d;background:rgba(70,200,110,.07)}.state-closed{color:#9aa3b2;background:rgba(154,163,178,.05)}.state-result{color:#b9a2ff;background:rgba(130,105,255,.07)}.state-na{color:#7f8795;background:#11151c}.window p{font-size:11px;color:#7f8795;line-height:1.5;margin:10px 2px 0}.ended-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #303847;background:#121720;border-radius:12px;padding:13px 14px}.ended-title{font-size:16px;font-weight:900;color:#d4d9e2}.exchange-state{font-size:12px;font-weight:850;border-radius:999px;padding:7px 10px;white-space:nowrap}.exchange-open{color:#9fc0ff;background:rgba(80,130,255,.12);border:1px solid rgba(80,130,255,.24)}.exchange-check{color:#f2cd72;background:rgba(242,205,114,.08);border:1px solid rgba(242,205,114,.18)}
+.actions{display:flex;align-items:center;justify-content:flex-end}.official-btn{display:inline-block;text-decoration:none;color:#cfd6e3;font-size:12px;font-weight:800;padding:4px 0;border:0;background:transparent;white-space:nowrap}.official-btn:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}.empty{padding:30px 0;color:#8f98a8}
+@media(max-width:1000px){.game{grid-template-columns:74px minmax(230px,1fr) minmax(320px,1fr)}.actions{grid-column:3;justify-content:flex-end}.window{padding-left:18px}.official-btn{margin-left:auto}}
+@media(max-width:760px){.bar{grid-template-columns:1fr;gap:10px}.tracker-clock-wrap{align-items:flex-start;text-align:left}.summary{grid-template-columns:1fr 1fr}.game{grid-template-columns:62px minmax(0,1fr);align-items:start}.window{grid-column:2;border-left:0;border-top:1px solid #27303d;padding:14px 0 0}.window-grid{grid-template-columns:1fr}.actions{grid-column:2;justify-content:flex-start}.official-btn{margin-left:0}}
+
+</style>
+<style>
+  .tracker-clock-wrap{
+    margin-left:auto;
+    min-width:280px;
+    text-align:right;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+    gap:2px;
+    padding:8px 0;
+  }
+  .tracker-clock-date{
+    font-size:12px;
+    color:#8f98aa;
+    font-weight:650;
+    letter-spacing:.02em;
+  }
+  .tracker-clock-time{
+    font-size:22px;
+    line-height:1;
+    font-weight:800;
+    color:#f5f7fb;
+    letter-spacing:.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .tracker-clock-zone{
+    font-size:10px;
+    color:#646d7d;
+    margin-top:2px;
+  }
+  @media (max-width:860px){
+    .tracker-clock-wrap{min-width:auto;align-items:flex-start;text-align:left;padding-top:2px}
+    .tracker-clock-time{font-size:24px}
+  }
+</style>
+
+
+<style>
+.week.nearest-week{
+  position:relative;
+  border-radius:20px;
+  padding:18px 18px 20px;
+  margin-left:-18px;
+  margin-right:-18px;
+  background:linear-gradient(90deg,rgba(89,135,255,.085),rgba(89,135,255,.025) 48%,rgba(255,255,255,.012));
+  border:1px solid rgba(118,155,255,.42);
+  box-shadow:0 0 0 1px rgba(118,155,255,.08),0 14px 36px rgba(0,0,0,.12);
+}
+.week.nearest-week::before{
+  content:"";
+  position:absolute;
+  left:-1px;
+  top:22px;
+  bottom:22px;
+  width:3px;
+  border-radius:99px;
+  background:rgba(133,166,255,.85);
+}
+.week.nearest-week .weekhead h2{
+  color:#f7f9ff;
+}
+.week.nearest-week .weekhead h2::after{
+  content:"当前最近";
+  display:inline-flex;
+  align-items:center;
+  margin-left:10px;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:10px;
+  line-height:1;
+  font-weight:850;
+  color:#d9e2ff;
+  background:rgba(116,154,255,.16);
+  border:1px solid rgba(116,154,255,.32);
+  vertical-align:middle;
+}
+</style>
+
+
+<style>
+.member-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  margin-left:8px;
+  padding:3px 7px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:850;
+  color:#ffd9dc;
+  background:rgba(219,0,7,.10);
+  border:1px solid rgba(219,0,7,.22);
+  vertical-align:middle;
+}
+</style>
+
+
+<style>
+.calendar-notice{
+  display:inline-flex;align-items:center;gap:6px;margin-top:8px;
+  font-size:11px;font-weight:800;color:#c9d6ff;
+}
+.calendar-notice::before{
+  content:"●";font-size:8px;color:#8aa6ff;
+}
+</style>
+
+<style>
+/* Team crests + competition watermark */
+.game{
+  grid-template-columns:86px minmax(320px,1.05fr) 112px minmax(430px,1fr) 86px !important;
+}
+.fixture h3{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  white-space:normal;
+  overflow:visible;
+}
+.team-inline{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+}
+.team-badge{
+  width:29px;
+  height:29px;
+  object-fit:contain;
+  flex:0 0 29px;
+  opacity:0;
+  transition:opacity .18s ease, transform .18s ease;
+}
+.team-badge.loaded{opacity:1}
+.team-inline:hover .team-badge{transform:scale(1.05)}
+.versus{
+  color:#596273;
+  font-size:13px;
+  font-weight:800;
+  margin:0 1px;
+}
+.compmark{
+  height:100%;
+  min-height:116px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  background:transparent;
+  border-right:1px solid #27303d;
+}
+.comp-logo{
+  display:block;
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  opacity:.11;
+  filter:grayscale(1);
+  user-select:none;
+  pointer-events:none;
+}
+.compmark[data-comp="UEFA Champions League"] .comp-logo{
+  width:82px;height:82px;opacity:.09;filter:none;
+}
+.compmark[data-comp="Carabao Cup"] .comp-logo{
+  opacity:.09;
+}
+.window{
+  border-left:0 !important;
+  padding-left:22px !important;
+}
+@media(max-width:1180px){
+  .game{
+    grid-template-columns:74px minmax(245px,1fr) 82px minmax(320px,1fr) !important;
+  }
+  .actions{grid-column:4;justify-content:flex-end}
+  .comp-logo{width:60px;height:60px}
+}
+@media(max-width:760px){
+  .game{grid-template-columns:62px minmax(0,1fr) !important}
+  .compmark{
+    grid-column:2;
+    min-height:52px;
+    justify-content:flex-start;
+    border-right:0;
+    border-top:1px solid #27303d;
+    padding-top:10px;
+  }
+  .comp-logo{width:46px;height:46px}
+  .window{grid-column:2;padding-left:0 !important}
+  .actions{grid-column:2}
+  .team-badge{width:25px;height:25px;flex-basis:25px}
+}
+</style>
+
+
+<style>
+.comp-fallback{
+  display:none;
+  position:absolute;
+  text-align:center;
+  font-size:13px;
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:rgba(255,255,255,.065);
+  user-select:none;
+  pointer-events:none;
+}
+.compmark[data-comp="Premier League"] .comp-logo{
+  width:84px;
+  height:84px;
+  opacity:.28;
+  filter:grayscale(1) brightness(1.9);
+  image-rendering:auto;
+}
+</style>
+
+<!-- Compact mobile top/header -->
+
+<style>
+@media (max-width:760px){
+  body{font-size:14px}
+  .wrap{padding:14px 14px 40px !important}
+  h1{font-size:34px !important;line-height:1.02 !important;margin:0 0 6px !important;letter-spacing:-.04em}
+  .sub{font-size:12px !important;margin:4px 0 10px !important;line-height:1.35}
+  .bar{
+    position:sticky !important;
+    top:0 !important;
+    z-index:60 !important;
+    padding:7px 0 8px !important;
+    gap:6px !important;
+    grid-template-columns:1fr auto !important;
+    align-items:start !important;
+    background:rgba(9,11,16,.96) !important;
+  }
+  .bar-left{min-width:0}
+  .bar .row{gap:5px !important;flex-wrap:wrap}
+  .bar button{
+    min-height:32px !important;
+    padding:5px 9px !important;
+    font-size:12px !important;
+    border-radius:16px !important;
+  }
+  .bar select{
+    min-height:32px !important;
+    height:32px !important;
+    padding:4px 28px 4px 9px !important;
+    font-size:12px !important;
+    border-radius:16px !important;
+    max-width:150px !important;
+  }
+  .bar .row[style*="margin-top"]{margin-top:5px !important}
+  .tracker-clock-wrap{
+    min-width:72px !important;
+    padding:2px 0 0 6px !important;
+    gap:0 !important;
+    align-items:flex-end !important;
+    text-align:right !important;
+  }
+  .tracker-clock-date{
+    font-size:9px !important;
+    line-height:1.1 !important;
+    white-space:nowrap;
+  }
+  .tracker-clock-time{
+    font-size:16px !important;
+    line-height:1.05 !important;
+    font-weight:800 !important;
+  }
+  .tracker-clock-zone{display:none !important}
+  .summary{
+    margin-top:10px !important;
+    gap:6px !important;
+  }
+  .summary>div{
+    padding:10px 11px !important;
+    min-height:auto !important;
+  }
+  .summary strong{font-size:18px !important}
+}
+@media (max-width:430px){
+  h1{font-size:30px !important}
+  .bar{grid-template-columns:minmax(0,1fr) 64px !important}
+  .bar button{padding:5px 8px !important;font-size:11px !important}
+  .bar select{max-width:136px !important;font-size:11px !important}
+  .tracker-clock-time{font-size:15px !important}
+  .tracker-clock-date{font-size:8px !important}
+}
+</style>
+
+
+<style>
+.data-audit-note{font-size:11px;color:#7f8a9d;margin-top:7px;line-height:1.45}
+@media(max-width:760px){.data-audit-note{font-size:9px;margin-top:4px}}
+</style>
+
+
+<style>
+.calendar-subscribe-wrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.calendar-subscribe-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#111827;color:#fff;text-decoration:none;font-size:13px;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.14)}
+.calendar-subscribe-btn:hover{transform:translateY(-1px)}
+.calendar-subscribe-copy{font-size:11px;color:#7f8a9d}
+@media(max-width:760px){.calendar-subscribe-wrap{margin-top:6px}.calendar-subscribe-btn{padding:7px 10px;font-size:11px}.calendar-subscribe-copy{font-size:9px}}
+</style>
+
+
+<style>
+.membership-profile{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:8px;font-size:11px;color:#7f8a9d}
+.membership-chip{padding:5px 8px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(17,24,39,.72);color:#e5e7eb;font-weight:700}
+@media(max-width:760px){.membership-profile{font-size:9px;margin-top:5px}.membership-chip{padding:4px 7px}}
+</style>
+
+</head><body>
+<div class="wrap">
+<h1>Premier Ticket Tracker</h1>
+<p class="sub">2026/27 · 仅主场 · 仅未开赛 · Arsenal · Chelsea · Manchester United · Manchester City</p>
+<div class="bar">
+<div class="bar-left">
+<div class="row" id="clubs"><button class="active" data-club="all">全部</button><button data-club="Arsenal">Arsenal</button><button data-club="Chelsea">Chelsea</button><button data-club="Manchester United">Man Utd</button><button data-club="Manchester City">Man City</button></div>
+<div class="row" style="margin-top:8px">
+<select id="comp"><option value="all">全部赛事</option><option>Premier League</option><option>UEFA Champions League</option><option>Carabao Cup</option></select>
+<select id="ticket"><option value="all">全部票务状态</option><option value="BUY NOW">现在可买</option><option value="EXCHANGE OPEN">Exchange 已开放</option><option value="APPLICATION CLOSED">申请已截止</option><option value="COMING SOON">即将开售</option><option value="WAITING FOR TICKET INFO">等待官方票务信息</option><option value="CLOSED">票务已结束</option></select>
+</div>
+</div>
+<div class="tracker-clock-wrap" aria-label="当前时间">
+  <div class="tracker-clock-date" id="trackerClockDate">--</div>
+  <div class="tracker-clock-time" id="trackerClockTime">--:--:--</div>
+  <div class="tracker-clock-zone" id="trackerClockZone">本地时间</div>
+</div>
+</div>
+<div class="summary"><div class="sum"><b id="count">0</b><span>主场比赛</span></div><div class="sum"><b id="action">0</b><span>现在可操作</span></div><div class="sum"><b id="future">0</b><span>未来主场</span></div></div>
+<div id="timeline"></div>
+</div>
+<script>
+const DATA=[{"date":"2026-08-21","time":"20:00","home":"Arsenal","away":"Coventry City","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"FINISHED","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2026-08-23","time":"14:00","home":"Manchester City","away":"AFC Bournemouth","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"FINISHED","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"等待 Manchester City 官方票务页更新"},{"date":"2026-08-27","time":"19:30","home":"Chelsea","away":"Luton Town","competition":"Carabao Cup","clubs":["Chelsea"],"matchStatus":"FINISHED","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","source":"Chelsea 官方 Tickets / Member Application","membershipTier":"CFC Blue"},{"date":"2026-08-30","time":"14:00","home":"Chelsea","away":"Brighton & Hove Albion","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"FINISHED","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-08-30","time":"16:30","home":"Manchester United","away":"Ipswich Town","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"FINISHED","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-09-05","time":"15:00","home":"Manchester City","away":"Coventry City","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"等待 Manchester City 官方票务页更新"},{"date":"2026-09-06","time":"16:30","home":"Arsenal","away":"Chelsea","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal","Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2026-09-12","time":"15:00","home":"Chelsea","away":"Hull City","competition":"Premier League","source":"Chelsea 官方 Hull 主场票务公告","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"APPLICATION CLOSED","officialUrl":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home","windowType":"Application","windowOpen":"2026-08-21 12:00 BST","windowClose":"2026-08-26 12:00 BST","resultTime":"截止后 4 个工作日内","windowNote":"True Blue+ / True Blue / CFC Blue / Junior Blue；申请已截止","membershipTier":"CFC Blue"},{"date":"2026-09-13","time":"16:30","home":"Manchester United","away":"Manchester City","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United","Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-09-17","time":"19:30","home":"Manchester City","away":"Norwich City","competition":"Carabao Cup","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets available to qualifying fans","source":"Manchester City 官方 Men's Home Tickets / Member"},{"date":"2026-09-20","time":"14:00","home":"Manchester City","away":"Sunderland","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-10-10","time":"15:00","home":"Arsenal","away":"Leeds United","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"BALLOT CLOSED","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"2026-08-14 12:00 BST","windowClose":"2026-08-17 12:00 BST","resultTime":"Ballot 已结束","windowNote":"Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准"},{"date":"2026-10-10","time":"15:00","home":"Chelsea","away":"AFC Bournemouth","competition":"Premier League","source":"Chelsea 官方 Bournemouth 主场票务公告","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"APPLICATION OPEN","officialUrl":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27","windowType":"Application","windowOpen":"2026-09-07 12:00 BST","windowClose":"2026-09-10 12:00 BST","resultTime":"截止后 4 个工作日内","windowNote":"True Blue+ / True Blue / CFC Blue / Junior Blue；当前申请窗口开放","membershipTier":"CFC Blue"},{"date":"2026-10-10","time":"15:00","home":"Manchester United","away":"Tottenham Hotspur","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-10-13","time":"20:00","home":"Arsenal","away":"Lille","competition":"UEFA Champions League","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"BALLOT NOTICE","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"官方日历已提醒","windowClose":"待官方票务页公布","resultTime":"待官方公布","windowNote":"Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间","source":"Arsenal 官方 Tickets / Red Member"},{"date":"2026-10-14","time":"20:00","home":"Manchester City","away":"Paris Saint-Germain","competition":"UEFA Champions League","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"COMING SOON","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality coming soon / Notify Me","source":"Manchester City 官方 Men's Home Tickets / Member"},{"date":"2026-10-17","time":"15:00","home":"Manchester City","away":"Ipswich Town","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-10-20","time":"20:00","home":"Manchester City","away":"AEK Athens","competition":"UEFA Champions League","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"COMING SOON","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality coming soon / Notify Me","source":"Manchester City 官方 Men's Home Tickets / Member"},{"date":"2026-10-24","time":"14:00","home":"Arsenal","away":"Everton","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"BALLOT CLOSED","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"2026-09-04 12:00 BST","windowClose":"2026-09-07 12:00 BST","resultTime":"Ballot 已结束","windowNote":"Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准"},{"date":"2026-10-24","time":"15:00","home":"Chelsea","away":"Tottenham Hotspur","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-10-24","time":"15:00","home":"Manchester United","away":"AFC Bournemouth","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-10-31","time":"15:00","home":"Chelsea","away":"Manchester United","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea","Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-10-31","time":"15:00","home":"Manchester City","away":"Brighton & Hove Albion","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-11-07","time":"15:00","home":"Arsenal","away":"Hull City","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"BALLOT NOTICE","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"官方日历已提醒","windowClose":"待官方票务页公布","resultTime":"待官方公布","windowNote":"Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间"},{"date":"2026-11-07","time":"15:00","home":"Manchester United","away":"Aston Villa","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-11-21","time":"15:00","home":"Chelsea","away":"Leeds United","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-11-21","time":"15:00","home":"Manchester City","away":"Fulham","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-11-24","time":"20:00","home":"Arsenal","away":"Borussia Dortmund","competition":"UEFA Champions League","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间","source":"Arsenal 官方 Tickets / Red Member"},{"date":"2026-11-24","time":"20:00","home":"Manchester City","away":"Napoli","competition":"UEFA Champions League","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"COMING SOON","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality coming soon / Notify Me","source":"Manchester City 官方 Men's Home Tickets / Member"},{"date":"2026-11-28","time":"15:00","home":"Arsenal","away":"Manchester City","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal","Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2026-11-28","time":"15:00","home":"Manchester United","away":"Brentford","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-12-02","time":"20:00","home":"Chelsea","away":"Crystal Palace","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-12-02","time":"20:00","home":"Manchester City","away":"Leeds United","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-12-05","time":"15:00","home":"Chelsea","away":"Liverpool","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-12-05","time":"15:00","home":"Manchester United","away":"Coventry City","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-12-09","time":"20:00","home":"Arsenal","away":"Real Madrid","competition":"UEFA Champions League","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间","source":"Arsenal 官方 Tickets / Red Member"},{"date":"2026-12-12","time":"15:00","home":"Arsenal","away":"AFC Bournemouth","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2026-12-12","time":"15:00","home":"Manchester City","away":"Chelsea","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Chelsea","Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-12-19","time":"15:00","home":"Arsenal","away":"Manchester United","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal","Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2026-12-19","time":"15:00","home":"Chelsea","away":"Aston Villa","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2026-12-19","time":"15:00","home":"Manchester City","away":"Hull City","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2026-12-26","time":"15:00","home":"Manchester United","away":"Nottingham Forest","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2026-12-30","time":"20:00","home":"Manchester United","away":"Sunderland","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-01-02","time":"15:00","home":"Arsenal","away":"Ipswich Town","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-01-02","time":"15:00","home":"Chelsea","away":"Newcastle United","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-01-02","time":"15:00","home":"Manchester City","away":"Tottenham Hotspur","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-01-06","time":"20:00","home":"Arsenal","away":"Brentford","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-01-06","time":"20:00","home":"Manchester United","away":"Newcastle United","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-01-16","time":"15:00","home":"Chelsea","away":"Sunderland","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-01-16","time":"15:00","home":"Manchester City","away":"Nottingham Forest","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-01-23","time":"15:00","home":"Arsenal","away":"Newcastle United","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-01-23","time":"15:00","home":"Manchester United","away":"Liverpool","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-01-27","time":"20:00","home":"Arsenal","away":"Sabah FK","competition":"UEFA Champions League","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间","source":"Arsenal 官方 Tickets / Red Member"},{"date":"2027-01-27","time":"20:00","home":"Manchester City","away":"Sporting CP","competition":"UEFA Champions League","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"COMING SOON","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality coming soon / Notify Me","source":"Manchester City 官方 Men's Home Tickets / Member"},{"date":"2027-01-30","time":"15:00","home":"Chelsea","away":"Nottingham Forest","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-01-30","time":"15:00","home":"Manchester City","away":"Arsenal","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Arsenal","Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-02-06","time":"15:00","home":"Arsenal","away":"Liverpool","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-02-06","time":"15:00","home":"Manchester United","away":"Chelsea","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Chelsea","Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-02-10","time":"20:00","home":"Manchester United","away":"Brighton & Hove Albion","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-02-20","time":"15:00","home":"Arsenal","away":"Fulham","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-02-20","time":"15:00","home":"Chelsea","away":"Ipswich Town","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-02-20","time":"15:00","home":"Manchester City","away":"Newcastle United","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-02-27","time":"15:00","home":"Manchester United","away":"Arsenal","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Arsenal","Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-03-03","time":"20:00","home":"Arsenal","away":"Crystal Palace","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-03-03","time":"20:00","home":"Chelsea","away":"Coventry City","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-03-03","time":"20:00","home":"Manchester City","away":"Everton","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-03-13","time":"15:00","home":"Chelsea","away":"Arsenal","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Arsenal","Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-03-13","time":"15:00","home":"Manchester United","away":"Everton","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-03-20","time":"15:00","home":"Arsenal","away":"Sunderland","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-03-20","time":"15:00","home":"Manchester City","away":"Manchester United","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester United","Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-04-10","time":"15:00","home":"Chelsea","away":"Fulham","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-04-10","time":"15:00","home":"Manchester United","away":"Hull City","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-04-17","time":"15:00","home":"Arsenal","away":"Aston Villa","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-04-17","time":"15:00","home":"Manchester City","away":"Crystal Palace","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-04-24","time":"15:00","home":"Chelsea","away":"Manchester City","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea","Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-04-24","time":"15:00","home":"Manchester United","away":"Crystal Palace","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-05-01","time":"15:00","home":"Arsenal","away":"Tottenham Hotspur","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-05-01","time":"15:00","home":"Manchester City","away":"Brentford","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-05-08","time":"15:00","home":"Manchester City","away":"Liverpool","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-05-15","time":"15:00","home":"Arsenal","away":"Nottingham Forest","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-05-15","time":"15:00","home":"Chelsea","away":"Everton","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-05-15","time":"15:00","home":"Manchester United","away":"Leeds United","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"},{"date":"2027-05-23","time":"15:00","home":"Manchester City","away":"Aston Villa","competition":"Premier League","source":"Manchester City 官方 Men's Home Tickets / Member","clubs":["Manchester City"],"matchStatus":"UPCOMING","ticketStatus":"BUY NOW","officialUrl":"https://www.mancity.com/tickets/mens/all/home","windowType":"Member Sale","windowOpen":"不适用","windowClose":"不适用","resultTime":"不适用","windowNote":"官方状态：Tickets and hospitality on sale；需符合会员购票条件"},{"date":"2027-05-30","time":"15:00","home":"Arsenal","away":"Brighton & Hove Albion","competition":"Premier League","source":"Arsenal 官方 Tickets / Red Member","clubs":["Arsenal"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.arsenal.com/tickets/men","windowType":"Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间"},{"date":"2027-05-30","time":"15:00","home":"Chelsea","away":"Brentford","competition":"Premier League","source":"Chelsea 官方 Tickets / Member Application","clubs":["Chelsea"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://www.chelseafc.com/en/tickets","windowType":"Application","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"CFC Blue会员：按 CFC Blue 会员资格监控 Application / Member Sale / Ticket Exchange。 会员 Ticket Application Window 尚未在官网公布精确时间","membershipTier":"CFC Blue"},{"date":"2027-05-30","time":"15:00","home":"Manchester United","away":"Fulham","competition":"Premier League","source":"Manchester United 官方票务 / Official Member","clubs":["Manchester United"],"matchStatus":"UPCOMING","ticketStatus":"WAITING FOR TICKET INFO","officialUrl":"https://tickets.manutd.com/","windowType":"Member Sale / Ballot","windowOpen":"待官方公布","windowClose":"待官方公布","resultTime":"待官方公布","windowNote":"Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示"}]; let club='all';
+const el=document.getElementById('timeline'),comp=document.getElementById('comp'),ticket=document.getElementById('ticket');
+function monday(s){const d=new Date(s+'T12:00:00Z'),n=(d.getUTCDay()+6)%7;d.setUTCDate(d.getUTCDate()-n);return d.toISOString().slice(0,10)}
+function fmt(s){return new Intl.DateTimeFormat('zh-CN',{month:'short',day:'numeric'}).format(new Date(s+'T12:00:00Z'))}
+function cls(s){if(s==='BUY NOW')return'buy';if(s==='EXCHANGE OPEN')return'exchange';if(s.includes('CLOSED'))return'closed';if(s==='COMING SOON')return'soon';return'wait'}
+function windowValue(v){const m=v.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})\s*(.*)$/);if(!m)return `<span class=\"date-main\">${v}</span>`;return `<span class=\"date-main\">${Number(m[2])}月${Number(m[3])}日</span><span class=\"time-sub\">${m[4]} ${m[5]}</span>`}
+function updateDynamicTicketStates(){
+  const nowMs=Date.now();
+  DATA.forEach(x=>{
+    if(x.home==='Arsenal' && x.away==='Everton' && x.date==='2026-10-24'){
+      const openMs=Date.parse('2026-09-04T12:00:00+01:00');
+      const closeMs=Date.parse('2026-09-07T12:00:00+01:00');
+      const txOpenMs=Date.parse('2026-09-15T17:00:00+01:00');
+      if(nowMs < openMs){
+        x.ticketStatus='BALLOT UPCOMING';
+        x.windowNote='Red Member：今天 19:00 开放；截止 09-07 19:00；Red Ballot 结果日 09-15';
+      }else if(nowMs < closeMs){
+        x.ticketStatus='BALLOT OPEN';
+        x.windowNote='Red Member：Ballot 开放中；截止 09-07 19:00（北京/台北）';
+      }else if(nowMs < txOpenMs){
+        x.ticketStatus='RESULT PENDING';
+        x.windowNote='Red Member：Ballot 已截止；等待 09-15 Red Ballot 结果';
+      }else{
+        x.ticketStatus='EXCHANGE OPEN';
+        x.windowOpen='已结束';
+        x.windowClose='已结束';
+        x.resultTime='已结束';
+        x.windowNote='Red Member：Ballot 已结束；Ticket Exchange 已开放';
+      }
+    }
+  });
+}
+function parseUkTime(s){
+  if(!s || !/^\d{4}-\d{2}-\d{2} \d{2}:\d{2} BST$/.test(s)) return null;
+  return Date.parse(s.replace(' BST','')+':00+01:00');
+}
+function updateDynamicTicketStates(){
+  const nowMs=Date.now();
+  DATA.forEach(x=>{
+    // Arsenal Red Member: ECAL/official ballot lifecycle.
+    if(x.home==='Arsenal' && x.windowType && x.windowType.includes('Ballot') && x.ticketStatus!=='BALLOT NOTICE'){
+      const openMs=parseUkTime(x.windowOpen);
+      const closeMs=parseUkTime(x.windowClose);
+      if(openMs && closeMs){
+        const h48=48*60*60*1000;
+        if(nowMs < openMs && openMs-nowMs <= h48){
+          x.ticketStatus='BALLOT UPCOMING';
+          x.windowNote='Red Member：48小时内开放 Ballot；精确时间以 Arsenal 官方票务页面为准';
+        }else if(nowMs >= openMs && nowMs < closeMs){
+          x.ticketStatus='BALLOT OPEN';
+          x.windowNote='Red Member：Ballot 开放中';
+        }else if(nowMs >= closeMs && !['EXCHANGE OPEN','CLOSED'].includes(x.ticketStatus)){
+          x.ticketStatus='RESULT PENDING';
+          x.windowNote='Red Member：Ballot 已截止，等待 Red Ballot 结果';
+        }
+      }
+    }
+
+    // Chelsea member Application Window lifecycle using exact official dates only.
+    if(x.home==='Chelsea' && x.windowType==='Application'){
+      const openMs=parseUkTime(x.windowOpen);
+      const closeMs=parseUkTime(x.windowClose);
+      if(openMs && closeMs){
+        const h48=48*60*60*1000;
+        if(nowMs < openMs && openMs-nowMs <= h48){
+          x.ticketStatus='APPLICATION UPCOMING';
+          x.windowNote='Chelsea 会员：48小时内开放 Ticket Application Window';
+        }else if(nowMs >= openMs && nowMs < closeMs){
+          x.ticketStatus='APPLICATION OPEN';
+          x.windowNote='Chelsea 会员：Ticket Application Window 开放中';
+        }else if(nowMs >= closeMs && x.matchStatus!=='FINISHED'){
+          x.ticketStatus='APPLICATION CLOSED';
+          x.windowNote='Chelsea 会员：申请已截止；等待结果或 Ticket Exchange 后续状态';
+        }
+      }
+    }
+  });
+}
+
+const COMP_LOGOS={
+  'Premier League':'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzg4NTA3ODE3NTkwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9Ijc5MzkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTQ2NC4yNjE5NjcgMTAyNGEyMy41NDkwNTYgMjMuNTQ5MDU2IDAgMCAwLTUuMDU1MzY4LTEuOTgzNzUyIDE5OS43ODMwMjcgMTk5Ljc4MzAyNyAwIDAgMS0yOS41MDAzMTItNC45OTEzNzZjLTI2LjY4NDY2NC04LjgzMDg5Ni01My4wNDkzNjktMTguODEzNjQ4LTc5LjY3MDA0Mi0yOC4yMjA0NzMtNi4zOTkyLTIuMzY3NzA0LTguNTEwOTM2LTUuODIzMjcyLTQuODYzMzkyLTEyLjQxNDQ0OGE1MC4wNDE3NDUgNTAuMDQxNzQ1IDAgMCAwIDQuNzM1NDA4LTExLjI2MjU5MiAzNDQuNzg4OTAxIDM0NC43ODg5MDEgMCAwIDAgMTUuNjE0MDQ5LTEyOC41NTk5M2MtMi4zNjc3MDQtMjIuNDYxMTkyLTYuMDE1MjQ4LTQ0Ljc5NDQwMS05LjUzNDgwOC02Ny4wNjM2MTctMS40MDc4MjQtOC44MzA4OTYtNC4yMjM0NzItMTcuNDY5ODE2LTYuNzgzMTUzLTI3LjcwODUzNmE0OTkuMTM3NjA4IDQ5OS4xMzc2MDggMCAwIDEtMTIzLjM3NjU3NyAxNDkuMDM3MzcgNDgwLjQ1MTk0NCA0ODAuNDUxOTQ0IDAgMCAxLTI1LjAyMDg3My0yODEuOTQ4NzU2IDkyLjcyNDQwOSA5Mi43MjQ0MDkgMCAwIDEtNzIuODIyODk3IDI3LjM4ODU3NmM0LjIyMzQ3Mi0yMy41NDkwNTYgNi44NDcxNDQtNDYuNzE0MTYxIDEyLjc5ODQtNjkuMDQ3MzY5YTM5Ny41ODIzMDIgMzk3LjU4MjMwMiAwIDAgMSA3NC40ODY2ODktMTQ0LjMwMTk2MmwtNDUuNjI2Mjk2LTcuMzU5MDgxYTQwNC4zMDE0NjIgNDA0LjMwMTQ2MiAwIDAgMSAxMjAuNDMyOTQ2LTE1NC45ODg2MjZjMC44OTU4ODggMTcuODUzNzY4IDAuNzY3OTA0IDM1LjEzMTYwOSAyLjgxNTY0OCA1Mi4xNTM0ODFhODkuMTQwODU3IDg5LjE0MDg1NyAwIDAgMCAyMS43NTcyOCA1My4wNDkzNjkgMzYuMjgzNDY1IDM2LjI4MzQ2NSAwIDAgMCAxNy41OTc4IDEyLjc5ODQgMjc5LjY0NTA0NCAyNzkuNjQ1MDQ0IDAgMCAxLTYuMDE1MjQ4LTc3Ljg3ODI2NSAxMzYuNDMwOTQ2IDEzNi40MzA5NDYgMCAwIDEgNS41NjczMDQtMzEuOTk2MDAxIDI5LjE4MDM1MiAyOS4xODAzNTIgMCAwIDEgMzAuNjUyMTY5LTIwLjQ3NzQ0IDEwMi4zODcyMDIgMTAyLjM4NzIwMiAwIDAgMSA0My4wNjY2MTYgMTguMTczNzI4YzEuMDg3ODY0IDAuODMxODk2IDMuMTM1NjA4IDAuNTExOTM2IDUuMjQ3MzQ0IDAuNzY3OTA0YTY5LjMwMzMzNyA2OS4zMDMzMzcgMCAwIDAtNTIuNTM3NDMyLTQ4LjM3Nzk1M2MzLjcxMTUzNi0xLjk4Mzc1MiA1LjYzMTI5Ni0zLjMyNzU4NCA3Ljc0MzAzMi00LjE1OTQ4YTUyOS40Njk4MTYgNTI5LjQ2OTgxNiAwIDAgMSAxMTUuODI1NTIyLTM1LjMyMzU4NCA1MjQuNzM0NDA4IDUyNC43MzQ0MDggMCAwIDEgOTMuNDI4MzIxLTYuMzk5MiAyMC40MTM0NDggMjAuNDEzNDQ4IDAgMCAxIDguMjU0OTY4IDEuOTE5NzYgMTUyLjgxMjg5OCAxNTIuODEyODk4IDAgMCAxIDQ5LjY1Nzc5MyAzNS42NDM1NDQgMTYwLjkzOTg4MyAxNjAuOTM5ODgzIDAgMCAxIDEwLjk0MjYzMiAxNi41NzM5MjkgODMuNjM3NTQ1IDgzLjYzNzU0NSAwIDAgMC0yLjgxNTY0OC00My4wNjY2MTcgMTEuMDcwNjE2IDExLjA3MDYxNiAwIDAgMSAxLjY2Mzc5MiAwIDM0MC41NjU0MjkgMzQwLjU2NTQyOSAwIDAgMSAxMTguMjU3MjE4IDU4LjM2MDcwNSA3Ljk5OSA3Ljk5OSAwIDAgMSAyLjk0MzYzMiA1LjM3NTMyOCAyMTAuMDIxNzQ3IDIxMC4wMjE3NDcgMCAwIDAgMTUuODcwMDE2IDY3LjE5MTYwMWMwLjg5NTg4OCAyLjQzMTY5NiAyLjA0Nzc0NCA0Ljc5OTQgMy4wMDc2MjQgNy4yOTUwODhzMS42NjM3OTIgNC43OTk0IDMuMDA3NjI0IDguODk0ODg4YTYzMS40MDkwNzQgNjMxLjQwOTA3NCAwIDAgMC0xMDYuMjkwNzEzLTg2LjY0NTE2OWwtMTEuNzEwNTM3IDQ4LjEyMTk4NWMtMjguMDI4NDk2LTE2LjU3MzkyOC01NC4yNjUyMTctMzIuNTA3OTM3LTgwLjgyMTg5Ny00Ny42MTAwNDlhMzguMDExMjQ5IDM4LjAxMTI0OSAwIDAgMC0zMS45OTYtNC42MDc0MjQgNTI4Ljk1Nzg4IDUyOC45NTc4OCAwIDAgMC01Mi4wODk0ODkgMTguNjg1NjY0IDEzOS4yNDY1OTQgMTM5LjI0NjU5NCAwIDAgMC01MC4zNjE3MDUgMzYuOTg3Mzc3IDIxLjc1NzI4IDIxLjc1NzI4IDAgMCAwLTIuMjM5NzIgNC42NzE0MTZsMjQuMTg4OTc2IDguMTkwOTc2LTcyLjc1ODkwNSA1MS4xOTM2MDEgNDEuMDgyODY1IDMuMTM1NjA4LTQuMTU5NDggMjMuMjkzMDg4YzguNzAyOTEyLTMuMjYzNTkyIDEwLjk0MjYzMiAxLjk4Mzc1MiAxMi43OTg0IDguNDQ2OTQ0YTY3LjYzOTU0NSA2Ny42Mzk1NDUgMCAwIDAgNTguOTM2NjMzIDQzLjA2NjYxN2g5MS4zMTY1ODVhNzYuNzkwNDAxIDc2Ljc5MDQwMSAwIDAgMSAzNy4xMTUzNjEgNi4zOTkyYzEuOTE5NzYgMC45NTk4OCA1Ljc1OTI4LTEuMDIzODcyIDguMTI2OTg0LTIuNjIzNjcyIDAuNjM5OTItMC4zODM5NTIgMC00LjczNTQwOC0xLjQwNzgyNC02LjM5OTJhMTk3LjQxNTMyMyAxOTcuNDE1MzIzIDAgMCAwLTUyLjUzNzQzMy01Mi42MDE0MjUgMTUuMjMwMDk2IDE1LjIzMDA5NiAwIDAgMC02Ljk3NTEyOC0yLjYyMzY3MmMtMjEuNDM3MzItMS4wMjM4NzItNDIuODc0NjQxLTEuMjc5ODQtNjMuOTkyMDAxLTIuODc5NjRhNjcuNzY3NTI5IDY3Ljc2NzUyOSAwIDAgMS00MC44OTA4ODgtMTcuNDA1ODI0Yy04Ljc2NjkwNC03LjkzNTAwOC04LjUxMDkzNi04Ljc2NjkwNCAwLjc2NzkwNC0xNS4xNjYxMDVhODUuNTU3MzA1IDg1LjU1NzMwNSAwIDAgMSA1NS44MDEwMjQtMTkuMTk3NiAxMDQuMTc4OTc4IDEwNC4xNzg5NzggMCAwIDEgNTEuODk3NTEzIDIwLjczMzQwOCAxNS40ODYwNjQgMTUuNDg2MDY0IDAgMCAwIDE2LjU3MzkyOCAyLjgxNTY0OGMxMS4wMDY2MjQtNC45OTEzNzYgMjEuNjI5Mjk2LTEwLjc1MDY1NiAyOS41MDAzMTMtMTQuNjU0MTY4LTIuNjIzNjcyIDcuOTk5LTUuODg3MjY0IDE5LjE5NzYtOS45ODI3NTIgMzAuMjY4MjE3YTguMjU0OTY4IDguMjU0OTY4IDAgMCAwIDMuMTM1NjA4IDExLjAwNjYyNCAzNTUuOTg3NTAyIDM1NS45ODc1MDIgMCAwIDEgMzAuNzE2MTYgMjkuODg0MjY0IDM2NC4wNTA0OTQgMzY0LjA1MDQ5NCAwIDAgMSAyMS42MjkyOTcgMzAuMjA0MjI1IDIxNy4xODg4NTEgMjE3LjE4ODg1MSAwIDAgMSAxMDYuODY2NjQxLTYuMzk5MiAzOTUuMDIyNjIyIDM5NS4wMjI2MjIgMCAwIDEtNzUuMTI2NjA5LTkwLjE2NDczbDM4LjkwNzEzNyAyNS41OTY4MDFhNDYuOTcwMTI5IDQ2Ljk3MDEyOSAwIDAgMSA2LjM5OTItMTIuMTU4NDhjMy43MTE1MzYtMy4zOTE1NzYgOS4yNzg4NC03Ljg3MTAxNiAxMy4xODIzNTItNy4xNjcxMDUgOS43OTA3NzYgMS43Mjc3ODQgMTMuNjk0Mjg4IDEwLjk0MjYzMiAxNS42MTQwNDggMjAuMDI5NDk3IDEuNTk5OCA3Ljc0MzAzMiAzLjMyNzU4NCAxNi4zMTc5Ni05LjM0MjgzMiAyMC42MDU0MjRsMjguMTU2NDgxIDM0LjYxOTY3MyAyLjk0MzYzMi0wLjcwMzkxMiA1Ljc1OTI4LTIyLjIwNTIyNSAyLjY4NzY2NC0wLjk1OTg4YzE1LjI5NDA4OCAyOS4zMDgzMzYgMzEuOTk2IDU4LjA0MDc0NSA0NS40MzQzMiA4OC4xODA5NzhhMzQ5LjU4ODMwMSAzNDkuNTg4MzAxIDAgMCAxIDI4LjY2ODQxNyA5OC4xNjM3MjljMS4zNDM4MzIgOS45ODI3NTIgMy41MTk1NiAxOS43NzM1MjggNS4zMTEzMzYgMjkuNjI4Mjk3djczLjMzNDgzM2MtMC41NzU5MjggMC44OTU4ODgtMS41OTk4IDEuNjYzNzkyLTEuNzkxNzc2IDIuNjIzNjcyLTMuMDA3NjI0IDE4LjgxMzY0OC01LjE4MzM1MiAzNy43NTUyODEtOS4wMjI4NzIgNTYuNDQwOTQ1LTMuMjYzNTkyIDE2LjA2MTk5Mi04LjM4Mjk1MiAzMS45OTYtMTIuNzk4NCA0OS4xNDU4NTYtMTUuNzQyMDMyLTI4LjE1NjQ4LTIwLjU0MTQzMi0zMi40NDM5NDUtMzIuNTcxOTI5LTMwLjI2ODIxNmEzMzAuODM4NjQ1IDMzMC44Mzg2NDUgMCAwIDEtMTQ3LjgyMTUyMiAyNTIuNzA0NDEybC0xMy41MDIzMTItNTguNTUyNjgxYy04Ljg5NDg4OCA1LjU2NzMwNC0xNS44MDYwMjQgOS41MzQ4MDgtMjIuMzMzMjA5IDE0LjA3ODI0YTI5NS4yNTkwOTMgMjk1LjI1OTA5MyAwIDAgMS0xMDkuNTU0MzA1IDQ2LjUyMjE4NWwtMjYuNDkyNjg5IDUuNTAzMzEyeiBtMjY2Ljc4MjY1Mi0yNzQuMzMzNzA4YTE1Ny42MTIyOTggMTU3LjYxMjI5OCAwIDAgMCAxNS44MDYwMjUtOS4wMjI4NzIgOTAuNTQ4NjgxIDkwLjU0ODY4MSAwIDAgMCAzMC4yNjgyMTYtNDMuNjQyNTQ1IDgxLjM5NzgyNSA4MS4zOTc4MjUgMCAwIDAgMS4zNDM4MzItNjguODU1MzkzIDIyLjI2OTIxNiAyMi4yNjkyMTYgMCAwIDAtMTguODEzNjQ4LTEyLjE1ODQ4Yy01LjYzMTI5NiAwLjcwMzkxMi0xMS4zMjY1ODQgMS4wMjM4NzItMTYuOTU3ODggMS43OTE3NzZhNzUuMDYyNjE3IDc1LjA2MjYxNyAwIDAgMC0yMi4zOTcyMDEgMy44Mzk1MiAxMTUuMTg1NjAyIDExNS4xODU2MDIgMCAwIDAtMjQuMjUyOTY4IDE3LjQ2OTgxNiAxMjQuNDAwNDUgMTI0LjQwMDQ1IDAgMCAxLTQ4LjE4NTk3NyAyMy40ODUwNjRjLTQuOTI3Mzg0IDEuNDA3ODI0LTEwLjA0Njc0NCAyLjQ5NTY4OC0xNC44NDYxNDQgMy42NDc1NDQgOC4xMjY5ODQgMTcuNDA1ODI0IDE1LjkzNDAwOCAzMy41OTU4MDEgMjMuMjkzMDg4IDUwLjE2OTcyOSAxLjk4Mzc1MiA0LjYwNzQyNCA0LjYwNzQyNCA2LjM5OTIgOS4yMTQ4NDggNS41MDMzMTJhOTguMjI3NzIyIDk4LjIyNzcyMiAwIDAgMCA0OS4xNDU4NTctMjIuNzgxMTUyYzUuMDU1MzY4LTQuNzM1NDA4IDEwLjYyMjY3Mi04LjgzMDg5NiAxNS45OTgtMTMuMzEwMzM2YTEzNS40MDcwNzQgMTM1LjQwNzA3NCAwIDAgMSAwLjM4Mzk1MiA2My44NjQwMTd6IG0tNjcuMzE5NTg1LTI3Ni4xODk0NzdjLTMxLjE2NDEwNCAxNy4wMjE4NzItNjIuMjAwMjI1IDM0LjIzNTcyMS05My4wNDQzNjkgNTEuODk3NTEzYTExLjgzODUyIDExLjgzODUyIDAgMCAwLTUuNTY3MzA0IDE3LjAyMTg3MmMzLjkwMzUxMiA3LjQyMzA3MiA3LjgwNzAyNCAxNC45MTAxMzYgMTEuODM4NTIgMjIuMjY5MjE3IDkuNTk4OCAxNy41MzM4MDggMTkuMTk3NiAzNS4xMzE2MDkgMjkuMDUyMzY4IDUyLjYwMTQyNSAzLjE5OTYgNS42OTUyODggNy4yMzEwOTYgMTEuMDcwNjE2IDE0Ljc4MjE1MyA5LjkxODc2YTEwNS41MjI4MSAxMDUuNTIyODEgMCAwIDAgMTQuMDc4MjQtMi45NDM2MzIgMTg1LjU3NjgwMyAxODUuNTc2ODAzIDAgMCAwIDU5LjAwMDYyNS0zMi42OTk5MTMgNDQwLjUyMDkzNSA0NDAuNTIwOTM1IDAgMCAwIDM3LjgxOTI3Mi0zNS41Nzk1NTIgNi4zOTkyIDYuMzk5MiAwIDAgMCAxLjIxNTg0OC0zLjgzOTUydi0yNS41OTY4MDFoMC4zODM5NTJhOTIuOTE2Mzg1IDkyLjkxNjM4NSAwIDAgMSAwLTEzLjM3NDMyOCAxMi4wOTQ0ODggMTIuMDk0NDg4IDAgMCAwLTcuODA3MDI0LTEzLjUwMjMxMiAxMzguNTQyNjgyIDEzOC41NDI2ODIgMCAwIDEtMjkuNDM2MzItMjAuMDI5NDk3Yy03LjQ4NzA2NC03LjM1OTA4LTEyLjIyMjQ3Mi0xMS4wNzA2MTYtMTguMTczNzI4LTExLjA3MDYxNmEzMS4yOTIwODggMzEuMjkyMDg4IDAgMCAwLTE0LjE0MjIzMyA0LjkyNzM4NHogbTExOC44MzMxNDYgMTguMzY1NzA1YTI5LjMwODMzNiAyOS4zMDgzMzYgMCAwIDAtMTUuMzU4MDggMzEuOTk2YzAuNTc1OTI4IDMuNzExNTM2LTEuMzQzODMyIDcuNjc5MDQtMS4wODc4NjQgMTEuMzkwNTc2IDAuNTc1OTI4IDkuNzI2Nzg0LTMuMzkxNTc2IDE5Ljk2NTUwNCAzLjcxMTUzNiAyOS4xMTYzNjEgMTIuNzk4NCAxNi40NDU5NDQgMjUuMTQ4ODU2IDMzLjI3NTg0MSAzOC4zOTUyMDEgNTAuNDg5Njg5YTE1NC42Njg2NjYgMTU0LjY2ODY2NiAwIDAgMC02LjM5OTItMTM4LjYwNjY3NSAxNzAuNjY2NjY3IDE3MC42NjY2NjcgMCAwIDEtMTkuMjYxNTkzIDE1Ljg3MDAxN3pNMjg1LjIxMjM0OCA5MS44Mjg1MjFsNzMuMzk4ODI2IDQ4LjE4NTk3N0wzNDMuNDQ1MDY5IDQyLjkzODYzM2wxMDQuOTQ2ODgyIDc1Ljc2NjUyOSAzMC4wNzYyNC0xMTMuMDczODY2aDMuMjYzNTkzbDUzLjY4OTI4OCA5My4wNDQzN2MyLjQ5NTY4OCA0LjM1MTQ1NiAzLjM5MTU3NiA1LjY5NTI4OCA3LjI5NTA4OCAwLjU3NTkyOCAxOC43NDk2NTYtMjQuOTU2ODggMzguMzk1MjAxLTQ5LjMzNzgzMyA1Ny4yNzI4NDEtNzMuOTc0NzU0IDUuMDU1MzY4LTYuMzk5MiA5LjcyNjc4NC0xMy41NjYzMDQgMTQuNzE4MTYxLTIwLjI4NTQ2NEE0Ny40MTgwNzMgNDcuNDE4MDczIDAgMCAxIDYyMC4wODI0OSAwYzAuODk1ODg4IDM4Ljc3OTE1MyAxLjkxOTc2IDc1LjgzMDUyMSAyLjg3OTY0IDExNS45NTM1MDZsNjMuNDE2MDczLTcwLjM5MTIwMWEzNTAuOTMyMTMzIDM1MC45MzIxMzMgMCAwIDAtMjMuOTMzMDA5IDExOS40MDkwNzQgNDAzLjE0OTYwNiA0MDMuMTQ5NjA2IDAgMCAwLTMyOC4xNTA5ODEgNDAuNTA2OTM2IDI5My42NTkyOTMgMjkzLjY1OTI5MyAwIDAgMC00OS4xNDU4NTctMTEzLjY0OTc5NHoiIGZpbGw9IiMzMzMzMzMiIHAtaWQ9Ijc5NDAiPjwvcGF0aD48L3N2Zz4=',
+  'UEFA Champions League':'https://assets.footylogos.com/logos/uefa-champions-league-symbol-white/uefa-champions-league-symbol-white-logo-footylogos.svg',
+  'Carabao Cup':'https://assets.footylogos.com/logos/efl-cup-logo-footylogos.svg'
+};
+function escAttr(v){
+  return String(v??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function teamMarkup(name){
+  return `<span class="team-inline"><img class="team-badge" data-team="${escAttr(name)}" alt="${escAttr(name)} 队徽"><span>${name}</span></span>`;
+}
+function compMark(comp){
+  const src=COMP_LOGOS[comp];
+  const fallback=comp==='Premier League'
+    ? '<div class="comp-fallback">PREMIER<br>LEAGUE</div>'
+    : '';
+  return `<div class="compmark" data-comp="${escAttr(comp)}">${src?`<img class="comp-logo" src="${src}" alt="${escAttr(comp)} logo" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')">`:''}${fallback}</div>`;
+}
+
+function render(){
+updateDynamicTicketStates();
+const nowForFixtures=new Date();
+const todayYmd=`${nowForFixtures.getFullYear()}-${String(nowForFixtures.getMonth()+1).padStart(2,'0')}-${String(nowForFixtures.getDate()).padStart(2,'0')}`;
+let rows=DATA.filter(x=>
+  x.matchStatus!=='FINISHED' &&
+  x.date>=todayYmd &&
+  (club==='all'||x.home===club) &&
+  (comp.value==='all'||x.competition===comp.value) &&
+  (ticket.value==='all'||x.ticketStatus===ticket.value)
+);
+document.getElementById('count').textContent=rows.length;
+document.getElementById('action').textContent=rows.filter(x=>['BUY NOW','EXCHANGE OPEN'].includes(x.ticketStatus)).length;
+document.getElementById('future').textContent=rows.filter(x=>x.matchStatus==='UPCOMING').length;
+let groups={};rows.forEach(x=>(groups[monday(x.date)]??=[]).push(x));
+const weekKeys=Object.keys(groups).sort();
+const now=new Date();
+const todayLocal=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+let nearestWeek='';
+if(weekKeys.length){
+  const currentWeek=weekKeys.find(w=>{
+    const start=new Date(w+'T00:00:00');
+    const end=new Date(start);
+    end.setDate(end.getDate()+6);
+    end.setHours(23,59,59,999);
+    return todayLocal>=start && todayLocal<=end;
+  });
+  nearestWeek=currentWeek || weekKeys.reduce((best,w)=>{
+    const d=new Date(w+'T00:00:00');
+    const bestD=new Date(best+'T00:00:00');
+    return Math.abs(d-todayLocal)<Math.abs(bestD-todayLocal)?w:best;
+  },weekKeys[0]);
+}
+const wstate=(v,kind)=>{if(v==='待官方公布')return 'state-wait';if(v==='不适用')return 'state-na';if(kind==='result')return 'state-result';if(/2026|2027/.test(v))return kind==='open'?'state-open':'state-closed';return 'state-result'};
+el.innerHTML=weekKeys.map(w=>`<section class="week ${w===nearestWeek?'nearest-week':''}"><div class="weekhead"><h2>${fmt(w)} 起这一周</h2><span>${groups[w].length} 场</span></div><div class="games">${groups[w].map(x=>`<article class="game"><div class="date"><b>${fmt(x.date)}</b><span>${x.time}</span></div><div class="fixture"><div class="comp">${x.competition}</div><h3>${teamMarkup(x.home)} <span class="versus">vs</span> ${teamMarkup(x.away)}</h3><div class="statusline"><span class="pill">${({'UPCOMING':'比赛未开始','FINISHED':'比赛已结束'}[x.matchStatus]||x.matchStatus)}</span><span class="pill ${cls(x.ticketStatus)}">${({'BUY NOW':'现在可买','EXCHANGE OPEN':'Exchange 已开放','APPLICATION CLOSED':'申请已截止','WAITING FOR TICKET INFO':'等待官方票务信息','APPLICATION UPCOMING':'即将开放申请','APPLICATION OPEN':'申请开放中','BALLOT CLOSED':'Ballot 已结束','BALLOT NOTICE':'官方日历已提醒','BALLOT UPCOMING':'48小时内开放','BALLOT OPEN':'Ballot 开放中','RESULT PENDING':'等待 Red Ballot 结果','APPLICATION UPCOMING':'48小时内开放','APPLICATION OPEN':'申请开放中','BALLOT UPCOMING':'今晚开放','BALLOT OPEN':'Ballot 开放中','RESULT PENDING':'等待 Red Ballot 结果','CLOSED':'票务已结束','SOLD OUT':'已售罄','RESULT PENDING':'等待结果','COMING SOON':'即将开售'}[x.ticketStatus]||x.ticketStatus)}</span></div></div>${compMark(x.competition)}<div class="window"><h4>${x.windowType}${x.home==='Arsenal'?'<span class="member-pill">Red会员</span>':''}</h4>${(x.windowType.startsWith('Ballot') && (x.windowOpen==='已结束' || x.windowNote.includes('Ballot 已结束'))) ? `<div class="ended-panel"><span class="ended-title">Ballot 已结束</span><span class="exchange-state ${x.ticketStatus==='EXCHANGE OPEN'?'exchange-open':'exchange-check'}">${x.ticketStatus==='EXCHANGE OPEN'?'Exchange 已开放':'Exchange 状态待确认'}</span></div><p>${x.home==='Arsenal'?(x.ticketStatus==='EXCHANGE OPEN'?'按阿森纳官方票务/Red Member 日历状态；限符合条件会员，实时库存需登录查看':'以阿森纳官方票务/Red Member 日历为准'):(x.ticketStatus==='EXCHANGE OPEN'?'限符合条件会员，实时库存需登录官方票务系统查看':'以俱乐部官方票务页实时状态为准')}</p>` : `<div class="window-grid"><div class="window-state ${wstate(x.windowOpen,'open')}"><span class="label">开放</span><span class="value">${windowValue(x.windowOpen)}</span></div><div class="window-state ${wstate(x.windowClose,'close')}"><span class="label">截止</span><span class="value">${windowValue(x.windowClose)}</span></div><div class="window-state ${wstate(x.resultTime,'result')}"><span class="label">结果</span><span class="value">${windowValue(x.resultTime)}</span></div></div><p>${x.windowNote}</p>${x.ticketStatus==='BALLOT NOTICE'?'<div class="calendar-notice">来自 Arsenal 官方 Red Member 日历提醒</div>':''}`}</div><div class="actions"><a class="official-btn" href="${x.officialUrl}" target="_blank" rel="noreferrer">官方票务</a></div></article>`).join('')}</div></section>`).join('')||'<div class="empty">当前筛选没有比赛</div>';
+}
+document.querySelectorAll('#clubs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#clubs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');club=b.dataset.club;render()}));
+comp.addEventListener('change',render);ticket.addEventListener('change',render);render();
+</script>
+<script>
+(function(){
+  const dateEl = document.getElementById('trackerClockDate');
+  const timeEl = document.getElementById('trackerClockTime');
+  const zoneEl = document.getElementById('trackerClockZone');
+  if(!dateEl || !timeEl) return;
+  function updateClock(){
+    const now = new Date();
+    const wd = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][now.getDay()];
+    const y = now.getFullYear();
+    const m = String(now.getMonth()+1).padStart(2,'0');
+    const d = String(now.getDate()).padStart(2,'0');
+    const hh = String(now.getHours()).padStart(2,'0');
+    const mm = String(now.getMinutes()).padStart(2,'0');
+    const ss = String(now.getSeconds()).padStart(2,'0');
+    dateEl.textContent = `${y}年${m}月${d}日 · ${wd}`;
+    timeEl.textContent = `${hh}:${mm}:${ss}`;
+    try{
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      zoneEl.textContent = tz ? `本地时间 · ${tz}` : '本地时间';
+    }catch(e){
+      zoneEl.textContent = '本地时间';
+    }
+  }
+  updateClock();
+  setInterval(updateClock,1000);
+})();
+</script>
+
+
+<script>
+(function(){
+  const API='https://www.thesportsdb.com/api/v1/json/123';
+  const CACHE_KEY='ptt-team-badges-v2';
+  const aliases={
+    'Lille':'LOSC Lille',
+    'Liverpool':'Liverpool FC',
+    'Paris Saint-Germain':'Paris Saint Germain',
+    'Sporting CP':'Sporting Lisbon'
+  };
+  let cache={};
+  try{cache=JSON.parse(localStorage.getItem(CACHE_KEY)||'{}')||{}}catch(e){cache={}}
+
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  const normalize=s=>String(s||'').toLowerCase().replace(/football club|fc|afc/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+
+  function apply(){
+    document.querySelectorAll('.team-badge').forEach(img=>{
+      const name=img.dataset.team;
+      const src=cache[name];
+      if(src && img.src!==src){
+        img.onload=()=>img.classList.add('loaded');
+        img.onerror=()=>img.classList.remove('loaded');
+        img.src=src;
+      }
+    });
+  }
+
+  async function getJson(url){
+    const r=await fetch(url,{cache:'force-cache'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return r.json();
+  }
+
+  async function seedPremierLeague(){
+    try{
+      const j=await getJson(API+'/search_all_teams.php?l=English_Premier_League');
+      (j.teams||[]).forEach(t=>{
+        if(!t.strBadge) return;
+        const names=[t.strTeam].concat((t.strTeamAlternate||'').split(',').map(x=>x.trim()).filter(Boolean));
+        names.forEach(n=>{
+          const target=[...document.querySelectorAll('.team-badge')].find(el=>normalize(el.dataset.team)===normalize(n));
+          if(target) cache[target.dataset.team]=t.strBadge;
+        });
+      });
+    }catch(e){}
+  }
+
+  async function lookup(name){
+    try{
+      const q=encodeURIComponent(aliases[name]||name);
+      const j=await getJson(API+'/searchteams.php?t='+q);
+      const team=(j.teams||[]).find(t=>t.strSport==='Soccer') || (j.teams||[])[0];
+      if(team?.strBadge) cache[name]=team.strBadge;
+    }catch(e){}
+  }
+
+  async function hydrate(){
+    apply();
+    await seedPremierLeague();
+    apply();
+
+    const names=[...new Set([...document.querySelectorAll('.team-badge')].map(x=>x.dataset.team))];
+    const missing=names.filter(n=>!cache[n]);
+    for(const n of missing){
+      await lookup(n);
+      apply();
+      await wait(120);
+    }
+    try{localStorage.setItem(CACHE_KEY,JSON.stringify(cache))}catch(e){}
+    apply();
+  }
+
+  const originalRender=window.render;
+  if(typeof originalRender==='function'){
+    window.render=function(){
+      originalRender();
+      setTimeout(hydrate,0);
+    };
+  }
+  hydrate();
+})();
+</script>
+
+
+<script>
+(function(){
+  const btn = document.getElementById('iphoneCalendarSubscribe');
+  if(!btn) return;
+  const host = location.host || 'premier-ticket-tracker.vercel.app';
+  const path = '/iphone-cn.ics';
+  btn.href = 'webcal://' + host + path;
+  btn.addEventListener('click', function(){
+    // Native iPhone/iPad Calendar should handle webcal:// directly.
+  });
+})();
+</script>
+
+</body></html>
