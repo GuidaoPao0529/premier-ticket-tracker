@@ -171,3 +171,9 @@ webcal://premier-ticket-tracker.vercel.app/iphone-cn.ics
 
 【比赛时间显示】
 新版 iPhone 日历中的比赛事件只保留开球时间，不显示比赛结束时间。
+
+【iPhone 比赛事件显示修正 V2】
+比赛事件现在明确写入 DURATION:PT0S（零时长），不再作为两小时比赛时段显示“结束 01:30”等结束时间。
+同时比赛 UID 升级为 V2，避免 iPhone 继续沿用旧订阅缓存中的两小时结束时间。
+部署后建议等待订阅刷新；如果仍看到旧的“结束”时间，删除旧的“四队票务｜北京时间”订阅后，用原地址重新添加一次即可：
+https://premier-ticket-tracker.vercel.app/iphone-cn.ics
