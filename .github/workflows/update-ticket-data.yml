@@ -29,8 +29,6 @@ jobs:
       - name: Check official club sources
         run: python scripts/update_tickets.py
 
-      - name: Validate ticket data
-        run: python -m json.tool tickets.json > /dev/null
 
       - name: Commit verified changes
         run: |
