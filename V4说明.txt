@@ -1,0 +1,15 @@
+Premier Ticket Tracker V4 UNIFIED
+
+本版重点：
+1. 修正 Arsenal v Lille：不再错误显示“Ballot 待官方公布”。当前显示 Ballot 已结束；不伪造历史精确开放/截止时间。
+2. 新增 Arsenal stale-state guard：比赛进入 28 天内，如果旧数据仍只是 BALLOT NOTICE / 官方日历已提醒，不再继续显示“待官方公布”，而改为“状态待官方核验”，防止旧提醒误导。
+3. Arsenal Red：继续坚持只有具体官方比赛页明确给出 Red Ballot open+close 才自动写精确时间。
+4. Chelsea CFC Blue、Manchester City 逐场安全解析继续保留。
+5. Manchester United 正式加入 source health 检查，为后续逐场 Member/Ballot 自动解析打底。
+6. iPhone 日历继续读取 tickets.json；Lille 不会生成未来的“Ballot 开放/截止”假提醒。
+7. 404 / 抓取失败 / 解析不完整 = 不覆盖已确认数据。
+8. Workflow 仍为每小时检查；只有 tickets.json 发生真实变化才 commit/push，Vercel 才部署。
+
+升级建议：
+- 最稳妥：用完整 V4 包覆盖仓库同名文件。
+- 若只想最少替换：至少替换 tickets.json、index.html、scripts/update_tickets.py。

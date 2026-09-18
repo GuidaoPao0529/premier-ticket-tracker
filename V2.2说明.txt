@@ -1,0 +1,7 @@
+V2.2 BALLOT + APPLICATION
+- 保留 V2.1.2 已验证的 Manchester City 比赛级 Match Ticket 解析。
+- Chelsea 新增比赛级 Application 解析：只有官方文章同时出现 Application opens/closes 且明确包含 CFC Blue 才写入。
+- 第一批接入 Hull City、AFC Bournemouth 官方 ticket-news 页面。
+- Arsenal 本版先锁定 Red Member，并坚持“没有具体比赛官方页面/ECAL精确时间就不写日期”；通用帮助页只作为规则证据，绝不推测。
+- 时间先保存官网原文（UK local wording），避免第一版日期/夏令时转换误写；后续验证后再标准化并进入 iPhone 日历。
+- Workflow 继续使用现有文件。先手动 Run，检查 last-audit.json 后再决定定时自动。

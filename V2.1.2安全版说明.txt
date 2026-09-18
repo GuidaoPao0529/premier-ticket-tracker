@@ -1,0 +1,8 @@
+V2.1.2 SAFE
+1. 新增 BUY TICKETS -> BUY NOW 识别。
+2. 继续严格隔离 Bars/Hospitality。
+3. 不再只用 tickets.json 全名硬拼 URL；加入 Manchester City 官网常用短名称候选（Spurs/N Forest/Sporting/Man United/C Palace/Brighton 等），并在写入前验证比赛身份。
+4. FINISHED 比赛不再请求详情页，减少无意义 404。
+5. 抓不到/404 = skipped，不修改原数据。
+6. Arsenal/Chelsea/Manchester United 仍保持只监控、不自动写状态。
+测试时先保持定时任务关闭，只手动 Run 一次并检查 last-audit.json。

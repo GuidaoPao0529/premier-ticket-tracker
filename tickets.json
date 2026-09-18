@@ -17,7 +17,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-08-23",
@@ -138,7 +138,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "home": "Manchester United",
@@ -259,7 +259,7 @@
     "windowClose": "2026-08-17 12:00 BST",
     "resultTime": "Ballot 已结束",
     "windowNote": "Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-10-10",
@@ -307,16 +307,16 @@
     "date": "2026-10-13",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "BALLOT NOTICE",
+    "ticketStatus": "BALLOT CLOSED",
     "windowType": "Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "windowNote": "Red Member。2026/27 欧冠主场赛程已由阿森纳官方确认；Ballot 精确开放/截止时间待官方票务页确认。",
+    "windowOpen": "历史开放时间待同步",
+    "windowClose": "Ballot 已结束",
+    "windowNote": "Red Member：Ballot 已结束；精确历史开放/截止时间待从 Arsenal 官方票务/日历记录同步。当前后续购票机会请以 Ticket Exchange 官方实时状态为准。",
     "officialUrl": "https://www.arsenal.com/tickets/men",
     "membershipTier": "Red Member",
     "matchStatus": "UPCOMING",
-    "resultTime": "待官方公布",
-    "source": "俱乐部官方",
+    "resultTime": "Ballot 已结束",
+    "source": "Arsenal 官方 Tickets / Red Member",
     "clubs": [
       "Arsenal"
     ]
@@ -327,7 +327,7 @@
     "date": "2026-10-14",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -367,7 +367,7 @@
     "date": "2026-10-20",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -399,7 +399,7 @@
     "windowClose": "2026-09-07 12:00 BST",
     "resultTime": "Ballot 已结束",
     "windowNote": "Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-10-24",
@@ -520,7 +520,7 @@
     "windowClose": "待官方票务页公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-11-07",
@@ -641,7 +641,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-11-28",
@@ -801,7 +801,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-12-12",
@@ -843,7 +843,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-12-19",
@@ -943,7 +943,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-01-02",
@@ -976,7 +976,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1003,7 +1003,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-01-06",
@@ -1056,7 +1056,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1103,7 +1103,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-01-23",
@@ -1197,7 +1197,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1224,7 +1224,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-02-06",
@@ -1285,7 +1285,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-02-20",
@@ -1366,7 +1366,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-03-03",
@@ -1399,7 +1399,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1467,7 +1467,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-03-20",
@@ -1481,7 +1481,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1548,7 +1548,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-04-17",
@@ -1561,7 +1561,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1629,7 +1629,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-05-01",
@@ -1642,7 +1642,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1662,7 +1662,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1689,7 +1689,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-05-15",
@@ -1742,7 +1742,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1769,7 +1769,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-05-30",

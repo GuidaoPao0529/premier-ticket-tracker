@@ -13,6 +13,7 @@ HEALTH=[
  ("Arsenal","https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets"),
  ("Chelsea","https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members"),
  ("Manchester City","https://www.mancity.com/news/mens/ticket-news"),
+  ("Manchester United","https://www.manutd.com/en/tickets-and-hospitality"),
 ]
 
 def fetch(url):
@@ -181,7 +182,7 @@ def arsenal_red_ballot_exact(text):
 
 def main():
  rows=json.loads(DATA.read_text(encoding="utf-8"))
- audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V3 MAJOR",
+ audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V4 UNIFIED",
         "sources":[],"evidence":[],"changes":[],"skipped":[]}
  for club,url in HEALTH:
   try:
@@ -278,9 +279,22 @@ def main():
   if candidates and not found:
    audit["skipped"].append({"match":f"Arsenal v {row.get('away')}","reason":"fixture page found but no exact verified Red ballot open+close pair","attempts":candidates})
 
+ # V4 stale Arsenal ballot guard: never present a near-term match as "待官方公布" when an old ballot notice is stale.
+ # This guard does NOT invent dates; it only changes the display state to require verification.
+ from datetime import date
+ today=date.today()
+ for row in rows:
+  if row.get("home")!="Arsenal" or row.get("matchStatus")=="FINISHED": continue
+  try: days=(date.fromisoformat(row.get("date"))-today).days
+  except Exception: continue
+  if 0 <= days <= 28 and row.get("ticketStatus")=="BALLOT NOTICE" and row.get("windowOpen") in ("待官方公布","官方日历已提醒"):
+   row["ticketStatus"]="BALLOT STATUS CHECK"
+   row["resultTime"]="状态待官方核验"
+   row["windowNote"]="Red Member：该场已进入临近比赛窗口，旧的 Ballot 提醒可能已过期；V4 不再显示“待官方公布”，需以 Arsenal 当前官方票务状态核验。"
+
  DATA.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  AUDIT.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print(json.dumps({"mode":"V3 MAJOR","sources":len(audit["sources"]),
+ print(json.dumps({"mode":"V4 UNIFIED","sources":len(audit["sources"]),
   "evidence":len(audit["evidence"]),"changes":len(audit["changes"]),
   "skipped":len(audit["skipped"])},ensure_ascii=False))
 

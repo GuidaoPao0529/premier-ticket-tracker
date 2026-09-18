@@ -1,0 +1,10 @@
+V3 MAJOR
+- Manchester City：保留已验证的逐场普通票 BUY NOW / COMING SOON 安全解析。
+- Chelsea CFC Blue：重写 Application parser，兼容官网不同文章格式与 “at 12pm”；Hull/Bournemouth/Tottenham 均纳入。
+- Chelsea 时间统一标准化为 YYYY-MM-DD HH:MM BST/GMT，供网站和 iPhone 北京时间日历。
+- Arsenal Red：自动从 Arsenal 官方 tickets/men 页面发现具体比赛票务链接；只有具体比赛页明确同时出现 Red + Ballot + 开放时间 + 截止时间才写入。
+- Arsenal UCL embargo 证据继续保留；不拿“赛前4-6周”推算任何具体 Ballot 日期。
+- iPhone 日历继续动态读取 tickets.json，Ballot/Application 自动换算 Asia/Shanghai；比赛事件 DURATION:PT0S。
+- Workflow 每小时检查，但每次 audit 作为 Actions Artifact 保存7天；只有 tickets.json 真正变化才 commit/push，避免无意义 Vercel 重部署。
+- 404/抓不到/解析不完整 = skipped，不修改。
+升级时请同时替换 scripts/update_tickets.py 和 .github/workflows/update-ticket-data.yml，然后手动 Run 一次。

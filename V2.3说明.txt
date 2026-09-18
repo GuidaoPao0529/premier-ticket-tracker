@@ -1,0 +1,10 @@
+V2.3 CALENDAR SAFE
+1. 保留 V2.1.2 Manchester City 安全解析。
+2. Chelsea CFC Blue Application：新增 Tottenham，并把官网自然语言时间标准化为 YYYY-MM-DD HH:MM BST/GMT。
+3. 标准化使用 Europe/London zoneinfo 自动判断 BST/GMT，避免手工夏令时错误。
+4. api/calendar.js 继续从 tickets.json 生成订阅日历，因此标准化后的 Application 开/截止可稳定转换到北京时间。
+5. Arsenal 固定 Red Member；加入官方 UCL membership embargo 证据：
+   Real Madrid / Lille / Sabah：会员须不晚于 2026-08-26 购买；
+   Borussia Dortmund：不晚于 2026-06-24。
+6. Arsenal 具体 Ballot 开/截止时间仍坚持“具体官方页面/ECAL有精确时间才写”，本版绝不推算。
+7. 建议先手动 Run 一次，确认 last-audit.json 和 tickets.json，再保持小时自动任务。
