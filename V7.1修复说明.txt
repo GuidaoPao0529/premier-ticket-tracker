@@ -1,0 +1,19 @@
+V7.1 修复内容
+
+1. 修复 iPhone 比赛时间：
+   calendar-fixtures.json 中的比赛时间本来已经是北京时间。
+   V7 生成器错误地把 +08:00 时间再通过 UTC getter 输出，导致显示少 8 小时，看起来像英国时间。
+   V7.1 直接按 Asia/Shanghai 的“北京时间墙上时间”写入 ICS，不再二次减 8 小时。
+
+2. 恢复/增强票务信息：
+   - 有精确时间：继续生成 Ballot / Application / Member Sale 的“开放”和“截止”时间事件。
+   - 尚无精确时间但已有官方状态：在比赛日期增加一个票务信息事件，例如：
+     【Ballot｜官方已提醒】阿森纳-赫尔城
+     【会员购票｜当前可购】曼城-桑德兰
+   - 精确时间一旦写入 tickets.json，动态日历会继续生成具体北京时间提醒。
+
+3. 保留：
+   - 四队比赛：Arsenal / Chelsea / Manchester City / Manchester United
+   - 三队票务：Arsenal / Chelsea / Manchester City
+   - PC 与手机同一套配色、图标和状态样式
+   - 比赛 DURATION:PT0S，不显示结束时间

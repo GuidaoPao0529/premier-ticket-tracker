@@ -41,7 +41,7 @@ module.exports=async(req,res)=>{
   for(const f of fixtures){
     if(!f.date||f.date<today) continue;
     const match=f.timeZone==='Asia/Shanghai'
-      ? new Date(`${f.date}T${f.time||'00:00'}:00+08:00`)
+      ? (()=>{ const [y,m,d]=f.date.split('-').map(Number), [hh,mm]=(f.time||'00:00').split(':').map(Number); return new Date(Date.UTC(y,m-1,d,hh,mm,0)); })()
       : ukToBeijing(f.date,f.time||'');
     const key=`${f.date}|${f.home}|${f.away}`; fixtureKeys.add(key);
     out.push('BEGIN:VEVENT');
@@ -82,6 +82,34 @@ module.exports=async(req,res)=>{
       out.push('BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY',`DESCRIPTION:${esc(`【比赛】2小时后 ${cnTeam(x.home)}-${cnTeam(x.away)}`)}`,'END:VALARM');
     }
     out.push('END:VEVENT');
+    }
+
+
+    // Keep ticket information visible in iPhone even when an exact opening/closing timestamp
+    // has not yet been published. Exact timed events below remain the source of reminders.
+    if(TICKET_CLUBS.has(x.home)){
+      const openExact=parseWindow(x.windowOpen), closeExact=parseWindow(x.windowClose);
+      const wt=String(x.windowType||'').toLowerCase();
+      let infoTag='票务';
+      if(wt.includes('ballot')) infoTag='Ballot';
+      else if(wt.includes('application')) infoTag='申请';
+      else if(wt.includes('member')) infoTag='会员购票';
+      else if(wt.includes('exchange')||wt.includes('resale')) infoTag='Exchange';
+      if(!openExact && !closeExact && x.windowType && x.windowType!=='Ticket Info'){
+        let state='待官方公布';
+        const ts=String(x.ticketStatus||'').toUpperCase();
+        if(ts.includes('NOTICE')) state='官方已提醒';
+        else if(ts.includes('BUY NOW')) state='当前可购';
+        else if(ts.includes('CLOSED')) state='已结束';
+        out.push('BEGIN:VEVENT');
+        out.push(`UID:ticket-info-${x.home}-${x.away}-${x.date}-v71@premier-ticket-tracker`);
+        out.push(`DTSTAMP:${now.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')}`);
+        out.push(`SUMMARY:${esc(`【${infoTag}｜${state}】${cnTeam(x.home)}-${cnTeam(x.away)}`)}`);
+        out.push(`DTSTART;VALUE=DATE:${x.date.replace(/-/g,'')}`);
+        out.push(`DESCRIPTION:${esc(`票务类型：${x.windowType||''}\n状态：${x.ticketStatus||''}\n开放：${x.windowOpen||'待官方公布'}\n截止：${x.windowClose||'待官方公布'}\n会员资格：${x.membershipTier||''}\n说明：${x.windowNote||''}\n官方链接：${x.officialUrl||''}`)}`);
+        if(x.officialUrl) out.push(`URL:${esc(x.officialUrl)}`);
+        out.push('END:VEVENT');
+      }
     }
 
     if(TICKET_CLUBS.has(x.home)) for(const [field,label] of [['windowOpen','开放'],['windowClose','截止']]){
