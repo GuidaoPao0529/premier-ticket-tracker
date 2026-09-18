@@ -174,8 +174,8 @@
     "ticketStatus": "APPLICATION CLOSED",
     "officialUrl": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home",
     "windowType": "Application",
-    "windowOpen": "Friday 21 August 12pm",
-    "windowClose": "Wednesday 26 August 12pm",
+    "windowOpen": "2026-08-21 12:00 BST",
+    "windowClose": "2026-08-26 12:00 BST",
     "resultTime": "截止后 4 个工作日内",
     "windowNote": "True Blue+ / True Blue / CFC Blue / Junior Blue；申请已截止",
     "membershipTier": "CFC Blue"
@@ -275,8 +275,8 @@
     "ticketStatus": "APPLICATION OPEN",
     "officialUrl": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
     "windowType": "Application",
-    "windowOpen": "Monday 7 September 12pm",
-    "windowClose": "Thursday 10 September 12pm",
+    "windowOpen": "2026-09-07 12:00 BST",
+    "windowClose": "2026-09-10 12:00 BST",
     "resultTime": "截止后 4 个工作日内",
     "windowNote": "True Blue+ / True Blue / CFC Blue / Junior Blue；当前申请窗口开放",
     "membershipTier": "CFC Blue"

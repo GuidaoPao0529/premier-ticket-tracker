@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-18T08:05:51.416590+00:00",
-  "mode": "V2.2 BALLOT+APPLICATION",
+  "checkedAt": "2026-09-18T08:12:10.128014+00:00",
+  "mode": "V2.3 CALENDAR SAFE",
   "sources": [
     {
       "club": "Arsenal",
@@ -12,19 +12,19 @@
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "95bec324eece032c"
+      "sha256": "9598e8cfc1746970"
     },
     {
       "club": "Chelsea",
       "url": "https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members",
       "ok": true,
-      "sha256": "675b5c57f9537d39"
+      "sha256": "9c81a1c95e4ec2bf"
     },
     {
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "c7f3edb246a83acb"
+      "sha256": "4ef64bbf1f52762b"
     }
   ],
   "evidence": [
@@ -143,35 +143,69 @@
         "closeText": "Thursday 10 September 12pm",
         "cfcBlue": true
       }
+    },
+    {
+      "match": "Chelsea v Tottenham Hotspur",
+      "type": "Application",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-tottenham-at-home-2026-27",
+      "parsed": null
+    },
+    {
+      "match": "Arsenal v Lille",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-08-26",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    },
+    {
+      "match": "Arsenal v Borussia Dortmund",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-06-24",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    },
+    {
+      "match": "Arsenal v Real Madrid",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-08-26",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    },
+    {
+      "match": "Arsenal v Sabah",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-08-26",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
     }
   ],
   "changes": [
     {
       "match": "Chelsea v Hull City",
       "field": "windowOpen",
-      "old": "2026-08-21 12:00 BST",
-      "new": "Friday 21 August 12pm",
+      "old": "Friday 21 August 12pm",
+      "new": "2026-08-21 12:00 BST",
       "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home"
     },
     {
       "match": "Chelsea v Hull City",
       "field": "windowClose",
-      "old": "2026-08-26 12:00 BST",
-      "new": "Wednesday 26 August 12pm",
+      "old": "Wednesday 26 August 12pm",
+      "new": "2026-08-26 12:00 BST",
       "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home"
     },
     {
       "match": "Chelsea v AFC Bournemouth",
       "field": "windowOpen",
-      "old": "2026-09-07 12:00 BST",
-      "new": "Monday 7 September 12pm",
+      "old": "Monday 7 September 12pm",
+      "new": "2026-09-07 12:00 BST",
       "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27"
     },
     {
       "match": "Chelsea v AFC Bournemouth",
       "field": "windowClose",
-      "old": "2026-09-10 12:00 BST",
-      "new": "Thursday 10 September 12pm",
+      "old": "Thursday 10 September 12pm",
+      "new": "2026-09-10 12:00 BST",
       "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27"
     }
   ],
