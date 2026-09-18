@@ -1,5 +1,67 @@
 {
-  "checkedAt": null,
-  "sources": [],
-  "changes": []
-}
+  "checkedAt": "2026-09-18T07:17:55.931738+00:00",
+  "sources": [
+    {
+      "club": "Arsenal",
+      "url": "https://www.arsenal.com/tickets/men",
+      "ok": true,
+      "sha256": "6753c745cba0857c"
+    },
+    {
+      "club": "Arsenal",
+      "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
+      "ok": true,
+      "sha256": "968fffab890d08b3"
+    },
+    {
+      "club": "Chelsea",
+      "url": "https://www.chelseafc.com/en/tickets",
+      "ok": false,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "club": "Manchester United",
+      "url": "https://www.manutd.com/en/tickets-and-hospitality",
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "club": "Manchester City",
+      "url": "https://www.mancity.com/tickets/mens/all/home",
+      "ok": true,
+      "sha256": "2a8423d103c68734"
+    }
+  ],
+  "changes": [
+    {
+      "match": "Manchester City v PSG",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW"
+    },
+    {
+      "match": "Manchester City v AEK Athens",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW"
+    },
+    {
+      "match": "Manchester City v Napoli",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW"
+    },
+    {
+      "match": "Arsenal v Manchester United",
+      "field": "ticketStatus",
+      "old": "WAITING FOR TICKET INFO",
+      "new": "BUY NOW"
+    },
+    {
+      "match": "Manchester City v Sporting CP",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW"
+    }
+  ]
+}\n

@@ -17,7 +17,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-08-23",
@@ -138,7 +138,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "home": "Manchester United",
@@ -259,7 +259,7 @@
     "windowClose": "2026-08-17 12:00 BST",
     "resultTime": "Ballot 已结束",
     "windowNote": "Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-10-10",
@@ -327,7 +327,7 @@
     "date": "2026-10-14",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -367,7 +367,7 @@
     "date": "2026-10-20",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -399,7 +399,7 @@
     "windowClose": "2026-09-07 12:00 BST",
     "resultTime": "Ballot 已结束",
     "windowNote": "Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-10-24",
@@ -520,7 +520,7 @@
     "windowClose": "待官方票务页公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-11-07",
@@ -608,7 +608,7 @@
     "date": "2026-11-24",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -641,7 +641,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-11-28",
@@ -801,7 +801,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-12-12",
@@ -836,14 +836,14 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.arsenal.com/tickets/men",
     "windowType": "Ballot",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2026-12-19",
@@ -943,7 +943,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-01-02",
@@ -1003,7 +1003,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-01-06",
@@ -1103,7 +1103,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-01-23",
@@ -1151,7 +1151,7 @@
     "date": "2027-01-27",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -1224,7 +1224,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-02-06",
@@ -1285,7 +1285,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-02-20",
@@ -1366,7 +1366,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-03-03",
@@ -1467,7 +1467,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-03-20",
@@ -1548,7 +1548,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-04-17",
@@ -1629,7 +1629,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-05-01",
@@ -1689,7 +1689,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-05-15",
@@ -1769,7 +1769,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": ""
+    "membershipTier": "Red Member"
   },
   {
     "date": "2027-05-30",
@@ -1811,4 +1811,4 @@
     "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
     "membershipTier": ""
   }
-]
+]\n
