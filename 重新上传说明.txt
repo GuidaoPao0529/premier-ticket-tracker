@@ -1,0 +1,33 @@
+Premier Ticket Tracker · 2026-09-08 完整重传版
+
+这个 ZIP 已合并今天所有修改。不要再混用之前的 ZIP。
+
+包含：
+- 网站 index.html
+- 完整 tickets.json
+- Vercel 动态日历 api/calendar.js
+- /iphone-cn.ics 订阅路由
+- 北京时间
+- 中文短标题
+- 比赛和票务提醒均不显示“结束时间”
+- 仅未来且未结束比赛进入 iPhone 日历
+- 修复网站统计有数字但列表空白
+- 清除错误的 2026-09-17 切尔西 vs 巴塞罗那
+- 欧冠使用今天重新审计后的数据
+- Arsenal 按 Red Member
+- Chelsea 按 CFC Blue
+
+上传：
+1. 解压 ZIP。
+2. GitHub 仓库 premier-ticket-tracker 旧文件全部删除。
+3. 把本 ZIP 解压后的所有文件/文件夹原样上传到仓库根目录。
+4. Commit 到 main。
+5. 等 Vercel Production Deployment = Ready。
+
+网站：
+https://premier-ticket-tracker.vercel.app/
+
+iPhone 订阅：
+https://premier-ticket-tracker.vercel.app/iphone-cn.ics
+
+如果手机还显示旧“结束时间”，删除旧的“四队票务｜北京时间”订阅，再用上面的 HTTPS 地址重新添加。

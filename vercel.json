@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/iphone-cn.ics",
+      "destination": "/api/calendar"
+    },
+    {
+      "source": "/premier-ticket-tracker.ics",
+      "destination": "/api/calendar"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/iphone-cn.ics",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/calendar; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/api/calendar",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    }
+  ]
+}
