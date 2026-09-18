@@ -1,0 +1,9 @@
+Premier Ticket Tracker V7 Stable
+
+本版重点：
+1. PC 端视觉不改版：继续沿用 #090b10 / #10141b / #111620 深色体系、白色激活按钮、原状态色和原球队/赛事图标。
+2. 手机端重新排版，但颜色、按钮、状态 Pill、队徽、赛事图标与 PC 端保持同一套视觉语言。
+3. 手机卡片改为紧凑单列：日期左侧、对阵/状态右侧、票务窗口三列压缩显示，赛事 Logo 改为淡水印，减少纵向占用。
+4. 手机底部增加球队快速筛选 Dock；功能与 PC 顶部球队筛选完全同步，不新增另一套业务逻辑。
+5. iPhone 日历：四队比赛，三队票务；所有明确比赛时间使用 Asia/Shanghai（北京时间 UTC+8），比赛 DURATION:PT0S，不显示结束时间。
+6. 保留 V6.1 的 tickets.json、150 场 calendar-fixtures.json、自动更新脚本、GitHub Actions 与 Vercel 动态 /iphone-cn.ics。

@@ -338,6 +338,125 @@ button.active{background:#fff;color:#090b10}.summary{display:grid;grid-template-
 @media(max-width:760px){.membership-profile{font-size:9px;margin-top:5px}.membership-chip{padding:4px 7px}}
 </style>
 
+
+<style id="v7-mobile-stable">
+/* V7 Stable — mobile uses the same palette, borders, pills and typography as desktop */
+@media(max-width:760px){
+  html{scroll-padding-top:122px}
+  body{background:#090b10;color:#f6f7fb;overflow-x:hidden}
+  .wrap{padding:16px 12px 88px!important;max-width:100%!important}
+  h1{font-size:28px!important;line-height:1.04!important;letter-spacing:-.045em!important;margin:0 0 5px!important}
+  .sub{font-size:11px!important;color:#8f98a8!important;margin:0 0 10px!important}
+
+  .bar{
+    margin:0 -12px!important;padding:8px 12px 9px!important;
+    grid-template-columns:minmax(0,1fr) auto!important;gap:8px!important;
+    border-bottom:1px solid #202632!important;background:rgba(9,11,16,.96)!important
+  }
+  .bar-left{overflow:hidden}
+  #clubs{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:6px!important;padding-bottom:1px;scrollbar-width:none}
+  #clubs::-webkit-scrollbar{display:none}
+  .bar button{flex:0 0 auto!important;min-height:30px!important;padding:5px 9px!important;font-size:11px!important;border:1px solid #293140!important;background:#111620!important;color:#fff!important}
+  .bar button.active{background:#fff!important;color:#090b10!important;border-color:#fff!important}
+  .bar .row[style*="margin-top"]{display:grid!important;grid-template-columns:1fr 1fr!important;gap:6px!important;margin-top:6px!important}
+  .bar select{width:100%!important;max-width:none!important;min-width:0!important;height:30px!important;padding:3px 25px 3px 8px!important;font-size:10px!important;border:1px solid #293140!important;background:#111620!important;color:#fff!important}
+  .tracker-clock-wrap{min-width:68px!important;padding:2px 0 0!important;align-items:flex-end!important}
+  .tracker-clock-date{font-size:8px!important;color:#8f98a8!important}
+  .tracker-clock-time{font-size:15px!important;color:#f5f7fb!important}
+  .tracker-clock-zone{display:block!important;font-size:8px!important;color:#646d7d!important;margin-top:1px!important}
+
+  .summary{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;margin:10px 0 16px!important}
+  .sum{padding:10px 9px!important;border-radius:13px!important;background:#10141b!important;border-color:#242b37!important;min-width:0}
+  .sum b{font-size:20px!important;line-height:1!important}
+  .sum span{font-size:9px!important;white-space:nowrap}
+
+  .week{margin:18px 0!important}
+  .week.nearest-week{margin:16px -4px!important;padding:12px 8px 10px!important;border-radius:16px!important}
+  .week.nearest-week::before{top:16px!important;bottom:16px!important;width:2px!important}
+  .weekhead{align-items:center!important;margin-bottom:8px!important;padding:0 2px}
+  .weekhead h2{font-size:14px!important}
+  .weekhead h2::after{font-size:8px!important;padding:3px 6px!important;margin-left:6px!important}
+  .weekhead span{font-size:9px!important}
+
+  .games{gap:8px!important}
+  .game{
+    position:relative!important;display:grid!important;
+    grid-template-columns:54px minmax(0,1fr)!important;gap:0 10px!important;
+    padding:13px 12px!important;border-radius:15px!important;
+    background:#10141b!important;border:1px solid #242b37!important;
+    overflow:hidden!important;min-width:0!important
+  }
+  .date{grid-column:1;grid-row:1 / span 3;padding-top:2px}
+  .date b{font-size:12px!important;line-height:1.2}
+  .date span{font-size:10px!important;color:#8f98a8!important;margin-top:3px;display:block}
+  .fixture{grid-column:2;grid-row:1;min-width:0;padding-right:2px}
+  .comp{font-size:9px!important;color:#7f8795!important;letter-spacing:.06em}
+  .fixture h3{font-size:15px!important;line-height:1.35!important;margin:5px 0 0!important;gap:5px!important}
+  .team-inline{gap:5px!important}
+  .team-badge{width:22px!important;height:22px!important;flex-basis:22px!important}
+  .versus{font-size:10px!important;color:#596273!important}
+  .statusline{margin-top:8px!important;gap:5px!important}
+  .pill{font-size:9px!important;padding:5px 7px!important}
+
+  /* Competition mark becomes a subtle watermark instead of a separate mobile row */
+  .compmark{
+    position:absolute!important;right:-7px!important;top:7px!important;
+    width:62px!important;height:62px!important;min-height:0!important;
+    border:0!important;padding:0!important;opacity:.72!important;pointer-events:none!important
+  }
+  .comp-logo,.compmark[data-comp="Premier League"] .comp-logo,.compmark[data-comp="UEFA Champions League"] .comp-logo{
+    width:54px!important;height:54px!important;opacity:.075!important
+  }
+
+  .window{
+    grid-column:2!important;grid-row:2!important;
+    margin-top:11px!important;padding:11px 0 0!important;
+    border-top:1px solid #27303d!important
+  }
+  .window h4{font-size:13px!important;margin:0 0 8px!important}
+  .member-pill{font-size:8px!important;padding:3px 6px!important;margin-left:5px!important}
+  .window-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5px!important}
+  .window-state{min-height:58px!important;padding:8px 7px!important;border-radius:10px!important}
+  .window-state .label{font-size:8px!important;margin-bottom:5px!important}
+  .window-state .value{font-size:10px!important;line-height:1.25!important;overflow-wrap:anywhere}
+  .window-state .date-main{font-size:10px!important}
+  .window-state .time-sub{font-size:8px!important;margin-top:3px!important}
+  .window p{font-size:9px!important;line-height:1.4!important;margin:7px 1px 0!important}
+  .ended-panel{padding:9px 10px!important;border-radius:10px!important;gap:7px!important}
+  .ended-title{font-size:12px!important}
+  .exchange-state{font-size:9px!important;padding:5px 7px!important}
+
+  .actions{grid-column:2!important;grid-row:3!important;justify-content:flex-start!important;margin-top:9px!important}
+  .official-btn{
+    display:inline-flex!important;align-items:center!important;gap:5px!important;
+    min-height:28px!important;padding:6px 9px!important;border-radius:9px!important;
+    border:1px solid #303847!important;background:#121720!important;
+    color:#cfd6e3!important;font-size:10px!important;text-decoration:none!important
+  }
+  .official-btn::before{content:"↗";font-size:11px;color:#8f98a8}
+
+  .calendar-subscribe-wrap{margin-top:7px!important;gap:6px!important}
+  .calendar-subscribe-btn{font-size:10px!important;padding:7px 9px!important;border-radius:9px!important;background:#111827!important}
+  .calendar-subscribe-copy{font-size:8px!important}
+  .membership-profile{font-size:8px!important;gap:5px!important}
+  .membership-chip{font-size:8px!important;padding:4px 6px!important;background:rgba(17,24,39,.72)!important}
+
+  /* Mobile quick team dock; same PC chip styling/colors */
+  .v7-mobile-dock{
+    display:flex!important;position:fixed;z-index:80;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));
+    padding:6px;gap:5px;border:1px solid #242b37;border-radius:15px;
+    background:rgba(9,11,16,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:0 10px 35px rgba(0,0,0,.38)
+  }
+  .v7-mobile-dock button{
+    flex:1;min-width:0;border:1px solid #293140;background:#111620;color:#cfd6e3;
+    border-radius:10px;padding:8px 4px;font-size:9px;font-weight:800
+  }
+  .v7-mobile-dock button.active{background:#fff;color:#090b10;border-color:#fff}
+}
+@media(min-width:761px){.v7-mobile-dock{display:none!important}}
+</style>
+
 </head><body>
 <div class="wrap">
 <h1>Premier Ticket Tracker</h1>
@@ -635,4 +754,27 @@ comp.addEventListener('change',render);ticket.addEventListener('change',render);
 })();
 </script>
 
+
+<nav class="v7-mobile-dock" aria-label="手机端球队筛选">
+  <button class="active" data-v7club="all">全部</button>
+  <button data-v7club="Arsenal">Arsenal</button>
+  <button data-v7club="Chelsea">Chelsea</button>
+  <button data-v7club="Manchester City">Man City</button>
+</nav>
+
+<script>
+
+document.querySelectorAll('.v7-mobile-dock button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const target=document.querySelector(`#clubs button[data-club="${btn.dataset.v7club}"]`);
+    if(target) target.click();
+    document.querySelectorAll('.v7-mobile-dock button').forEach(x=>x.classList.toggle('active',x===btn));
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+document.querySelectorAll('#clubs button').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.v7-mobile-dock button').forEach(x=>x.classList.toggle('active',x.dataset.v7club===btn.dataset.club));
+}));
+
+</script>
 </body></html>
