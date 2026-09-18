@@ -1,0 +1,4 @@
+V5.1 修复：V5 的比赛日历错误地依赖仅含主场票务的 tickets.json，因此四队客场会漏项。
+新增 calendar-fixtures.json，将“比赛赛程”和“三队票务”分离。
+本周已补：Brentford-Chelsea、Brighton-Arsenal、Man City-Sunderland、Fulham-Man United。
+票务提醒仍仅 Arsenal / Chelsea / Manchester City。

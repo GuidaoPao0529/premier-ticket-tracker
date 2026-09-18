@@ -1,0 +1,1202 @@
+[
+  {
+    "date": "2026-09-19",
+    "time": "03:00",
+    "home": "Brentford",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-09-19",
+    "time": "22:00",
+    "home": "Brighton & Hove Albion",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-09-20",
+    "time": "21:00",
+    "home": "Manchester City",
+    "away": "Sunderland",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-09-20",
+    "time": "23:30",
+    "home": "Fulham",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-10",
+    "time": "19:30",
+    "home": "Arsenal",
+    "away": "Leeds United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-10",
+    "time": "22:00",
+    "home": "Chelsea",
+    "away": "AFC Bournemouth",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-11",
+    "time": "00:30",
+    "home": "Manchester United",
+    "away": "Tottenham Hotspur",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-11",
+    "time": "23:30",
+    "home": "Liverpool",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-14",
+    "time": "03:00",
+    "home": "Arsenal",
+    "away": "Lille",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-14",
+    "time": "03:00",
+    "home": "Atletico Madrid",
+    "away": "Manchester United",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-15",
+    "time": "03:00",
+    "home": "Manchester City",
+    "away": "PSG",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-17",
+    "time": "19:30",
+    "home": "Everton",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-17",
+    "time": "22:00",
+    "home": "Manchester City",
+    "away": "Ipswich Town",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-18",
+    "time": "21:00",
+    "home": "Leeds United",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-18",
+    "time": "23:30",
+    "home": "Nottingham Forest",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-21",
+    "time": "03:00",
+    "home": "Manchester City",
+    "away": "AEK Athens",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-22",
+    "time": "00:45",
+    "home": "Como 1907",
+    "away": "Manchester United",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-22",
+    "time": "03:00",
+    "home": "Bayern Munich",
+    "away": "Arsenal",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-24",
+    "time": "19:30",
+    "home": "Aston Villa",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-24",
+    "time": "22:00",
+    "home": "Arsenal",
+    "away": "Everton",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-25",
+    "time": "00:30",
+    "home": "Chelsea",
+    "away": "Tottenham Hotspur",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-25",
+    "time": "22:00",
+    "home": "Manchester United",
+    "away": "AFC Bournemouth",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-28",
+    "time": "00:00",
+    "home": "Fleetwood Town",
+    "away": "Arsenal",
+    "competition": "Carabao Cup",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-28",
+    "time": "00:00",
+    "home": "Liverpool",
+    "away": "Chelsea",
+    "competition": "Carabao Cup",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-28",
+    "time": "00:00",
+    "home": "Manchester City",
+    "away": "Brighton & Hove Albion",
+    "competition": "Carabao Cup",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-31",
+    "time": "20:30",
+    "home": "Chelsea",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-10-31",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Brighton & Hove Albion",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-02",
+    "time": "00:30",
+    "home": "Liverpool",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-04",
+    "time": "04:00",
+    "home": "Manchester United",
+    "away": "AS Roma",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-05",
+    "time": "04:00",
+    "home": "RB Leipzig",
+    "away": "Manchester City",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-05",
+    "time": "04:00",
+    "home": "Slavia Prague",
+    "away": "Arsenal",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-07",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Hull City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-07",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Aston Villa",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-07",
+    "time": "23:00",
+    "home": "Nottingham Forest",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-07",
+    "time": "23:00",
+    "home": "Sunderland",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Leeds United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "23:00",
+    "home": "Liverpool",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Fulham",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-21",
+    "time": "23:00",
+    "home": "Newcastle United",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-25",
+    "time": "04:00",
+    "home": "Arsenal",
+    "away": "Borussia Dortmund",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-25",
+    "time": "04:00",
+    "home": "Manchester City",
+    "away": "Napoli",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-26",
+    "time": "04:00",
+    "home": "Sporting CP",
+    "away": "Manchester United",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Brentford",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-11-28",
+    "time": "23:00",
+    "home": "Nottingham Forest",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "04:00",
+    "home": "Brentford",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "04:00",
+    "home": "Chelsea",
+    "away": "Crystal Palace",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "04:00",
+    "home": "Manchester City",
+    "away": "Leeds United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-03",
+    "time": "04:00",
+    "home": "Newcastle United",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "23:00",
+    "home": "Brentford",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Liverpool",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Coventry City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-05",
+    "time": "23:00",
+    "home": "Tottenham Hotspur",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-09",
+    "time": "04:00",
+    "home": "Barcelona",
+    "away": "Manchester City",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-09",
+    "time": "04:00",
+    "home": "Manchester United",
+    "away": "RB Leipzig",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-10",
+    "time": "04:00",
+    "home": "Arsenal",
+    "away": "Real Madrid",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "AFC Bournemouth",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "23:00",
+    "home": "Crystal Palace",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-12",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-19",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-19",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Aston Villa",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-19",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Hull City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-27",
+    "time": "04:00",
+    "home": "Newcastle United",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-27",
+    "time": "22:00",
+    "home": "Coventry City",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-28",
+    "time": "00:30",
+    "home": "Manchester United",
+    "away": "Nottingham Forest",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-28",
+    "time": "03:00",
+    "home": "Crystal Palace",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-30",
+    "time": "04:15",
+    "home": "Everton",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-31",
+    "time": "03:30",
+    "home": "Fulham",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-31",
+    "time": "03:30",
+    "home": "Manchester United",
+    "away": "Sunderland",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2026-12-31",
+    "time": "04:15",
+    "home": "Ipswich Town",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-02",
+    "time": "20:30",
+    "home": "Brighton & Hove Albion",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-02",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Ipswich Town",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-03",
+    "time": "22:00",
+    "home": "Chelsea",
+    "away": "Newcastle United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-04",
+    "time": "00:30",
+    "home": "Manchester City",
+    "away": "Tottenham Hotspur",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-06",
+    "time": "03:30",
+    "home": "Arsenal",
+    "away": "Brentford",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-07",
+    "time": "03:30",
+    "home": "Crystal Palace",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-07",
+    "time": "04:15",
+    "home": "Leeds United",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-08",
+    "time": "04:00",
+    "home": "Manchester United",
+    "away": "Newcastle United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-16",
+    "time": "23:00",
+    "home": "Aston Villa",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-16",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Sunderland",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-16",
+    "time": "23:00",
+    "home": "Hull City",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-16",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Nottingham Forest",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-21",
+    "time": "04:00",
+    "home": "Lens",
+    "away": "Manchester City",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-21",
+    "time": "04:00",
+    "home": "Manchester United",
+    "away": "Bayern Munich",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-21",
+    "time": "04:00",
+    "home": "Real Betis",
+    "away": "Arsenal",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-23",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Newcastle United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-23",
+    "time": "23:00",
+    "home": "Brighton & Hove Albion",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-23",
+    "time": "23:00",
+    "home": "Leeds United",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-23",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Liverpool",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-28",
+    "time": "04:00",
+    "home": "Arsenal",
+    "away": "Sabah",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-28",
+    "time": "04:00",
+    "home": "Manchester City",
+    "away": "Sporting CP",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-28",
+    "time": "04:00",
+    "home": "Villarreal",
+    "away": "Manchester United",
+    "competition": "UEFA Champions League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-30",
+    "time": "23:00",
+    "home": "Brentford",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-30",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Nottingham Forest",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-01-30",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-06",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Liverpool",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-06",
+    "time": "23:00",
+    "home": "Fulham",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-06",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-11",
+    "time": "04:00",
+    "home": "Ipswich Town",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-11",
+    "time": "04:00",
+    "home": "Manchester United",
+    "away": "Brighton & Hove Albion",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-11",
+    "time": "04:00",
+    "home": "Newcastle United",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-11",
+    "time": "04:00",
+    "home": "Tottenham Hotspur",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-20",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Fulham",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-20",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Ipswich Town",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-20",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Newcastle United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-20",
+    "time": "23:00",
+    "home": "Nottingham Forest",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-27",
+    "time": "23:00",
+    "home": "Aston Villa",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-27",
+    "time": "23:00",
+    "home": "Hull City",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-02-27",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-04",
+    "time": "04:00",
+    "home": "Arsenal",
+    "away": "Crystal Palace",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-04",
+    "time": "04:00",
+    "home": "Chelsea",
+    "away": "Coventry City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-04",
+    "time": "04:00",
+    "home": "Manchester City",
+    "away": "Everton",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-04",
+    "time": "04:00",
+    "home": "Sunderland",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-13",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-13",
+    "time": "23:00",
+    "home": "Coventry City",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-13",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Everton",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-20",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Sunderland",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-20",
+    "time": "23:00",
+    "home": "Hull City",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-03-20",
+    "time": "23:00",
+    "home": "Manchester City",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-10",
+    "time": "22:00",
+    "home": "AFC Bournemouth",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-10",
+    "time": "22:00",
+    "home": "Chelsea",
+    "away": "Fulham",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-10",
+    "time": "22:00",
+    "home": "Coventry City",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-10",
+    "time": "22:00",
+    "home": "Manchester United",
+    "away": "Hull City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-17",
+    "time": "22:00",
+    "home": "Arsenal",
+    "away": "Aston Villa",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-17",
+    "time": "22:00",
+    "home": "Brighton & Hove Albion",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-17",
+    "time": "22:00",
+    "home": "Ipswich Town",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-17",
+    "time": "22:00",
+    "home": "Manchester City",
+    "away": "Crystal Palace",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-24",
+    "time": "22:00",
+    "home": "AFC Bournemouth",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-24",
+    "time": "22:00",
+    "home": "Chelsea",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-04-24",
+    "time": "22:00",
+    "home": "Manchester United",
+    "away": "Crystal Palace",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-01",
+    "time": "22:00",
+    "home": "Arsenal",
+    "away": "Tottenham Hotspur",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-01",
+    "time": "22:00",
+    "home": "Coventry City",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-01",
+    "time": "22:00",
+    "home": "Liverpool",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-01",
+    "time": "22:00",
+    "home": "Manchester City",
+    "away": "Brentford",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-08",
+    "time": "22:00",
+    "home": "AFC Bournemouth",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-08",
+    "time": "22:00",
+    "home": "Leeds United",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-08",
+    "time": "22:00",
+    "home": "Manchester City",
+    "away": "Liverpool",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-08",
+    "time": "22:00",
+    "home": "Tottenham Hotspur",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-15",
+    "time": "22:00",
+    "home": "Arsenal",
+    "away": "Nottingham Forest",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-15",
+    "time": "22:00",
+    "home": "Chelsea",
+    "away": "Everton",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-15",
+    "time": "22:00",
+    "home": "Ipswich Town",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-15",
+    "time": "22:00",
+    "home": "Manchester United",
+    "away": "Leeds United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-23",
+    "time": "22:00",
+    "home": "AFC Bournemouth",
+    "away": "Chelsea",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-23",
+    "time": "22:00",
+    "home": "Everton",
+    "away": "Arsenal",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-23",
+    "time": "22:00",
+    "home": "Manchester City",
+    "away": "Aston Villa",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-23",
+    "time": "22:00",
+    "home": "Tottenham Hotspur",
+    "away": "Manchester United",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-30",
+    "time": "23:00",
+    "home": "Arsenal",
+    "away": "Brighton & Hove Albion",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-30",
+    "time": "23:00",
+    "home": "Chelsea",
+    "away": "Brentford",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-30",
+    "time": "23:00",
+    "home": "Manchester United",
+    "away": "Fulham",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  },
+  {
+    "date": "2027-05-30",
+    "time": "23:00",
+    "home": "Sunderland",
+    "away": "Manchester City",
+    "competition": "Premier League",
+    "timeZone": "Asia/Shanghai"
+  }
+]

@@ -1,0 +1,19 @@
+Premier Ticket Tracker V6 FULL
+生成日期：2026-09-18
+
+日历比赛层：
+- 四队：Arsenal / Chelsea / Manchester City / Manchester United
+- 当前写入未来正式比赛 150 场
+- 包含当前已确认的 Premier League，并纳入当前赛程源已确认的 UCL / Carabao Cup 场次
+- 北京时间
+- 比赛事件零时长，不显示结束时间
+- 比赛层独立于 tickets.json，因此客场不会再因为票务数据库而漏掉
+
+票务层：
+- 仅 Arsenal（Red Member）
+- Chelsea（CFC Blue）
+- Manchester City（会员）
+- Manchester United 不做票务监控、不生成票务提醒
+
+注意：
+后续杯赛抽签产生的新比赛、以及官方改期，仍需要自动同步逻辑继续更新 calendar-fixtures.json。
