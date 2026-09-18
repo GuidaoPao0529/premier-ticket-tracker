@@ -5,7 +5,7 @@ from datetime import datetime,timezone
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"tickets.json"; AUDIT=ROOT/"last-audit.json"
-UA="Mozilla/5.0 PremierTicketTracker/2.2"
+UA="Mozilla/5.0 PremierTicketTracker/3.0"
 CTX=ssl.create_default_context()
 
 HEALTH=[
@@ -139,10 +139,10 @@ def search_official_news(query_url):
 
 def chelsea_application_from_text(text):
  if not text:return None
- # Supports: "Ticket application window opens – Monday 7 September 12pm"
- op=re.search(r"Ticket application window opens?\s*[-–—:]\s*([^.;]+?)(?=Ticket application window closes?|Accessible|$)",text,re.I)
- cl=re.search(r"Ticket application window closes?\s*[-–—:]\s*([^.;]+?)(?=The ticket application|Accessible|Supporters|$)",text,re.I)
- tiers=bool(re.search(r"CFC Blue",text,re.I))
+ datepat=r"((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+\d{1,2}\s+[A-Za-z]+\s+(?:at\s+)?\d{1,2}(?::\d{2})?\s*(?:am|pm))"
+ op=re.search(r"ticket\s+application\s+window\s+opens?\s*[-–—:]\s*"+datepat,text,re.I)
+ cl=re.search(r"ticket\s+application\s+window\s+closes?\s*[-–—:]\s*"+datepat,text,re.I)
+ tiers=bool(re.search(r"\bCFC\s+Blue\b",text,re.I))
  if not (op and cl and tiers):return None
  return {"openText":op.group(1).strip(),"closeText":cl.group(1).strip(),"cfcBlue":True}
 
@@ -154,9 +154,34 @@ def arsenal_ballot_from_text(text):
  if not (op and cl):return None
  return {"openText":op.group(1).strip(),"closeText":cl.group(1).strip(),"tier":"Red Member"}
 
+def hrefs_from_html(html,base):
+ from urllib.parse import urljoin
+ vals=re.findall(r"href=[\\\"\\']([^\\\"\\'#]+)[\\\"\\']",html,re.I)
+ out=[]
+ for v in vals:
+  u=urljoin(base,v)
+  if "arsenal.com" in u and u not in out:out.append(u)
+ return out
+
+def arsenal_fixture_candidates(landing_html,row):
+ away=str(row.get("away","")); tokens=[x for x in re.split(r"[^a-z0-9]+",away.lower()) if len(x)>=3]
+ urls=[]
+ for u in hrefs_from_html(landing_html,"https://www.arsenal.com/tickets/men"):
+  ul=u.lower()
+  if ("ticket" in ul or "ballot" in ul) and tokens and any(t in ul for t in tokens):urls.append(u)
+ return urls[:8]
+
+def arsenal_red_ballot_exact(text):
+ if not text or not re.search(r"\\bRed\\b",text,re.I) or not re.search(r"\\bballot\\b",text,re.I):return None
+ datepat=r"((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\\s+\\d{1,2}\\s+[A-Za-z]+(?:\\s+\\d{4})?\\s+(?:at\\s+)?\\d{1,2}(?::\\d{2})?\\s*(?:am|pm))"
+ op=re.search(r"(?:Red[^.;]{0,80})?ballot[^.;]{0,100}?(?:opens?|open)\\s*[-–—:]?\\s*"+datepat,text,re.I)
+ cl=re.search(r"(?:Red[^.;]{0,80})?ballot[^.;]{0,100}?(?:closes?|close)\\s*[-–—:]?\\s*"+datepat,text,re.I)
+ if not (op and cl):return None
+ return {"openText":op.group(1).strip(),"closeText":cl.group(1).strip(),"tier":"Red Member"}
+
 def main():
  rows=json.loads(DATA.read_text(encoding="utf-8"))
- audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V2.3 CALENDAR SAFE",
+ audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V3 MAJOR",
         "sources":[],"evidence":[],"changes":[],"skipped":[]}
  for club,url in HEALTH:
   try:
@@ -229,9 +254,33 @@ def main():
   if row.get("matchStatus")=="FINISHED" or row.get("home")!="Arsenal":continue
   row["membershipTier"]="Red Member"
 
+ # V3 Arsenal fixture-level discovery: only fixture-specific exact Red ballot evidence may write.
+ try: arsenal_landing_html=fetch("https://www.arsenal.com/tickets/men")
+ except Exception: arsenal_landing_html=""
+ for row in rows:
+  if row.get("matchStatus")=="FINISHED" or row.get("home")!="Arsenal":continue
+  row["membershipTier"]="Red Member"
+  candidates=arsenal_fixture_candidates(arsenal_landing_html,row); found=False
+  for url in candidates:
+   try: txt=plain(fetch(url))
+   except Exception: continue
+   ev=arsenal_red_ballot_exact(txt)
+   audit["evidence"].append({"match":f"Arsenal v {row.get('away')}","type":"Red Ballot discovery","url":url,"parsed":ev})
+   if not ev:continue
+   open_norm=normalize_uk_datetime(ev["openText"],2026); close_norm=normalize_uk_datetime(ev["closeText"],2026)
+   if not (open_norm and close_norm):
+    audit["skipped"].append({"match":f"Arsenal v {row.get('away')}","reason":"Red ballot time could not be normalized","url":url});continue
+   for field,val in [("windowType","Ballot"),("windowOpen",open_norm),("windowClose",close_norm),("membershipTier","Red Member"),("officialUrl",url)]:
+    if row.get(field)!=val:
+     old=row.get(field);row[field]=val
+     audit["changes"].append({"match":f"Arsenal v {row.get('away')}","field":field,"old":old,"new":val,"url":url})
+   found=True;break
+  if candidates and not found:
+   audit["skipped"].append({"match":f"Arsenal v {row.get('away')}","reason":"fixture page found but no exact verified Red ballot open+close pair","attempts":candidates})
+
  DATA.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  AUDIT.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print(json.dumps({"mode":"V2.3 CALENDAR SAFE","sources":len(audit["sources"]),
+ print(json.dumps({"mode":"V3 MAJOR","sources":len(audit["sources"]),
   "evidence":len(audit["evidence"]),"changes":len(audit["changes"]),
   "skipped":len(audit["skipped"])},ensure_ascii=False))
 
