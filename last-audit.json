@@ -1,8 +1,333 @@
 {
-  "checkedAt": null,
-  "mode": "V2.1.2 SAFE",
-  "sources": [],
-  "evidence": [],
-  "changes": [],
-  "skipped": []
+  "checkedAt": "2026-09-18T09:05:46.106487+00:00",
+  "mode": "V5 3 CLUBS",
+  "sources": [
+    {
+      "club": "Arsenal",
+      "url": "https://www.arsenal.com/tickets/men",
+      "ok": true,
+      "sha256": "6753c745cba0857c"
+    },
+    {
+      "club": "Arsenal",
+      "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
+      "ok": true,
+      "sha256": "bb45031df594db90"
+    },
+    {
+      "club": "Chelsea",
+      "url": "https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members",
+      "ok": true,
+      "sha256": "52a2ff189ebdd4cc"
+    },
+    {
+      "club": "Manchester City",
+      "url": "https://www.mancity.com/news/mens/ticket-news",
+      "ok": true,
+      "sha256": "7625637f46ab70d3"
+    }
+  ],
+  "evidence": [
+    {
+      "match": "Manchester City v PSG",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026",
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket On sale to Season Ticket Holders, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 2 tickets per person Buy Now "
+    },
+    {
+      "match": "Manchester City v AEK Athens",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-aek-athens-20-oct-2026",
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket On sale to Season Ticket Holders, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 4 tickets per person Buy Now "
+    },
+    {
+      "match": "Manchester City v Brighton & Hove Albion",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-brighton-31-oct-2026",
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday, Junior and Season Ticket Members. Four tickets per Member (additional three for Season Ticket Members). BUY TICKETS "
+    },
+    {
+      "match": "Manchester City v Fulham",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-fulham-21-nov-2026",
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday, Junior and Season Ticket Members. Four tickets per Member (additional three for Season Ticket Members). BUY TICKETS "
+    },
+    {
+      "match": "Manchester City v Napoli",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-napoli-24-nov-2026",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket Sign up to be notified when tickets for this fixture become available Notify Me "
+    },
+    {
+      "match": "Manchester City v Chelsea",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-chelsea-12-dec-2026",
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members. One ticket per Member. BUY TICKETS "
+    },
+    {
+      "match": "Manchester City v Tottenham Hotspur",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Nottingham Forest",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY "
+    },
+    {
+      "match": "Manchester City v Sporting CP",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-sporting-27-jan-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket Sign up to be notified when tickets for this fixture become available Notify Me "
+    },
+    {
+      "match": "Manchester City v Arsenal",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Everton",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-everton-3-mar-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Manchester United",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-man-united-20-mar-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Crystal Palace",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-c-palace-17-apr-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Brentford",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-brentford-1-may-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Liverpool",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-liverpool-8-may-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Manchester City v Aston Villa",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-aston-villa-23-may-2027",
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Chelsea v Hull City",
+      "type": "Application",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home",
+      "parsed": {
+        "openText": "Friday 21 August 12pm",
+        "closeText": "Wednesday 26 August 12pm",
+        "cfcBlue": true
+      }
+    },
+    {
+      "match": "Chelsea v AFC Bournemouth",
+      "type": "Application",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
+      "parsed": {
+        "openText": "Monday 7 September 12pm",
+        "closeText": "Thursday 10 September 12pm",
+        "cfcBlue": true
+      }
+    },
+    {
+      "match": "Chelsea v Tottenham Hotspur",
+      "type": "Application",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-tottenham-at-home-2026-27",
+      "parsed": null
+    },
+    {
+      "match": "Arsenal v Lille",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-08-26",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    },
+    {
+      "match": "Arsenal v Borussia Dortmund",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-06-24",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    },
+    {
+      "match": "Arsenal v Real Madrid",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-08-26",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    },
+    {
+      "match": "Arsenal v Sabah",
+      "type": "UCL membership embargo",
+      "membershipTier": "Red Member",
+      "membershipMustBePurchasedOnOrBefore": "2026-08-26",
+      "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
+    }
+  ],
+  "changes": [
+    {
+      "match": "Manchester City v PSG",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026"
+    },
+    {
+      "match": "Manchester City v AEK Athens",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-aek-athens-20-oct-2026"
+    },
+    {
+      "match": "Manchester City v Tottenham Hotspur",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027"
+    },
+    {
+      "match": "Manchester City v Nottingham Forest",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027"
+    },
+    {
+      "match": "Manchester City v Arsenal",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027"
+    },
+    {
+      "match": "Manchester City v Everton",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-everton-3-mar-2027"
+    },
+    {
+      "match": "Manchester City v Manchester United",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-man-united-20-mar-2027"
+    },
+    {
+      "match": "Manchester City v Crystal Palace",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-c-palace-17-apr-2027"
+    },
+    {
+      "match": "Manchester City v Brentford",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-brentford-1-may-2027"
+    },
+    {
+      "match": "Manchester City v Liverpool",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-liverpool-8-may-2027"
+    },
+    {
+      "match": "Manchester City v Aston Villa",
+      "field": "ticketStatus",
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-aston-villa-23-may-2027"
+    }
+  ],
+  "skipped": [
+    {
+      "match": "Manchester City v Coventry City",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-coventry-city-5-sep-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v Norwich City",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-norwich-city-17-sep-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v Sunderland",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-sunderland-20-sep-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v Ipswich Town",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-ipswich-town-17-oct-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v Leeds United",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-leeds-united-2-dec-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v Hull City",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-hull-city-19-dec-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v Newcastle United",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-newcastle-united-20-feb-2027",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    }
+  ]
 }
