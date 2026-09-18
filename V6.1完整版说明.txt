@@ -1,0 +1,17 @@
+Premier Ticket Tracker V6.1 FULL — 北京时间完整版
+
+网站：
+- 只显示 Arsenal / Chelsea / Manchester City 三队主场票务。
+- Arsenal 按 Red Member。
+- Chelsea 按 CFC Blue。
+- Manchester City 按会员资格。
+- Manchester United 不显示、不监控票务。
+
+iPhone 自动订阅日历：
+- 四队比赛：Arsenal / Chelsea / Manchester City / Manchester United。
+- 三队票务：Arsenal / Chelsea / Manchester City。
+- 所有已确认比赛开球时间按北京时间 Asia/Shanghai (UTC+8) 写入。
+- 比赛事件使用 DURATION:PT0S，不显示结束时间。
+- 比赛层与票务层分离，客场比赛不会因为主场票务数据库而漏掉。
+- 当前 calendar-fixtures.json 含 150 场未来已确认比赛。
+- 正式订阅 URL 保持 /iphone-cn.ics；部署后旧订阅可自动刷新。
