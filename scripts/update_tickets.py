@@ -111,6 +111,25 @@ def resolve_city_fixture(row,audit):
  return None,None
 
 
+MONTHNUM={"january":1,"february":2,"march":3,"april":4,"may":5,"june":6,"july":7,"august":8,"september":9,"october":10,"november":11,"december":12}
+
+def normalize_uk_datetime(raw,year=2026):
+ # Converts Chelsea/Arsenal official English wording to stable UK-local ISO-like storage.
+ # DST label is calculated by zoneinfo, not guessed.
+ from datetime import datetime
+ from zoneinfo import ZoneInfo
+ x=re.sub(r"^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s+","",raw.strip(),flags=re.I)
+ x=x.replace(" at "," ")
+ m=re.search(r"(\d{1,2})\s+([A-Za-z]+)\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)",x,re.I)
+ if not m:return None
+ day=int(m.group(1)); mon=MONTHNUM.get(m.group(2).lower())
+ if not mon:return None
+ hour=int(m.group(3)); minute=int(m.group(4) or 0); ap=m.group(5).lower()
+ if ap=="pm" and hour!=12:hour+=12
+ if ap=="am" and hour==12:hour=0
+ dt=datetime(year,mon,day,hour,minute,tzinfo=ZoneInfo("Europe/London"))
+ return dt.strftime("%Y-%m-%d %H:%M ")+dt.tzname()
+
 def search_official_news(query_url):
  # Fetch an explicitly supplied official article URL only; no guessed status writes.
  try:
@@ -137,7 +156,7 @@ def arsenal_ballot_from_text(text):
 
 def main():
  rows=json.loads(DATA.read_text(encoding="utf-8"))
- audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V2.2 BALLOT+APPLICATION",
+ audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V2.3 CALENDAR SAFE",
         "sources":[],"evidence":[],"changes":[],"skipped":[]}
  for club,url in HEALTH:
   try:
@@ -170,7 +189,8 @@ def main():
  # Chelsea: exact official article pages. We write only when CFC Blue is explicitly named.
  chelsea_articles={
   "Hull City":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home",
-  "AFC Bournemouth":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
+   "AFC Bournemouth":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
+  "Tottenham Hotspur":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-tottenham-at-home-2026-27",
  }
  for row in rows:
   if row.get("matchStatus")=="FINISHED":continue
@@ -179,10 +199,30 @@ def main():
    audit["evidence"].append({"match":f"Chelsea v {row.get('away')}","type":"Application","url":url,"parsed":ev})
    if ev:
     # Store exact official wording, avoiding timezone/date-parser mistakes in this first safe release.
-    for field,val in [("windowType","Application"),("windowOpen",ev["openText"]),("windowClose",ev["closeText"]),("membershipTier","CFC Blue")]:
+    open_norm=normalize_uk_datetime(ev["openText"],2026)
+    close_norm=normalize_uk_datetime(ev["closeText"],2026)
+    if not (open_norm and close_norm):
+     audit["skipped"].append({"match":f"Chelsea v {row.get('away')}","reason":"application time could not be normalized","url":url})
+     continue
+    for field,val in [("windowType","Application"),("windowOpen",open_norm),("windowClose",close_norm),("membershipTier","CFC Blue")]:
      if row.get(field)!=val:
       old=row.get(field);row[field]=val
       audit["changes"].append({"match":f"Chelsea v {row.get('away')}","field":field,"old":old,"new":val,"url":url})
+ # Arsenal UCL eligibility evidence: exact embargo dates from Arsenal Help.
+ arsenal_embargo={
+  "Real Madrid":"2026-08-26",
+  "Lille":"2026-08-26",
+  "Sabah":"2026-08-26",
+  "Borussia Dortmund":"2026-06-24",
+ }
+ for row in rows:
+  if row.get("matchStatus")=="FINISHED" or row.get("home")!="Arsenal":continue
+  row["membershipTier"]="Red Member"
+  if row.get("away") in arsenal_embargo:
+   audit["evidence"].append({"match":f"Arsenal v {row.get('away')}","type":"UCL membership embargo",
+    "membershipTier":"Red Member","membershipMustBePurchasedOnOrBefore":arsenal_embargo[row["away"]],
+    "source":"https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"})
+
  # Arsenal: current release remains evidence-only. Generic help pages confirm process but are NOT enough
  # to invent a specific fixture's dates. Exact match pages/ECAL will be added only when discoverable.
  for row in rows:
@@ -191,7 +231,7 @@ def main():
 
  DATA.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  AUDIT.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print(json.dumps({"mode":"V2.2 BALLOT+APPLICATION","sources":len(audit["sources"]),
+ print(json.dumps({"mode":"V2.3 CALENDAR SAFE","sources":len(audit["sources"]),
   "evidence":len(audit["evidence"]),"changes":len(audit["changes"]),
   "skipped":len(audit["skipped"])},ensure_ascii=False))
 
