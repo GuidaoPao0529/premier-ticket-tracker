@@ -1,0 +1,47 @@
+name: Update official ticket data
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: premier-ticket-tracker-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check official club sources
+        run: python scripts/update_tickets.py
+
+      - name: Validate ticket data
+        run: python -m json.tool tickets.json > /dev/null
+
+      - name: Commit verified changes
+        run: |
+          if git diff --quiet -- tickets.json last-audit.json; then
+            echo "No changes"
+            exit 0
+          fi
+
+          git config user.name "Premier Ticket Tracker Bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add tickets.json last-audit.json
+          git commit -m "chore: refresh official ticket data"
+          git push
