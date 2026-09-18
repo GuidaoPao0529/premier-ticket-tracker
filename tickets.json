@@ -17,7 +17,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-08-23",
@@ -90,14 +90,15 @@
       "Manchester United"
     ],
     "matchStatus": "FINISHED",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-09-05",
@@ -138,7 +139,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "home": "Manchester United",
@@ -146,19 +147,20 @@
     "date": "2026-09-10",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "WAITING FOR TICKET INFO",
-    "windowType": "Member Sale",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "windowNote": "2026/27 欧冠主场赛程已由曼联官方页面确认；普通会员具体售票/申请时间待官方票务页公布。",
+    "ticketStatus": "FIXTURE ONLY",
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
     "officialUrl": "https://tickets.manutd.com/",
-    "membershipTier": "Member",
+    "membershipTier": "",
     "matchStatus": "UPCOMING",
-    "resultTime": "待官方公布",
+    "resultTime": "不适用",
     "source": "俱乐部官方",
     "clubs": [
       "Manchester United"
-    ]
+    ],
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-09-12",
@@ -192,14 +194,15 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-09-17",
@@ -259,7 +262,7 @@
     "windowClose": "2026-08-17 12:00 BST",
     "resultTime": "Ballot 已结束",
     "windowNote": "Red Member：Ballot 已结束；Exchange 是否可进入以 Arsenal 官方 Tickets 实时状态为准",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-10-10",
@@ -292,14 +295,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "home": "Arsenal",
@@ -327,7 +331,7 @@
     "date": "2026-10-14",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -367,7 +371,7 @@
     "date": "2026-10-20",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -399,7 +403,7 @@
     "windowClose": "2026-09-07 12:00 BST",
     "resultTime": "Ballot 已结束",
     "windowNote": "Red Member：Ballot 已结束；后续 Ticket Exchange 以官方实时状态为准",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-10-24",
@@ -432,14 +436,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-10-31",
@@ -488,19 +493,20 @@
     "date": "2026-11-03",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "WAITING FOR TICKET INFO",
-    "windowType": "Member Sale",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "windowNote": "2026/27 欧冠主场赛程已由曼联官方页面确认；普通会员具体售票/申请时间待官方票务页公布。",
+    "ticketStatus": "FIXTURE ONLY",
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
     "officialUrl": "https://tickets.manutd.com/",
-    "membershipTier": "Member",
+    "membershipTier": "",
     "matchStatus": "UPCOMING",
-    "resultTime": "待官方公布",
+    "resultTime": "不适用",
     "source": "俱乐部官方",
     "clubs": [
       "Manchester United"
-    ]
+    ],
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-11-07",
@@ -520,7 +526,7 @@
     "windowClose": "待官方票务页公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-11-07",
@@ -533,14 +539,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-11-21",
@@ -641,7 +648,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-11-28",
@@ -654,14 +661,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-12-02",
@@ -734,14 +742,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "home": "Manchester United",
@@ -749,19 +758,20 @@
     "date": "2026-12-08",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "WAITING FOR TICKET INFO",
-    "windowType": "Member Sale",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "windowNote": "2026/27 欧冠主场赛程已由曼联官方页面确认；普通会员具体售票/申请时间待官方票务页公布。",
+    "ticketStatus": "FIXTURE ONLY",
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
     "officialUrl": "https://tickets.manutd.com/",
-    "membershipTier": "Member",
+    "membershipTier": "",
     "matchStatus": "UPCOMING",
-    "resultTime": "待官方公布",
+    "resultTime": "不适用",
     "source": "俱乐部官方",
     "clubs": [
       "Manchester United"
-    ]
+    ],
+    "calendarFixtureOnly": true
   },
   {
     "home": "Arsenal",
@@ -801,7 +811,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-12-12",
@@ -843,7 +853,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2026-12-19",
@@ -896,14 +906,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2026-12-30",
@@ -916,14 +927,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-01-02",
@@ -943,7 +955,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-01-02",
@@ -976,7 +988,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1003,7 +1015,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-01-06",
@@ -1016,14 +1028,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-01-16",
@@ -1056,7 +1069,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1071,19 +1084,20 @@
     "date": "2027-01-20",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "WAITING FOR TICKET INFO",
-    "windowType": "Member Sale",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "windowNote": "2026/27 欧冠主场赛程已由曼联官方页面确认；普通会员具体售票/申请时间待官方票务页公布。",
+    "ticketStatus": "FIXTURE ONLY",
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
     "officialUrl": "https://tickets.manutd.com/",
-    "membershipTier": "Member",
+    "membershipTier": "",
     "matchStatus": "UPCOMING",
-    "resultTime": "待官方公布",
+    "resultTime": "不适用",
     "source": "俱乐部官方",
     "clubs": [
       "Manchester United"
-    ]
+    ],
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-01-23",
@@ -1103,7 +1117,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-01-23",
@@ -1116,14 +1130,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "home": "Arsenal",
@@ -1197,7 +1212,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1224,7 +1239,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-02-06",
@@ -1238,14 +1253,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-02-10",
@@ -1258,14 +1274,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-02-20",
@@ -1285,7 +1302,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-02-20",
@@ -1339,14 +1356,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-03-03",
@@ -1366,7 +1384,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-03-03",
@@ -1399,7 +1417,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1440,14 +1458,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-03-20",
@@ -1467,7 +1486,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-03-20",
@@ -1481,7 +1500,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1521,14 +1540,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-04-17",
@@ -1548,7 +1568,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-04-17",
@@ -1561,7 +1581,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1602,14 +1622,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-05-01",
@@ -1629,7 +1650,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-05-01",
@@ -1642,7 +1663,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1662,7 +1683,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1689,7 +1710,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-05-15",
@@ -1722,14 +1743,15 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   },
   {
     "date": "2027-05-23",
@@ -1742,7 +1764,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1769,7 +1791,7 @@
     "windowClose": "待官方公布",
     "resultTime": "待官方公布",
     "windowNote": "Red Member：等待 Arsenal 官方公布该场 Ballot 精确时间",
-    "membershipTier": "Red Member"
+    "membershipTier": ""
   },
   {
     "date": "2027-05-30",
@@ -1802,13 +1824,14 @@
       "Manchester United"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "WAITING FOR TICKET INFO",
+    "ticketStatus": "FIXTURE ONLY",
     "officialUrl": "https://tickets.manutd.com/",
-    "windowType": "Member Sale / Ballot",
-    "windowOpen": "待官方公布",
-    "windowClose": "待官方公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Official Member：部分主场采用 Ballot；精确窗口仅在曼联官方公布后显示",
-    "membershipTier": ""
+    "windowType": "Fixture only",
+    "windowOpen": "不适用",
+    "windowClose": "不适用",
+    "resultTime": "不适用",
+    "windowNote": "仅用于 iPhone 四队比赛日历；网站与票务提醒不显示曼联票务信息。",
+    "membershipTier": "",
+    "calendarFixtureOnly": true
   }
 ]

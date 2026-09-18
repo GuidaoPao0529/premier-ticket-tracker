@@ -1,0 +1,14 @@
+Premier Ticket Tracker V5 — 3 Clubs Website / 4 Clubs Calendar
+
+网站与票务自动监控：
+- Arsenal：Red Member
+- Chelsea：CFC Blue
+- Manchester City：Matchday/Member
+- Manchester United：完全不显示票务信息，也不再做票务 source-health 检查。
+
+iPhone 订阅日历：
+- 比赛信息保留四队：Arsenal / Chelsea / Manchester United / Manchester City。
+- 球票信息只保留三队：Arsenal / Chelsea / Manchester City。
+- Manchester United 只生成【比赛】事件，不生成 Ballot / Member Sale / Exchange 等票务事件。
+- 比赛事件继续使用 DURATION:PT0S，不显示结束时间。
+- 订阅地址仍使用 /iphone-cn.ics，无需换 URL；部署 V5 后旧订阅会随 iPhone 刷新自动更新。

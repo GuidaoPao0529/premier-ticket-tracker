@@ -13,7 +13,6 @@ HEALTH=[
  ("Arsenal","https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets"),
  ("Chelsea","https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members"),
  ("Manchester City","https://www.mancity.com/news/mens/ticket-news"),
-  ("Manchester United","https://www.manutd.com/en/tickets-and-hospitality"),
 ]
 
 def fetch(url):
@@ -182,7 +181,7 @@ def arsenal_red_ballot_exact(text):
 
 def main():
  rows=json.loads(DATA.read_text(encoding="utf-8"))
- audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V4 UNIFIED",
+ audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V5 3 CLUBS",
         "sources":[],"evidence":[],"changes":[],"skipped":[]}
  for club,url in HEALTH:
   try:
@@ -192,6 +191,7 @@ def main():
    audit["sources"].append({"club":club,"url":url,"ok":False,"error":str(e)[:250]})
 
  for row in rows:
+  if row.get("home")=="Manchester United": continue
   row.setdefault("matchStatus","UPCOMING")
   row.setdefault("windowOpen","待官方公布"); row.setdefault("windowClose","待官方公布"); row.setdefault("resultTime","待官方公布")
   if row.get("home")=="Arsenal": row["membershipTier"]="Red Member"
@@ -294,7 +294,7 @@ def main():
 
  DATA.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  AUDIT.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print(json.dumps({"mode":"V4 UNIFIED","sources":len(audit["sources"]),
+ print(json.dumps({"mode":"V5 3 CLUBS","sources":len(audit["sources"]),
   "evidence":len(audit["evidence"]),"changes":len(audit["changes"]),
   "skipped":len(audit["skipped"])},ensure_ascii=False))
 
