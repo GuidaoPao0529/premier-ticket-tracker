@@ -5,7 +5,7 @@ from datetime import datetime,timezone
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"tickets.json"; AUDIT=ROOT/"last-audit.json"
-UA="Mozilla/5.0 PremierTicketTracker/2.1.2"
+UA="Mozilla/5.0 PremierTicketTracker/2.2"
 CTX=ssl.create_default_context()
 
 HEALTH=[
@@ -110,9 +110,34 @@ def resolve_city_fixture(row,audit):
  audit["skipped"].append({"match":match,"reason":"no verified fixture page","attempts":errors})
  return None,None
 
+
+def search_official_news(query_url):
+ # Fetch an explicitly supplied official article URL only; no guessed status writes.
+ try:
+  return plain(fetch(query_url))
+ except Exception:
+  return None
+
+def chelsea_application_from_text(text):
+ if not text:return None
+ # Supports: "Ticket application window opens – Monday 7 September 12pm"
+ op=re.search(r"Ticket application window opens?\s*[-–—:]\s*([^.;]+?)(?=Ticket application window closes?|Accessible|$)",text,re.I)
+ cl=re.search(r"Ticket application window closes?\s*[-–—:]\s*([^.;]+?)(?=The ticket application|Accessible|Supporters|$)",text,re.I)
+ tiers=bool(re.search(r"CFC Blue",text,re.I))
+ if not (op and cl and tiers):return None
+ return {"openText":op.group(1).strip(),"closeText":cl.group(1).strip(),"cfcBlue":True}
+
+def arsenal_ballot_from_text(text):
+ if not text:return None
+ # Evidence-only unless the article explicitly contains both opening and closing wording.
+ op=re.search(r"(?:Red Member ballot|Red ballot|ballot)[^.;]{0,120}?(?:opens?|open)\s*[-–—:]?\s*([^.;]+)",text,re.I)
+ cl=re.search(r"(?:Red Member ballot|Red ballot|ballot)[^.;]{0,120}?(?:closes?|close)\s*[-–—:]?\s*([^.;]+)",text,re.I)
+ if not (op and cl):return None
+ return {"openText":op.group(1).strip(),"closeText":cl.group(1).strip(),"tier":"Red Member"}
+
 def main():
  rows=json.loads(DATA.read_text(encoding="utf-8"))
- audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V2.1.2 SAFE",
+ audit={"checkedAt":datetime.now(timezone.utc).isoformat(),"mode":"V2.2 BALLOT+APPLICATION",
         "sources":[],"evidence":[],"changes":[],"skipped":[]}
  for club,url in HEALTH:
   try:
@@ -140,9 +165,33 @@ def main():
    audit["changes"].append({"match":f"Manchester City v {row.get('away')}",
     "field":"ticketStatus","old":old,"new":st,"url":url})
 
+
+ # V2.2 official, match-level seed articles already present in known data / current official season.
+ # Chelsea: exact official article pages. We write only when CFC Blue is explicitly named.
+ chelsea_articles={
+  "Hull City":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home",
+  "AFC Bournemouth":"https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
+ }
+ for row in rows:
+  if row.get("matchStatus")=="FINISHED":continue
+  if row.get("home")=="Chelsea" and row.get("away") in chelsea_articles:
+   url=chelsea_articles[row["away"]]; txt=search_official_news(url); ev=chelsea_application_from_text(txt)
+   audit["evidence"].append({"match":f"Chelsea v {row.get('away')}","type":"Application","url":url,"parsed":ev})
+   if ev:
+    # Store exact official wording, avoiding timezone/date-parser mistakes in this first safe release.
+    for field,val in [("windowType","Application"),("windowOpen",ev["openText"]),("windowClose",ev["closeText"]),("membershipTier","CFC Blue")]:
+     if row.get(field)!=val:
+      old=row.get(field);row[field]=val
+      audit["changes"].append({"match":f"Chelsea v {row.get('away')}","field":field,"old":old,"new":val,"url":url})
+ # Arsenal: current release remains evidence-only. Generic help pages confirm process but are NOT enough
+ # to invent a specific fixture's dates. Exact match pages/ECAL will be added only when discoverable.
+ for row in rows:
+  if row.get("matchStatus")=="FINISHED" or row.get("home")!="Arsenal":continue
+  row["membershipTier"]="Red Member"
+
  DATA.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  AUDIT.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print(json.dumps({"mode":"V2.1.2 SAFE","sources":len(audit["sources"]),
+ print(json.dumps({"mode":"V2.2 BALLOT+APPLICATION","sources":len(audit["sources"]),
   "evidence":len(audit["evidence"]),"changes":len(audit["changes"]),
   "skipped":len(audit["skipped"])},ensure_ascii=False))
 
