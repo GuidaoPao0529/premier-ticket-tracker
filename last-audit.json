@@ -1,7 +1,32 @@
 {
-  "checkedAt": null,
+  "checkedAt": "2026-09-18T07:38:32.645018+00:00",
   "mode": "V2.1 SAFE",
-  "sources": [],
+  "sources": [
+    {
+      "club": "Arsenal",
+      "url": "https://www.arsenal.com/tickets/men",
+      "ok": true,
+      "sha256": "6753c745cba0857c"
+    },
+    {
+      "club": "Arsenal",
+      "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
+      "ok": true,
+      "sha256": "30c81284e2fbe9b2"
+    },
+    {
+      "club": "Chelsea",
+      "url": "https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members",
+      "ok": true,
+      "sha256": "a60881440279c0ec"
+    },
+    {
+      "club": "Manchester City",
+      "url": "https://www.mancity.com/news/mens/ticket-news",
+      "ok": true,
+      "sha256": "3e48c9e59519390f"
+    }
+  ],
   "evidence": [],
   "changes": [],
   "skipped": []
