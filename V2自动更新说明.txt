@@ -1,0 +1,25 @@
+Premier Ticket Tracker V2 自动更新版
+
+自动链路：
+四队官网 → GitHub Actions 每小时检查 → tickets.json → 自动 commit/push
+→ Vercel 自动部署 → 网站更新 → iPhone 动态日历更新。
+
+本版第一阶段采用保守策略：
+- 只访问 Arsenal / Chelsea / Man Utd / Man City 官方页面。
+- 官网访问失败时保留旧数据。
+- 不根据模糊文字猜精确 Ballot/Application 时间。
+- Arsenal 固定按 Red Member；Chelsea 固定按 CFC Blue。
+- 每次运行生成 last-audit.json，能看到检查时间和每个官方来源是否成功。
+- 公开页面明确出现 Buy Now / Coming Soon 时可更新 broad status。
+
+上传后必须做一次：
+1. GitHub Settings → Actions → General → Workflow permissions → Read and write permissions。
+2. GitHub Actions → Update official ticket data → Run workflow。
+3. 运行变绿后打开 last-audit.json，确认 checkedAt 已更新。
+4. 确认 Vercel 自动出现新的 Production Deployment。
+5. 检查：
+   https://premier-ticket-tracker.vercel.app/
+   https://premier-ticket-tracker.vercel.app/iphone-cn.ics
+
+下一阶段会逐队增强精确解析：
+Arsenal Red Ballot → Chelsea CFC Blue Application → Man Utd → Man City → Exchange/Resale。
