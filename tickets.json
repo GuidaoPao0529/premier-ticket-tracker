@@ -327,7 +327,7 @@
     "date": "2026-10-14",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -367,7 +367,7 @@
     "date": "2026-10-20",
     "time": "20:00",
     "competition": "UEFA Champions League",
-    "ticketStatus": "COMING SOON",
+    "ticketStatus": "BUY NOW",
     "windowType": "Member Sale",
     "windowOpen": "待官方公布",
     "windowClose": "待官方公布",
@@ -1197,7 +1197,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1399,7 +1399,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1642,7 +1642,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1662,7 +1662,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
@@ -1742,7 +1742,7 @@
       "Manchester City"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "BUY NOW",
+    "ticketStatus": "COMING SOON",
     "officialUrl": "https://www.mancity.com/tickets/mens/all/home",
     "windowType": "Member Sale",
     "windowOpen": "不适用",
