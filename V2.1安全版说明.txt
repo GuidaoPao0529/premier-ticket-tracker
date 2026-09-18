@@ -1,0 +1,6 @@
+V2.1 SAFE：比赛级、票种级、证据级写入。
+曼城只读取该场比赛官方页面的 Tickets / Match ticket 区块，Bars/Hospitality 不会触发普通票 BUY NOW。
+Arsenal/Chelsea/Man Utd 暂时只监控，不自动改状态，待比赛级解析器验证后开放。
+本包基于干净 FINAL 版重建，因此不保留 V2 第一轮 broad-status 误判。
+测试：上传后先只手动 Run 一次，检查 last-audit.json 的 evidence/changes；确认后再启用每小时任务。
+注意：GitHub 网页拖拽可能漏掉 .github 隐藏目录，可单独覆盖 workflow 文件。
