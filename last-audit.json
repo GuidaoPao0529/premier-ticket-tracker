@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-18T07:56:57.598551+00:00",
-  "mode": "V2.1.2 SAFE",
+  "checkedAt": "2026-09-18T08:05:51.416590+00:00",
+  "mode": "V2.2 BALLOT+APPLICATION",
   "sources": [
     {
       "club": "Arsenal",
@@ -12,19 +12,19 @@
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "0930552177fa10a9"
+      "sha256": "95bec324eece032c"
     },
     {
       "club": "Chelsea",
       "url": "https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members",
       "ok": true,
-      "sha256": "6fe181b3a2572bb7"
+      "sha256": "675b5c57f9537d39"
     },
     {
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "7a76d3f1a63ad446"
+      "sha256": "c7f3edb246a83acb"
     }
   ],
   "evidence": [
@@ -123,36 +123,56 @@
       "url": "https://www.mancity.com/tickets/mens/man-city-v-aston-villa-23-may-2027",
       "matchTicketStatus": "COMING SOON",
       "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+    },
+    {
+      "match": "Chelsea v Hull City",
+      "type": "Application",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home",
+      "parsed": {
+        "openText": "Friday 21 August 12pm",
+        "closeText": "Wednesday 26 August 12pm",
+        "cfcBlue": true
+      }
+    },
+    {
+      "match": "Chelsea v AFC Bournemouth",
+      "type": "Application",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
+      "parsed": {
+        "openText": "Monday 7 September 12pm",
+        "closeText": "Thursday 10 September 12pm",
+        "cfcBlue": true
+      }
     }
   ],
   "changes": [
     {
-      "match": "Manchester City v Tottenham Hotspur",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027"
+      "match": "Chelsea v Hull City",
+      "field": "windowOpen",
+      "old": "2026-08-21 12:00 BST",
+      "new": "Friday 21 August 12pm",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home"
     },
     {
-      "match": "Manchester City v Nottingham Forest",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027"
+      "match": "Chelsea v Hull City",
+      "field": "windowClose",
+      "old": "2026-08-26 12:00 BST",
+      "new": "Wednesday 26 August 12pm",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home"
     },
     {
-      "match": "Manchester City v Manchester United",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-man-united-20-mar-2027"
+      "match": "Chelsea v AFC Bournemouth",
+      "field": "windowOpen",
+      "old": "2026-09-07 12:00 BST",
+      "new": "Monday 7 September 12pm",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27"
     },
     {
-      "match": "Manchester City v Crystal Palace",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-c-palace-17-apr-2027"
+      "match": "Chelsea v AFC Bournemouth",
+      "field": "windowClose",
+      "old": "2026-09-10 12:00 BST",
+      "new": "Thursday 10 September 12pm",
+      "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27"
     }
   ],
   "skipped": [
