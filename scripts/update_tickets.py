@@ -13,12 +13,12 @@ def fetch(u):
  r=urllib.request.Request(u,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml"})
  with urllib.request.urlopen(r,timeout=25,context=CTX) as x:return x.read().decode("utf-8","replace")
 def plain(h):
- h=re.sub(r"<script\\b[^>]*>.*?</script>"," ",h,flags=re.I|re.S); h=re.sub(r"<style\\b[^>]*>.*?</style>"," ",h,flags=re.I|re.S)
- h=re.sub(r"<[^>]+>"," ",h); return re.sub(r"\\s+"," ",h.replace("&amp;","&").replace("&nbsp;"," ")).strip()
+ h=re.sub(r"<script\b[^>]*>.*?</script>"," ",h,flags=re.I|re.S); h=re.sub(r"<style\b[^>]*>.*?</style>"," ",h,flags=re.I|re.S)
+ h=re.sub(r"<[^>]+>"," ",h); return re.sub(r"\s+"," ",h.replace("&amp;","&").replace("&nbsp;"," ")).strip()
 def slug(s): return re.sub(r"[^a-z0-9]+","-",str(s).lower().replace("&","and")).strip("-")
 def city_url(row):
  d=str(row.get("date",""))[:10]
- if not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}",d):return None
+ if not re.fullmatch(r"\d{4}-\d{2}-\d{2}",d):return None
  y,m,day=d.split("-"); mon={"01":"jan","02":"feb","03":"mar","04":"apr","05":"may","06":"jun","07":"jul","08":"aug","09":"sep","10":"oct","11":"nov","12":"dec"}
  opp={"PSG":"psg","Paris Saint-Germain":"psg","AEK Athens":"aek-athens","Sporting CP":"sporting-cp"}.get(row.get("away"),slug(row.get("away","")))
  return f"https://www.mancity.com/tickets/mens/man-city-v-{opp}-{int(day)}-{mon[m]}-{y}"
