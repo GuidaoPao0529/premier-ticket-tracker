@@ -1,30 +1,30 @@
 {
-  "checkedAt": "2026-09-18T11:08:05.033961+00:00",
+  "checkedAt": "2026-09-24T09:31:32.335277+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
       "club": "Arsenal",
       "url": "https://www.arsenal.com/tickets/men",
       "ok": true,
-      "sha256": "1c678375723181d5"
+      "sha256": "74fbb1787e3ff6a4"
     },
     {
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "9e1a667c9a4e5c81"
+      "sha256": "0fa93cd7c8051f45"
     },
     {
       "club": "Chelsea",
       "url": "https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members",
       "ok": true,
-      "sha256": "3f759afcfe8eb098"
+      "sha256": "8c514f0baa0990e5"
     },
     {
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "94e71dc7744521cb"
+      "sha256": "39ccb2456725aa03"
     }
   ],
   "evidence": [
@@ -32,7 +32,7 @@
       "match": "Manchester City v PSG",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026",
       "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket On sale to Season Ticket Holders, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 2 tickets per person Buy Now "
+      "excerpt": "Tickets Match ticket On sale to Season Ticket Holders, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 4 tickets per person Buy Now "
     },
     {
       "match": "Manchester City v AEK Athens",
@@ -61,8 +61,8 @@
     {
       "match": "Manchester City v Chelsea",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-chelsea-12-dec-2026",
-      "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members. One ticket per Member. BUY TICKETS "
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket Tickets for this fixture are currently sold out. Click below to fill out the form to be notified when more tickets are released. NOTIFY ME "
     },
     {
       "match": "Manchester City v Tottenham Hotspur",
@@ -181,81 +181,11 @@
   ],
   "changes": [
     {
-      "match": "Manchester City v PSG",
-      "field": "ticketStatus",
-      "old": "COMING SOON",
-      "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026"
-    },
-    {
-      "match": "Manchester City v AEK Athens",
-      "field": "ticketStatus",
-      "old": "COMING SOON",
-      "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-aek-athens-20-oct-2026"
-    },
-    {
-      "match": "Manchester City v Tottenham Hotspur",
+      "match": "Manchester City v Chelsea",
       "field": "ticketStatus",
       "old": "BUY NOW",
       "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027"
-    },
-    {
-      "match": "Manchester City v Nottingham Forest",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027"
-    },
-    {
-      "match": "Manchester City v Arsenal",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027"
-    },
-    {
-      "match": "Manchester City v Everton",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-everton-3-mar-2027"
-    },
-    {
-      "match": "Manchester City v Manchester United",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-man-united-20-mar-2027"
-    },
-    {
-      "match": "Manchester City v Crystal Palace",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-c-palace-17-apr-2027"
-    },
-    {
-      "match": "Manchester City v Brentford",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-brentford-1-may-2027"
-    },
-    {
-      "match": "Manchester City v Liverpool",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-liverpool-8-may-2027"
-    },
-    {
-      "match": "Manchester City v Aston Villa",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-aston-villa-23-may-2027"
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-chelsea-12-dec-2026"
     }
   ],
   "skipped": [
