@@ -1,30 +1,30 @@
 {
-  "checkedAt": "2026-09-24T09:31:32.335277+00:00",
+  "checkedAt": "2026-10-10T01:47:12.225231+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
       "club": "Arsenal",
       "url": "https://www.arsenal.com/tickets/men",
       "ok": true,
-      "sha256": "74fbb1787e3ff6a4"
+      "sha256": "e96473d3e4dc68d4"
     },
     {
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "0fa93cd7c8051f45"
+      "sha256": "02d2c7b13072ae11"
     },
     {
       "club": "Chelsea",
       "url": "https://www.chelseafc.com/en/news/article/ticket-application-window-information-for-members",
-      "ok": true,
-      "sha256": "8c514f0baa0990e5"
+      "ok": false,
+      "error": "HTTP Error 500: Internal Server Error"
     },
     {
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "39ccb2456725aa03"
+      "sha256": "48fa504e6bc5a501"
     }
   ],
   "evidence": [
@@ -32,13 +32,13 @@
       "match": "Manchester City v PSG",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026",
       "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket On sale to Season Ticket Holders, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 4 tickets per person Buy Now "
+      "excerpt": "Tickets Match ticket On sale to Season Ticket Members, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 4 tickets per person Buy Tickets "
     },
     {
       "match": "Manchester City v AEK Athens",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-aek-athens-20-oct-2026",
       "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket On sale to Season Ticket Holders, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 4 tickets per person Buy Now "
+      "excerpt": "Tickets Match ticket On sale to all supporters with 1 previous purchase at the Etihad Stadium. Up to 4 tickets per supporter (3 additional for members on the UEFA Cup Scheme). BUY NOW "
     },
     {
       "match": "Manchester City v Brighton & Hove Albion",
@@ -128,21 +128,13 @@
       "match": "Chelsea v Hull City",
       "type": "Application",
       "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-hull-at-home",
-      "parsed": {
-        "openText": "Friday 21 August 12pm",
-        "closeText": "Wednesday 26 August 12pm",
-        "cfcBlue": true
-      }
+      "parsed": null
     },
     {
       "match": "Chelsea v AFC Bournemouth",
       "type": "Application",
       "url": "https://www.chelseafc.com/en/news/article/premier-league-ticket-news-bournemouth-at-home-2026-27",
-      "parsed": {
-        "openText": "Monday 7 September 12pm",
-        "closeText": "Thursday 10 September 12pm",
-        "cfcBlue": true
-      }
+      "parsed": null
     },
     {
       "match": "Chelsea v Tottenham Hotspur",
@@ -179,15 +171,7 @@
       "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
     }
   ],
-  "changes": [
-    {
-      "match": "Manchester City v Chelsea",
-      "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-chelsea-12-dec-2026"
-    }
-  ],
+  "changes": [],
   "skipped": [
     {
       "match": "Manchester City v Coventry City",

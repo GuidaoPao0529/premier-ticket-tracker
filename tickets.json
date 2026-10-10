@@ -519,13 +519,13 @@
       "Arsenal"
     ],
     "matchStatus": "UPCOMING",
-    "ticketStatus": "BALLOT NOTICE",
+    "ticketStatus": "BALLOT STATUS CHECK",
     "officialUrl": "https://www.arsenal.com/tickets/men",
     "windowType": "Ballot",
     "windowOpen": "官方日历已提醒",
     "windowClose": "待官方票务页公布",
-    "resultTime": "待官方公布",
-    "windowNote": "Red Member：官方日历已有 Ballot 提醒；网站不推测精确开放/截止时间",
+    "resultTime": "状态待官方核验",
+    "windowNote": "Red Member：该场已进入临近比赛窗口，旧的 Ballot 提醒可能已过期；V4 不再显示“待官方公布”，需以 Arsenal 当前官方票务状态核验。",
     "membershipTier": "Red Member"
   },
   {
