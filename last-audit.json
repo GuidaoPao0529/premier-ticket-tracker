@@ -1,18 +1,18 @@
 {
-  "checkedAt": "2026-10-10T01:47:12.225231+00:00",
+  "checkedAt": "2026-10-16T12:33:21.603424+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
       "club": "Arsenal",
       "url": "https://www.arsenal.com/tickets/men",
       "ok": true,
-      "sha256": "e96473d3e4dc68d4"
+      "sha256": "d227eb1912034d47"
     },
     {
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "02d2c7b13072ae11"
+      "sha256": "ca4486d775927e36"
     },
     {
       "club": "Chelsea",
@@ -24,16 +24,10 @@
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "48fa504e6bc5a501"
+      "sha256": "d2baa4fe36570b76"
     }
   ],
   "evidence": [
-    {
-      "match": "Manchester City v PSG",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026",
-      "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket On sale to Season Ticket Members, Premium, Matchday and Junior Members (as of 27 August) who have previously purchased a match ticket at the Etihad Stadium. 4 tickets per person Buy Tickets "
-    },
     {
       "match": "Manchester City v AEK Athens",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-aek-athens-20-oct-2026",
@@ -43,8 +37,8 @@
     {
       "match": "Manchester City v Brighton & Hove Albion",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-brighton-31-oct-2026",
-      "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday, Junior and Season Ticket Members. Four tickets per Member (additional three for Season Ticket Members). BUY TICKETS "
+      "matchTicketStatus": null,
+      "excerpt": "Tickets Match ticket Tickets are now on general sale. Four tickets per Member (additional three for Season Ticket Members). BUY TICKETS "
     },
     {
       "match": "Manchester City v Fulham",
@@ -67,14 +61,14 @@
     {
       "match": "Manchester City v Tottenham Hotspur",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members. One ticket per Member. BUY NOW "
     },
     {
       "match": "Manchester City v Nottingham Forest",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY "
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members. Four tickets per Member (additional three for Season Ticket Members). BUY NOW "
     },
     {
       "match": "Manchester City v Sporting CP",
@@ -85,14 +79,14 @@
     {
       "match": "Manchester City v Arsenal",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+      "matchTicketStatus": null,
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members who purchased 3&#x2B; home Premier League fixtures across the 2024/25 and 2025/26 seasons. Buy from £61 "
     },
     {
       "match": "Manchester City v Everton",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-everton-3-mar-2027",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket The first release of tickets is now off sale. More tickets will be released later in the season. Please click below to be notified of future ticket releases. NOTIFY ME "
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members. Four tickets per Member (additional three for Season Ticket Members). BUY NOW "
     },
     {
       "match": "Manchester City v Manchester United",
@@ -171,7 +165,29 @@
       "source": "https://help.arsenal.com/support/solutions/articles/101000593989-ticketing-embargo-champions-league-group-phase"
     }
   ],
-  "changes": [],
+  "changes": [
+    {
+      "match": "Manchester City v Tottenham Hotspur",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027"
+    },
+    {
+      "match": "Manchester City v Nottingham Forest",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027"
+    },
+    {
+      "match": "Manchester City v Everton",
+      "field": "ticketStatus",
+      "old": "COMING SOON",
+      "new": "BUY NOW",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-everton-3-mar-2027"
+    }
+  ],
   "skipped": [
     {
       "match": "Manchester City v Coventry City",
@@ -199,6 +215,16 @@
       "attempts": [
         {
           "url": "https://www.mancity.com/tickets/mens/man-city-v-sunderland-20-sep-2026",
+          "reason": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    {
+      "match": "Manchester City v PSG",
+      "reason": "no verified fixture page",
+      "attempts": [
+        {
+          "url": "https://www.mancity.com/tickets/mens/man-city-v-psg-14-oct-2026",
           "reason": "HTTP Error 404: Not Found"
         }
       ]
