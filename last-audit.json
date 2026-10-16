@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-16T12:33:21.603424+00:00",
+  "checkedAt": "2026-10-16T17:29:33.591710+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "ca4486d775927e36"
+      "sha256": "a53400656d09eee8"
     },
     {
       "club": "Chelsea",
@@ -24,7 +24,7 @@
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "d2baa4fe36570b76"
+      "sha256": "800f7c6606bb5812"
     }
   ],
   "evidence": [
@@ -79,8 +79,8 @@
     {
       "match": "Manchester City v Arsenal",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027",
-      "matchTicketStatus": null,
-      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members who purchased 3&#x2B; home Premier League fixtures across the 2024/25 and 2025/26 seasons. Buy from £61 "
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday and Junior Members who purchased 3&#x2B; home Premier League fixtures across the 2024/25 and 2025/26 seasons. BUY NOW "
     },
     {
       "match": "Manchester City v Everton",
@@ -167,25 +167,11 @@
   ],
   "changes": [
     {
-      "match": "Manchester City v Tottenham Hotspur",
+      "match": "Manchester City v Arsenal",
       "field": "ticketStatus",
       "old": "COMING SOON",
       "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-spurs-2-jan-2027"
-    },
-    {
-      "match": "Manchester City v Nottingham Forest",
-      "field": "ticketStatus",
-      "old": "COMING SOON",
-      "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-n-forest-16-jan-2027"
-    },
-    {
-      "match": "Manchester City v Everton",
-      "field": "ticketStatus",
-      "old": "COMING SOON",
-      "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-everton-3-mar-2027"
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027"
     }
   ],
   "skipped": [
