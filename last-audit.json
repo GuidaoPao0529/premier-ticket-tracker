@@ -1,18 +1,18 @@
 {
-  "checkedAt": "2026-10-16T17:29:33.591710+00:00",
+  "checkedAt": "2026-10-26T14:21:14.110824+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
       "club": "Arsenal",
       "url": "https://www.arsenal.com/tickets/men",
       "ok": true,
-      "sha256": "d227eb1912034d47"
+      "sha256": "66524bad813c8ee1"
     },
     {
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "a53400656d09eee8"
+      "sha256": "0b90f021d9b7e531"
     },
     {
       "club": "Chelsea",
@@ -24,7 +24,7 @@
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "800f7c6606bb5812"
+      "sha256": "af6730134483e443"
     }
   ],
   "evidence": [
@@ -43,14 +43,14 @@
     {
       "match": "Manchester City v Fulham",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-fulham-21-nov-2026",
-      "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday, Junior and Season Ticket Members. Four tickets per Member (additional three for Season Ticket Members). BUY TICKETS "
+      "matchTicketStatus": "COMING SOON",
+      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday, Junior and Season Ticket Members. Four tickets per Member (additional three for Season Ticket Members). Notify Me "
     },
     {
       "match": "Manchester City v Napoli",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-napoli-24-nov-2026",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket Sign up to be notified when tickets for this fixture become available Notify Me "
+      "matchTicketStatus": null,
+      "excerpt": "Tickets Match ticket Find out more "
     },
     {
       "match": "Manchester City v Chelsea",
@@ -167,11 +167,11 @@
   ],
   "changes": [
     {
-      "match": "Manchester City v Arsenal",
+      "match": "Manchester City v Fulham",
       "field": "ticketStatus",
-      "old": "COMING SOON",
-      "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-arsenal-30-jan-2027"
+      "old": "BUY NOW",
+      "new": "COMING SOON",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-fulham-21-nov-2026"
     }
   ],
   "skipped": [
