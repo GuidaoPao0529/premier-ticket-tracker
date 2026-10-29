@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-26T14:21:14.110824+00:00",
+  "checkedAt": "2026-10-29T16:57:36.493771+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "0b90f021d9b7e531"
+      "sha256": "ad90097fabc4b91b"
     },
     {
       "club": "Chelsea",
@@ -24,7 +24,7 @@
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "af6730134483e443"
+      "sha256": "07f28636e30855c5"
     }
   ],
   "evidence": [
@@ -49,8 +49,8 @@
     {
       "match": "Manchester City v Napoli",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-napoli-24-nov-2026",
-      "matchTicketStatus": null,
-      "excerpt": "Tickets Match ticket Find out more "
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to all Cityzens with an active account before 27 August. 4 tickets per supporter (3 for members on the UEFA cup scheme) Buy Tickets "
     },
     {
       "match": "Manchester City v Chelsea",
@@ -167,11 +167,11 @@
   ],
   "changes": [
     {
-      "match": "Manchester City v Fulham",
+      "match": "Manchester City v Napoli",
       "field": "ticketStatus",
-      "old": "BUY NOW",
-      "new": "COMING SOON",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-fulham-21-nov-2026"
+      "old": "COMING SOON",
+      "new": "BUY NOW",
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-napoli-24-nov-2026"
     }
   ],
   "skipped": [
