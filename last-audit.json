@@ -1,18 +1,18 @@
 {
-  "checkedAt": "2026-10-29T16:57:36.493771+00:00",
+  "checkedAt": "2026-11-24T00:58:42.994334+00:00",
   "mode": "V5 3 CLUBS",
   "sources": [
     {
       "club": "Arsenal",
       "url": "https://www.arsenal.com/tickets/men",
       "ok": true,
-      "sha256": "66524bad813c8ee1"
+      "sha256": "12128cab95331e4e"
     },
     {
       "club": "Arsenal",
       "url": "https://help.arsenal.com/support/solutions/articles/101000578825-home-tickets",
       "ok": true,
-      "sha256": "ad90097fabc4b91b"
+      "sha256": "92604d3a7cc587aa"
     },
     {
       "club": "Chelsea",
@@ -24,7 +24,7 @@
       "club": "Manchester City",
       "url": "https://www.mancity.com/news/mens/ticket-news",
       "ok": true,
-      "sha256": "07f28636e30855c5"
+      "sha256": "d970e83bdbbd4836"
     }
   ],
   "evidence": [
@@ -43,20 +43,20 @@
     {
       "match": "Manchester City v Fulham",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-fulham-21-nov-2026",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket Tickets on sale to Premium, Matchday, Junior and Season Ticket Members. Four tickets per Member (additional three for Season Ticket Members). Notify Me "
+      "matchTicketStatus": null,
+      "excerpt": "Tickets Match ticket Tickets for this fixture are on general sale, 4 tickets per supporter (3 for Season Ticket Members). BUY NOW "
     },
     {
       "match": "Manchester City v Napoli",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-napoli-24-nov-2026",
-      "matchTicketStatus": "BUY NOW",
-      "excerpt": "Tickets Match ticket Tickets on sale to all Cityzens with an active account before 27 August. 4 tickets per supporter (3 for members on the UEFA cup scheme) Buy Tickets "
+      "matchTicketStatus": null,
+      "excerpt": "Tickets Match ticket Tickets for this fixture are now on general sale. 4 tickets per supporter (3 for members on the UEFA cup scheme) Buy Tickets "
     },
     {
       "match": "Manchester City v Chelsea",
       "url": "https://www.mancity.com/tickets/mens/man-city-v-chelsea-12-dec-2026",
-      "matchTicketStatus": "COMING SOON",
-      "excerpt": "Tickets Match ticket Tickets for this fixture are currently sold out. Click below to fill out the form to be notified when more tickets are released. NOTIFY ME "
+      "matchTicketStatus": "BUY NOW",
+      "excerpt": "Tickets Match ticket Tickets on sale to new and existing Premium, Matchday and Junior members. One ticket per person. BUY NOW "
     },
     {
       "match": "Manchester City v Tottenham Hotspur",
@@ -167,11 +167,11 @@
   ],
   "changes": [
     {
-      "match": "Manchester City v Napoli",
+      "match": "Manchester City v Chelsea",
       "field": "ticketStatus",
       "old": "COMING SOON",
       "new": "BUY NOW",
-      "url": "https://www.mancity.com/tickets/mens/man-city-v-napoli-24-nov-2026"
+      "url": "https://www.mancity.com/tickets/mens/man-city-v-chelsea-12-dec-2026"
     }
   ],
   "skipped": [
